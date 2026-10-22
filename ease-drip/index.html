@@ -61,12 +61,6 @@
     <a href="#shop" class="hero-cta" data-pt="Ver Coleção" data-en="View Collection">Ver Coleção</a>
   </div>
   <div class="hero-line"></div>
-  <div class="hero-zoom-controls" role="group" aria-label="Controlos de zoom da imagem">
-    <button type="button" data-zoom-out aria-label="Reduzir zoom" title="Reduzir zoom">−</button>
-    <output data-zoom-level aria-live="polite">100%</output>
-    <button type="button" data-zoom-in aria-label="Aumentar zoom" title="Aumentar zoom">+</button>
-    <button type="button" data-zoom-reset aria-label="Repor imagem" title="Repor imagem">↺</button>
-  </div>
 </section>
 
 <!-- BRANDS STRIP -->
@@ -243,6 +237,12 @@
       <button class="carousel-btn carousel-prev" onclick="carousel(-1)">&#8592;</button>
       <button class="carousel-btn carousel-next" onclick="carousel(1)">&#8594;</button>
       <div class="carousel-dots" id="carouselDots"></div>
+      <div class="product-zoom-controls" role="group" aria-label="Controlos de zoom do produto">
+        <button type="button" data-product-zoom-out aria-label="Reduzir zoom" title="Reduzir zoom">−</button>
+        <output data-product-zoom-level aria-live="polite">100%</output>
+        <button type="button" data-product-zoom-in aria-label="Aumentar zoom" title="Aumentar zoom">+</button>
+        <button type="button" data-product-zoom-reset aria-label="Repor imagem" title="Repor imagem">↺</button>
+      </div>
     </div>
     <div class="modal-info">
       <div class="modal-brand" id="modalBrand"></div>

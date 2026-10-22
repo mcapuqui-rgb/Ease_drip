@@ -234,6 +234,77 @@ function renderAllGrids() { renderShop(); }
 // ── MODAL ──
 let currentProduct = null;
 let modalHistoryEntry = false;
+let productZoomScale = 1, productZoomX = 0, productZoomY = 0, productZoomDrag = null;
+
+function activeProductImage() {
+  return document.querySelector(`#carouselTrack .carousel-slide:nth-child(${carouselIndex + 1}) img`);
+}
+
+function updateProductZoom() {
+  const gallery = document.querySelector('.modal-gallery');
+  const image = activeProductImage();
+  if (!gallery) return;
+  if (image) {
+    const bounds = gallery.getBoundingClientRect();
+    const naturalWidth = image.naturalWidth || bounds.width;
+    const naturalHeight = image.naturalHeight || bounds.height;
+    const fit = Math.min(bounds.width / naturalWidth, bounds.height / naturalHeight) || 1;
+    const maxX = naturalWidth * fit * (productZoomScale - 1) / 2;
+    const maxY = naturalHeight * fit * (productZoomScale - 1) / 2;
+    productZoomX = Math.max(-maxX, Math.min(maxX, productZoomX));
+    productZoomY = Math.max(-maxY, Math.min(maxY, productZoomY));
+    image.style.transform = `translate3d(${productZoomX}px, ${productZoomY}px, 0) scale(${productZoomScale})`;
+  }
+  gallery.classList.toggle('is-zoomed', productZoomScale > 1);
+  const level = gallery.querySelector('[data-product-zoom-level]');
+  const zoomIn = gallery.querySelector('[data-product-zoom-in]');
+  const zoomOut = gallery.querySelector('[data-product-zoom-out]');
+  if (level) level.value = `${Math.round(productZoomScale * 100)}%`;
+  if (zoomIn) zoomIn.disabled = productZoomScale >= 3 || !image;
+  if (zoomOut) zoomOut.disabled = productZoomScale <= 1 || !image;
+  if (gallery.querySelector('[data-product-zoom-reset]')) {
+    gallery.querySelector('[data-product-zoom-reset]').disabled = productZoomScale <= 1 || !image;
+  }
+}
+
+function resetProductZoom() {
+  productZoomScale = 1;
+  productZoomX = 0;
+  productZoomY = 0;
+  updateProductZoom();
+}
+
+const productGallery = document.querySelector('.modal-gallery');
+if (productGallery) {
+  productGallery.querySelector('[data-product-zoom-in]').addEventListener('click', () => {
+    productZoomScale = Math.min(3, Math.round((productZoomScale + 0.25) * 100) / 100);
+    updateProductZoom();
+  });
+  productGallery.querySelector('[data-product-zoom-out]').addEventListener('click', () => {
+    productZoomScale = Math.max(1, Math.round((productZoomScale - 0.25) * 100) / 100);
+    updateProductZoom();
+  });
+  productGallery.querySelector('[data-product-zoom-reset]').addEventListener('click', resetProductZoom);
+  productGallery.addEventListener('pointerdown', event => {
+    if (event.button !== 0 || productZoomScale <= 1 || !event.target.closest('.carousel-slide img')) return;
+    productZoomDrag = {id:event.pointerId, x:event.clientX, y:event.clientY, offsetX:productZoomX, offsetY:productZoomY};
+    productGallery.classList.add('is-dragging');
+    productGallery.setPointerCapture(event.pointerId);
+  });
+  productGallery.addEventListener('pointermove', event => {
+    if (!productZoomDrag || productZoomDrag.id !== event.pointerId) return;
+    productZoomX = productZoomDrag.offsetX + (event.clientX - productZoomDrag.x) * 1.5;
+    productZoomY = productZoomDrag.offsetY + (event.clientY - productZoomDrag.y) * 1.5;
+    updateProductZoom();
+  });
+  const stopProductZoomDrag = event => {
+    if (!productZoomDrag || productZoomDrag.id !== event.pointerId) return;
+    productZoomDrag = null;
+    productGallery.classList.remove('is-dragging');
+  };
+  productGallery.addEventListener('pointerup', stopProductZoomDrag);
+  productGallery.addEventListener('pointercancel', stopProductZoomDrag);
+}
 
 function openModal(id) {
   const p = products[id];
@@ -263,6 +334,7 @@ function openModal(id) {
 
   // Carousel
   buildCarousel();
+  resetProductZoom();
 
   // WhatsApp link
   const msg = encodeURIComponent(`Olá! Tenho interesse no produto: ${p.brand} – ${p.name.pt}. Podiam dar mais informações?`);
@@ -299,10 +371,12 @@ function buildCarousel() {
     `<div class="carousel-dot${i===0?' active':''}" onclick="goToSlide(${i})"></div>`
   ).join('');
 
+  track.querySelectorAll('img').forEach(img => img.addEventListener('load', updateProductZoom));
   updateCarousel();
 }
 
 function updateCarousel() {
+  resetProductZoom();
   document.getElementById('carouselTrack').style.transform = `translateX(-${carouselIndex * 100}%)`;
   document.querySelectorAll('.carousel-dot').forEach((d,i) => d.classList.toggle('active', i === carouselIndex));
 }
