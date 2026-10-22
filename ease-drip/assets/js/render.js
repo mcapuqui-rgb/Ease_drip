@@ -233,6 +233,7 @@ function renderAllGrids() { renderShop(); }
 
 // ── MODAL ──
 let currentProduct = null;
+let modalHistoryEntry = false;
 
 function openModal(id) {
   const p = products[id];
@@ -267,7 +268,13 @@ function openModal(id) {
   const msg = encodeURIComponent(`Olá! Tenho interesse no produto: ${p.brand} – ${p.name.pt}. Podiam dar mais informações?`);
   document.getElementById('modalWA').href = `https://wa.me/${WHATSAPP}?text=${msg}`;
 
-  document.getElementById('modalOverlay').classList.add('open');
+  const overlay = document.getElementById('modalOverlay');
+  if (!overlay.classList.contains('open')) {
+    const state = history.state && typeof history.state === 'object' ? history.state : {};
+    history.pushState({ ...state, easeDripProductModal: true }, '');
+    modalHistoryEntry = true;
+  }
+  overlay.classList.add('open');
   document.body.style.overflow = 'hidden';
 }
 
@@ -313,8 +320,14 @@ function selectSize(btn) {
 }
 
 function closeModal() {
-  document.getElementById('modalOverlay').classList.remove('open');
+  const overlay = document.getElementById('modalOverlay');
+  if (!overlay.classList.contains('open')) return;
+  overlay.classList.remove('open');
   document.body.style.overflow = '';
+  if (modalHistoryEntry) {
+    modalHistoryEntry = false;
+    history.back();
+  }
 }
 
 function closeModalOutside(e) {
@@ -322,3 +335,10 @@ function closeModalOutside(e) {
 }
 
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+window.addEventListener('popstate', () => {
+  const overlay = document.getElementById('modalOverlay');
+  if (!overlay.classList.contains('open')) return;
+  modalHistoryEntry = false;
+  overlay.classList.remove('open');
+  document.body.style.overflow = '';
+});

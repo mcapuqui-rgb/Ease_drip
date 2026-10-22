@@ -11,6 +11,8 @@
   --border:#222;
   --font-display:'Cormorant Garamond',serif;
   --font-body:'Montserrat',sans-serif;
+  --hero-bg-opacity:0.3;
+  --hero-bg-brightness:1;
 }
 
 /* ── TEMA CLARO ── */
@@ -18,7 +20,7 @@ html.light{
   --bg:#f5f0ea;
   --bg2:#ede8e0;
   --bg3:#e4ddd3;
-  --gold:#9a6f2a;
+  --gold:#c2b32a;
   --gold2:#b8872e;
   --white:#1a1612;
   --gray:#666;
@@ -28,7 +30,7 @@ html.light body{background:var(--bg);color:var(--white)}
 html.light nav{background:rgba(245,240,234,.95)}
 html.light .mobile-menu{background:var(--bg)}
 html.light .hero-bg::after{background:linear-gradient(to bottom,rgba(245,240,234,0.15) 0%,rgba(245,240,234,0.05) 40%,rgba(245,240,234,0.4) 100%)}
-html.light .hero-grid{opacity:.12}
+html.light .hero-grid{opacity:0.12}
 html.light ::-webkit-scrollbar-track{background:var(--bg)}
 html.light .product-card{background:var(--bg)}
 html.light .product-info{background:var(--bg)}
@@ -116,6 +118,8 @@ nav{position:fixed;top:0px;left:0;right:0;z-index:100;display:flex;align-items:c
   background-position: center;
   background-repeat: no-repeat;
   z-index: 0;
+  opacity: var(--hero-bg-opacity);
+  filter: brightness(var(--hero-bg-brightness));
 }
 
 /* Gradiente escuro por baixo do texto para legibilidade */
@@ -137,15 +141,24 @@ nav{position:fixed;top:0px;left:0;right:0;z-index:100;display:flex;align-items:c
     background-size: cover;
   }
   .hero-grid { opacity: 0.15; }
+  .hero-zoom-controls{right:1rem;bottom:1rem}
 }
 .hero-content{position:relative;text-align:center;max-width:800px;padding:2rem;z-index:2;text-shadow:0 2px 20px rgba(0,0,0,0.7)}
-.hero-tag{font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--white);margin-bottom:2rem;display:block}
-.hero-title{font-family:var(--font-display);font-size:clamp(3.5rem,8vw,7rem);font-weight:300;line-height:1;letter-spacing:.05em;margin-bottom:1.5rem}
+.hero-tag{font-size:1.5rem;letter-spacing:.3em;text-transform:uppercase;color:var(--white);margin-bottom:2rem;display:block}
+.hero-title{font-family:var(--font-display);font-size:clamp(9.5rem,9vw,9rem);font-weight:300;line-height:1;letter-spacing:.05em;margin-bottom:1.5rem}
 .hero-title em{font-style:italic;color:var(--gold)}
-.hero-sub{font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:rgb(255, 230, 1);margin-bottom:3rem;line-height:2}
+.hero-sub{font-size:1.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:3rem;line-height:2}
 .hero-cta{display:inline-block;padding:.9rem 3rem;border:1px solid var(--gold);color:var(--gold);font-family:var(--font-body);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;transition:all .4s;background:transparent}
 .hero-cta:hover{background:var(--gold);color:var(--bg)}
 .hero-line{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:1px;height:60px;background:linear-gradient(var(--gold),transparent);z-index:2}
+.hero-zoom-controls{position:absolute;right:2rem;bottom:2rem;z-index:3;display:flex;align-items:center;gap:.4rem;padding:.45rem;background:rgba(10,10,10,.65);border:1px solid rgba(201,168,76,.45);backdrop-filter:blur(8px)}
+.hero-zoom-controls button{min-width:2.2rem;height:2.2rem;border:1px solid var(--border);background:transparent;color:var(--gold2);font:inherit;font-size:.85rem;cursor:pointer;transition:background .2s,border-color .2s}
+.hero-zoom-controls button:hover:not(:disabled){background:rgba(201,168,76,.18);border-color:var(--gold)}
+.hero-zoom-controls button:disabled{opacity:.4;cursor:default}
+.hero-zoom-controls output{min-width:3.2rem;color:var(--white);font-size:.65rem;text-align:center;letter-spacing:.05em}
+#home.is-zoomed{cursor:grab}
+#home.is-dragging{cursor:grabbing;user-select:none}
+#home.is-dragging .hero-content{pointer-events:none}
 
 /* ── SECTIONS ── */
 section{padding:6rem 4rem}
@@ -206,8 +219,9 @@ html.light .shop-search::placeholder{color:var(--gray)}
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:200;display:none;align-items:center;justify-content:center;padding:2rem}
 .modal-overlay.open{display:flex}
 .modal{background:var(--bg2);width:100%;max-width:1000px;max-height:90vh;overflow-y:auto;display:grid;grid-template-columns:1fr 1fr;position:relative}
-.modal-close{position:absolute;top:1.5rem;right:1.5rem;background:none;border:none;color:var(--white);font-size:1.2rem;cursor:pointer;z-index:10;line-height:1;opacity:.6;transition:opacity .3s}
-.modal-close:hover{opacity:1}
+.modal-close{position:absolute;top:1rem;right:1rem;z-index:10;display:flex;align-items:center;gap:.5rem;padding:.6rem .85rem;background:linear-gradient(145deg,rgba(232,200,120,.32),rgba(201,168,76,.12));-webkit-backdrop-filter:blur(12px) saturate(150%);backdrop-filter:blur(12px) saturate(150%);border:1px solid rgba(232,200,120,.55);border-radius:999px;color:var(--gold2);font-family:var(--font-body);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 5px 18px rgba(0,0,0,.2);transition:background .3s,border-color .3s,color .3s,box-shadow .3s}
+.modal-close:hover{background:linear-gradient(145deg,rgba(232,200,120,.5),rgba(201,168,76,.25));border-color:var(--gold2);color:var(--white);box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 0 20px rgba(201,168,76,.2)}
+.modal-close:focus-visible{outline:2px solid var(--gold2);outline-offset:3px}
 .modal-gallery{background:var(--bg3);position:relative;overflow:hidden;min-height:500px}
 .carousel-track{display:flex;transition:transform .4s ease;height:100%}
 .carousel-slide{min-width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--bg3)}
@@ -392,7 +406,7 @@ html.light .filter-chip.active,html.light .collection-chip.active{color:#f5f0ea}
 }
 
 /* ── HERO SLIDESHOW (crossfade) ── */
-.hero-slide{position:absolute;inset:0;background-size:cover;background-position:center;background-repeat:no-repeat;opacity:0;transition:opacity var(--hero-fade,1600ms) ease-in-out;will-change:opacity;backface-visibility:hidden}
+.hero-slide{position:absolute;inset:0;background-size:cover;background-position:center;background-repeat:no-repeat;opacity:0;transform-origin:center;transition:opacity var(--hero-fade,1600ms) ease-in-out;will-change:opacity,transform;backface-visibility:hidden}
 .hero-slide.active{opacity:1}
 .hero-slide.no-fade{transition:none}
 @media (prefers-reduced-motion:reduce){.hero-slide{transition:none}}

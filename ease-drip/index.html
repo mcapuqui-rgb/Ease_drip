@@ -61,6 +61,12 @@
     <a href="#shop" class="hero-cta" data-pt="Ver Coleção" data-en="View Collection">Ver Coleção</a>
   </div>
   <div class="hero-line"></div>
+  <div class="hero-zoom-controls" role="group" aria-label="Controlos de zoom da imagem">
+    <button type="button" data-zoom-out aria-label="Reduzir zoom" title="Reduzir zoom">−</button>
+    <output data-zoom-level aria-live="polite">100%</output>
+    <button type="button" data-zoom-in aria-label="Aumentar zoom" title="Aumentar zoom">+</button>
+    <button type="button" data-zoom-reset aria-label="Repor imagem" title="Repor imagem">↺</button>
+  </div>
 </section>
 
 <!-- BRANDS STRIP -->
@@ -228,7 +234,10 @@
 <!-- PRODUCT MODAL -->
 <div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
   <div class="modal" id="modal">
-    <button class="modal-close" onclick="closeModal()">✕</button>
+    <button class="modal-close" type="button" onclick="closeModal()" aria-label="Fechar produto" title="Fechar">
+      <span aria-hidden="true">✕</span>
+      <span data-pt="Fechar" data-en="Close">Fechar</span>
+    </button>
     <div class="modal-gallery">
       <div class="carousel-track" id="carouselTrack"></div>
       <button class="carousel-btn carousel-prev" onclick="carousel(-1)">&#8592;</button>
