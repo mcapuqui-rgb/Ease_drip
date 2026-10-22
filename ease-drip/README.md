@@ -1,144 +1,204 @@
 # Ease Drip — Boutique Online
 
-Site institucional/loja da Ease Drip. Site estático (HTML + CSS + JavaScript puro,
-sem frameworks nem passo de build), pronto para hospedar em qualquer serviço
-de alojamento estático.
+Website estático da Ease Drip, uma boutique de moda em Lubango, Angola. O
+projeto apresenta produtos de moda para mulher, homem e crianças, com contacto
+e pedidos de informação encaminhados pelo WhatsApp.
+
+## Funcionalidades
+
+- Página adaptável a computadores e dispositivos móveis.
+- Loja organizada por público, categoria e subcategoria.
+- Pesquisa e filtros por tamanho, cor, preço, material, marca e ocasião.
+- Cartões de produto com miniatura e modal com galeria de imagens.
+- Coleções de novidades, mais vendidos e promoções.
+- Interface em português e inglês.
+- Tema claro e escuro.
+- Faixa animada de logótipos de marcas.
+- Imagens de fundo do hero com rotação e transição gradual.
+- Formulário de contacto que prepara uma mensagem para o WhatsApp.
+
+> O site não tem carrinho, checkout, pagamentos, contas de utilizador nem
+> servidor/backend. A venda e o atendimento são feitos diretamente pelo
+> WhatsApp.
+
+## Tecnologias
+
+- HTML5
+- CSS3
+- JavaScript sem frameworks, dependências de runtime ou processo de build
+- `serve` (via `npx`) para o servidor local definido em `npm start`
 
 ## Estrutura do projeto
 
-```
+```text
 ease-drip/
-├── index.html                  ← página única (single-page site)
+├── index.html
+├── package.json
 ├── README.md
-├── .gitignore
-├── package.json                ← apenas para correr um servidor local de testes
 └── assets/
     ├── css/
-    │   └── style.css           ← todo o estilo do site (tema claro/escuro incluído)
-    ├── js/
-    │   ├── config.js           ← número de WhatsApp e estado global (idioma, etc.)
-    │   ├── data-categories.js  ← árvore de categorias, coleções, materiais e ocasiões
-    │   ├── data-products.js    ← catálogo de produtos (cada um com cat/group/sub)
-    │   ├── render.js           ← categorias, coleções, filtros, grelha e modal de produto
-    │   ├── language.js         ← alternância PT/EN
-    │   ├── theme.js            ← alternância tema claro/escuro
-    │   ├── nav.js               ← menu mobile + destaque do menu ao fazer scroll
-    │   ├── contact.js          ← formulário de contacto (envia para WhatsApp)
-    │   ├── brands-render.js    ← lista de marcas + construção da faixa de logótipos
-    │   ├── ui-feedback.js      ← toasts e animação de entrada dos cartões
-    │   ├── hero-slider.js      ← rotação automática das imagens do hero (crossfade)
-    │   ├── init.js             ← arranque da página (chama as funções acima)
-    │   ├── brands-carousel.js  ← faixa de marcas: velocidade suave + arrasto
-    │   └── search.js           ← pesquisa de produtos
-    └── images/                 ← (não incluída neste pacote — mantém a tua cópia local)
-        ├── logos/               ← logótipos das marcas (referenciados em brands-render.js)
-        ├── products/            ← fotos dos produtos (referenciadas em data-products.js)
-        └── background/          ← imagem de fundo da secção principal (hero)
+    │   └── style.css
+    ├── images/
+    │   ├── Background/       # Fundos do hero (WebP)
+    │   ├── logos/            # Logótipos das marcas (WebP)
+    │   ├── products/         # Fotografias dos produtos
+    └── js/
+        ├── config.js         # WhatsApp, idioma e imagens do hero
+        ├── data-categories.js # Categorias, coleções e opções dos filtros
+        ├── data-products.js  # Catálogo e links oficiais das marcas
+        ├── render.js         # Loja, filtros, cartões e modal
+        ├── language.js       # Alternância de idioma
+        ├── theme.js          # Alternância de tema
+        ├── nav.js            # Navegação e menu móvel
+        ├── contact.js        # Formulário de contacto para WhatsApp
+        ├── brands-render.js  # Faixa de marcas
+        ├── brands-carousel.js # Movimento e arrasto da faixa de marcas
+        ├── ui-feedback.js    # Animações e notificações da interface
+        ├── search.js         # Pesquisa
+        ├── hero-slider.js    # Slideshow de fundo
+        └── init.js           # Inicialização da página
 ```
 
-Os ficheiros JavaScript são carregados por ordem no `index.html` (não são
-módulos ES) — se adicionares um novo ficheiro, garante que o `<script>` fica
-na posição certa (dados/funções antes de quem as usa).
+Os scripts não são módulos ES. A ordem das tags `<script>` no fim de
+`index.html` é importante: os dados e as funções devem ser carregados antes dos
+scripts que os utilizam.
 
-## Categorias, filtros e coleções
+## Executar localmente
 
-**Árvore** (em `data-categories.js`): Mulher · Homem · Moda Infantil → grupo
-(Vestuário / Calçado / Acessórios; Menina / Menino / Calçado infantil) →
-subcategoria. Para acrescentar uma subcategoria basta juntar uma linha.
+É necessário usar um servidor HTTP local. Não abras `index.html` diretamente
+com `file://`, porque o browser pode não carregar corretamente os recursos.
 
-**Produto** (em `data-products.js`) — campos novos:
+### Com Node.js
 
-```js
-{cat:'homem', group:'vestuario', sub:'camisas',   // onde aparece na loja
- also:[{cat:'mulher', group:'acessorios', sub:'cintos'}], // opcional: aparece também noutro sítio
- priceValue: 12000,        // número, para o filtro de Preço (null = "A consultar")
- price: '12 000 Kz',       // texto mostrado no cartão
- oldPrice: '15 000 Kz',    // opcional — o produto entra sozinho em "Promoções"
- materials:['algodao'],    // chaves de MATERIALS
- occasions:['casual'],     // chaves de OCCASIONS
- collections:['novidades','mais-vendidos'], // coleções
- sizes:[...], colors:[...], brand:'...', ...}
-```
-
-**Filtros** (Tamanho, Cor, Preço, Material, Marca, Ocasião): são gerados
-automaticamente a partir dos produtos da categoria aberta — só aparecem
-opções que existem. O filtro de Preço fica inativo até haver `priceValue`.
-
-**Coleções** (Novidades, Mais vendidos, Promoções): ficam vazias até marcares
-produtos reais em `collections`. Categorias sem produtos mostram "Brevemente".
-
-**Produtos sem lugar na nova árvore** (meias, gravatas, roupa interior, bebé…)
-estão guardados em `productsSemCategoria` no fim do bloco de dados e não
-aparecem na loja.
-
-## Imagens rotativas do hero
-
-Em `assets/js/config.js`, acrescenta caminhos ao array `HERO_IMAGES`
-(`HERO_INTERVAL_MS` = tempo por imagem, `HERO_FADE_MS` = duração da fusão).
-A transição só anima a opacidade — sem zoom nem blur — por isso não perde
-qualidade. Usa imagens ≥ 1920×1080 em WebP/JPG. Respeita
-`prefers-reduced-motion` e pára quando o separador está em segundo plano.
-
-## Como testar localmente
-
-Qualquer servidor estático serve. Duas opções simples:
+Na pasta que contém `package.json`:
 
 ```bash
-# Opção 1 — com Node instalado
 npm start
-
-# Opção 2 — com Python instalado
-python3 -m http.server 8000
 ```
 
-Depois abre `http://localhost:8000` (ou a porta que o `npm start` indicar).
-Não abras o `index.html` diretamente com duplo-clique (`file://...`) — alguns
-browsers bloqueiam pedidos a ficheiros locais e o site não carrega bem.
+O servidor `serve` é executado na porta `8000`. Abre
+<http://localhost:8000>.
 
-## Configuração antes de publicar
+### Com Python
 
-1. **Número de WhatsApp** — em `assets/js/config.js`, substitui
-   `'244900000000'` pelo número real da loja (com indicativo do país, sem
-   espaços nem `+`).
-2. **Produtos reais** — em `assets/js/data-products.js`, substitui as
-   descrições/preços de exemplo pelos produtos reais. Cada produto tem um
-   campo `images: []`; coloca aí os caminhos das fotos, por exemplo:
-   `images: ['assets/images/products/tshirt-nike-branca-1.jpg']`.
-3. **Fotos dos produtos** — usa imagens otimizadas para a web (formato
-   `.webp` ou `.jpg` comprimido, idealmente < 200 KB cada) para o site
-   carregar rápido em ligações móveis mais lentas.
-4. **Logótipos das marcas** — coloca os ficheiros em
-   `assets/images/logos/` com o nome exato usado em
-   `assets/js/brands-render.js`. Confirma que tens autorização/licença para
-   usar cada logótipo.
-5. **Favicon** — coloca um `favicon.png` (ou `.ico`) em `assets/images/` (já
-   está referenciado no `<head>` do `index.html`).
+```bash
+py -m http.server 8000
+```
 
-## Antes de considerar isto "pronto para produção"
+Abre <http://localhost:8000>.
 
-- [ ] Substituir todos os produtos/preços de exemplo por dados reais.
-- [ ] Confirmar direitos de uso de todas as imagens (fotos de produto e
-      logótipos de marcas).
-- [ ] Adicionar página de **Política de Privacidade** e **Termos & Condições**
-      (recomendado para qualquer loja online, mesmo sem checkout próprio).
-- [ ] Adicionar política de trocas/devoluções, já que as vendas fecham via
-      WhatsApp.
-- [ ] Comprar um domínio próprio e publicar com HTTPS (ver secção seguinte).
-- [ ] Testar em telemóvel real (iOS e Android), não só no browser do
-      computador.
-- [ ] Verificar todos os `alt=""` das imagens de produto quando as fotos
-      reais forem adicionadas (acessibilidade e SEO).
-- [ ] Considerar analytics (ex. Google Analytics / Meta Pixel) se quiseres
-      medir visitas e conversões — não incluído por defeito, por privacidade.
+## Atualizar o catálogo
 
-## Publicar o site (hosting)
+Os produtos visíveis estão no array `products`, em
+`assets/js/data-products.js`. Cada produto usa `cat`, `group` e `sub` para
+indicar a sua localização na árvore definida em
+`assets/js/data-categories.js`.
 
-Por ser 100% estático, podes publicar em qualquer um destes serviços,
-arrastando a pasta ou ligando a um repositório Git:
+Exemplo:
 
-- **Netlify** ou **Vercel** — grátis, HTTPS automático, muito simples.
-- **GitHub Pages** — grátis, ideal se já usas Git/GitHub.
-- Qualquer alojamento cPanel/FTP tradicional — basta enviar a pasta inteira.
+```js
+{
+  cat: 'homem',
+  group: 'vestuario',
+  sub: 'camisas',
+  brand: 'Zara',
+  name: { pt: 'Camisa Oxford', en: 'Oxford Shirt' },
+  desc: {
+    pt: 'Camisa de algodão para ocasiões formais e casuais.',
+    en: 'Cotton shirt for formal and casual occasions.'
+  },
+  price: '12 000 Kz',
+  priceValue: 12000,
+  sizes: ['S', 'M', 'L'],
+  colors: ['Branco', 'Azul'],
+  materials: ['algodao'],
+  occasions: ['casual', 'formal'],
+  collections: ['novidades'],
+  images: ['assets/images/products/zara-camisa-oxford-1.webp']
+}
+```
 
-Recomenda-se usar Git desde já (`git init`) para teres histórico de
-alterações e poderes reverter facilmente se algo correr mal.
+Campos opcionais e respetivo comportamento:
+
+| Campo | Utilização |
+| --- | --- |
+| `priceValue` | Valor numérico usado pelo filtro de preço. Usa `null` quando não há preço definido. |
+| `oldPrice` | Preço anterior; o produto também aparece em Promoções. |
+| `also` | Outras categorias onde o mesmo produto deve aparecer. |
+| `collections` | Coleções `novidades`, `mais-vendidos` e/ou `promocoes`. |
+| `images` | Caminhos relativos à raiz do site. A primeira imagem é a miniatura; todas são usadas na galeria do modal. |
+
+Os identificadores de `cat`, `group`, `sub`, `materials` e `occasions` devem
+existir em `data-categories.js`. As opções dos filtros são construídas a partir
+dos dados dos produtos.
+
+Produtos sem uma categoria disponível podem ficar no array
+`productsSemCategoria`; não são apresentados na loja até serem categorizados e
+movidos para `products`.
+
+## Adicionar ou substituir imagens
+
+Guarda as fotografias de produtos em `assets/images/products/` e usa no
+catálogo o caminho relativo à raiz do site, por exemplo:
+
+```js
+images: [
+  'assets/images/products/produto-1.webp',
+  'assets/images/products/produto-2.webp'
+]
+```
+
+Para cada imagem, confirma que o nome, extensão e capitalização no código
+correspondem exatamente ao ficheiro. Isto é especialmente importante em
+alojamentos Linux, que distinguem maiúsculas de minúsculas. Prefere imagens
+WebP otimizadas para reduzir o tempo de carregamento.
+
+Os logótipos são configurados no array `brands`, em
+`assets/js/brands-render.js`. Os caminhos atuais apontam para ficheiros `.webp`
+em `assets/images/logos/`.
+
+### Imagens do hero
+
+Os fundos que rodam automaticamente estão no array `HERO_IMAGES`, em
+`assets/js/config.js`. Os caminhos atuais usam os ficheiros
+`assets/images/Background/background0.webp` a
+`assets/images/Background/background10.webp`. Para ajustar a rotação, altera
+`HERO_INTERVAL_MS`; para alterar a duração da transição, altera
+`HERO_FADE_MS`.
+
+O nome da pasta `Background` tem B maiúsculo. Mantém a capitalização dos
+caminhos igual à dos diretórios e ficheiros.
+
+## Configuração de contacto
+
+O número de WhatsApp é definido pela constante `WHATSAPP` em
+`assets/js/config.js`. Atualiza-o usando o indicativo do país seguido do
+número, sem `+`, espaços ou pontuação. O formulário prepara uma mensagem e
+abre o WhatsApp; não envia nem guarda dados num servidor.
+
+## Publicação
+
+O projeto não precisa de compilação. Publica a pasta completa `ease-drip/`
+num alojamento de sites estáticos, por exemplo Netlify, Vercel, GitHub Pages ou
+alojamento próprio. Confirma que:
+
+1. `index.html` está na raiz publicada.
+2. A pasta `assets/` e todas as imagens necessárias foram incluídas.
+3. Os caminhos funcionam com as maiúsculas/minúsculas do alojamento.
+4. O site está acessível por HTTPS e o número de WhatsApp está correto.
+
+## Verificação antes de publicar
+
+- Abrir o site num servidor local e testar os links da navegação.
+- Testar pesquisa, filtros, mudança de idioma e tema.
+- Abrir cartões de produto e confirmar miniaturas e galeria.
+- Confirmar que os fundos do hero e os logótipos carregam.
+- Testar o botão e o formulário de WhatsApp num telemóvel.
+- Adicionar `assets/images/favicon.png` ou atualizar a referência do favicon
+  no `<head>` do `index.html`.
+- Rever preços, descrições e disponibilidade dos produtos.
+- Confirmar autorização para utilizar fotografias e logótipos.
+- Preparar Política de Privacidade, Termos e Condições e política de trocas e
+  devoluções adequadas à atividade e à legislação aplicável.
+
+Não existe atualmente um script de testes automatizados no `package.json`.

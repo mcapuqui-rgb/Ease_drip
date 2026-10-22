@@ -210,13 +210,263 @@ const products = [
     ]
   },
 
-  // ─── MULHER › Calçado ──────────────────────────────────────────────────────
+  // ─── CALÇADO › Ténis (homem e mulher) ───────────────────────────────────────
 
   // sapatos  (vazio — acrescentar produtos aqui)
 
   // sandalias  (vazio — acrescentar produtos aqui)
 
-  // tenis  (vazio — acrescentar produtos aqui)
+  // modelos de ténis
+  {
+    cat: 'homem', group: 'calcado', sub: 'tenis',
+    brand: 'Nike',
+    name: { pt: 'Air Force 1', en: 'Air Force 1' },
+    desc: { pt: 'Modelo Air Force 1 da Nike.', en: 'Nike Air Force 1 model.' },
+    price: 'A consultar', priceValue: null,
+    sizes: [], colors: [], materials: [], occasions: [], collections: [],
+    images: [],
+    also: [{ cat: 'mulher', group: 'calcado', sub: 'tenis' }]
+  },
+  {
+    cat: 'homem', group: 'calcado', sub: 'tenis',
+    brand: 'Nike',
+    name: { pt: 'Air Max 90', en: 'Air Max 90' },
+    desc: { pt: 'Modelo Air Max 90 da Nike.', en: 'Nike Air Max 90 model.' },
+    price: 'A consultar', priceValue: null,
+    sizes: [], colors: [], materials: [], occasions: [], collections: [],
+    images: [],
+    also: [{ cat: 'mulher', group: 'calcado', sub: 'tenis' }]
+  },
+  {
+    cat: 'homem', group: 'calcado', sub: 'tenis',
+    brand: 'Nike',
+    name: { pt: 'Air Max 270', en: 'Air Max 270' },
+    desc: { pt: 'Modelo Air Max 270 da Nike.', en: 'Nike Air Max 270 model.' },
+    price: 'A consultar', priceValue: null,
+    sizes: [], colors: [], materials: [], occasions: [], collections: [],
+    images: [],
+    also: [{ cat: 'mulher', group: 'calcado', sub: 'tenis' }]
+  },
+  {
+    cat: 'homem', group: 'calcado', sub: 'tenis',
+    brand: 'Nike',
+    name: { pt: 'Dunk Low', en: 'Dunk Low' },
+    desc: { pt: 'Modelo Dunk Low da Nike.', en: 'Nike Dunk Low model.' },
+    price: 'A consultar', priceValue: null,
+    sizes: [], colors: [], materials: [], occasions: [], collections: [],
+    images: [],
+    also: [{ cat: 'mulher', group: 'calcado', sub: 'tenis' }]
+  },
+  {
+    cat: 'homem', group: 'calcado', sub: 'tenis',
+    brand: 'Nike',
+    name: { pt: 'Air Jordan 1', en: 'Air Jordan 1' },
+    desc: { pt: 'Modelo Air Jordan 1 da Nike.', en: 'Nike Air Jordan 1 model.' },
+    price: 'A consultar', priceValue: null,
+    sizes: [], colors: [], materials: [], occasions: [], collections: [],
+    images: [],
+    also: [{ cat: 'mulher', group: 'calcado', sub: 'tenis' }]
+  },
+  {
+    cat: 'homem', group: 'calcado', sub: 'tenis',
+    brand: 'Nike',
+    name: { pt: 'Blazer Mid', en: 'Blazer Mid' },
+    desc: { pt: 'Modelo Blazer Mid da Nike.', en: 'Nike Blazer Mid model.' },
+    price: 'A consultar', priceValue: null,
+    sizes: [], colors: [], materials: [], occasions: [], collections: [],
+    images: [],
+    also: [{ cat: 'mulher', group: 'calcado', sub: 'tenis' }]
+  },
+  {
+    cat: 'homem', group: 'calcado', sub: 'tenis',
+    brand: 'Nike',
+    name: { pt: 'Pegasus', en: 'Pegasus' },
+    desc: { pt: 'Modelo Pegasus da Nike.', en: 'Nike Pegasus model.' },
+    price: 'A consultar', priceValue: null,
+    sizes: [], colors: [], materials: [], occasions: [], collections: [],
+    images: [],
+    also: [{ cat: 'mulher', group: 'calcado', sub: 'tenis' }]
+  },
+  {
+    cat: 'homem', group: 'calcado', sub: 'tenis',
+    brand: 'Nike',
+    name: { pt: 'Vomero', en: 'Vomero' },
+    desc: { pt: 'Modelo Vomero da Nike.', en: 'Nike Vomero model.' },
+    price: 'A consultar', priceValue: null,
+    sizes: [], colors: [], materials: [], occasions: [], collections: [],
+    images: [],
+    also: [{ cat: 'mulher', group: 'calcado', sub: 'tenis' }]
+  },
+  {
+    cat: 'homem', group: 'calcado', sub: 'tenis',
+    brand: 'Adidas',
+    name: { pt: 'Samba OG', en: 'Samba OG' },
+    desc: { pt: 'Modelo Samba OG da Adidas.', en: 'Adidas Samba OG model.' },
+    price: 'A consultar', priceValue: null,
+    sizes: [], colors: [], materials: [], occasions: [], collections: [],
+    images: [],
+    also: [{ cat: 'mulher', group: 'calcado', sub: 'tenis' }]
+  },
+  {
+    cat: 'homem', group: 'calcado', sub: 'tenis',
+    brand: 'Adidas',
+    name: { pt: 'Gazelle', en: 'Gazelle' },
+    desc: { pt: 'Modelo Gazelle da Adidas.', en: 'Adidas Gazelle model.' },
+    price: 'A consultar', priceValue: null,
+    sizes: [], colors: [], materials: [], occasions: [], collections: [],
+    images: [],
+    also: [{ cat: 'mulher', group: 'calcado', sub: 'tenis' }]
+  },
+  {
+    cat: 'homem', group: 'calcado', sub: 'tenis',
+    brand: 'Adidas',
+    name: { pt: 'Campus 00s', en: 'Campus 00s' },
+    desc: { pt: 'Modelo Campus 00s da Adidas.', en: 'Adidas Campus 00s model.' },
+    price: 'A consultar', priceValue: null,
+    sizes: [], colors: [], materials: [], occasions: [], collections: [],
+    images: [],
+    also: [{ cat: 'mulher', group: 'calcado', sub: 'tenis' }]
+  },
+  {
+    cat: 'homem', group: 'calcado', sub: 'tenis',
+    brand: 'Adidas',
+    name: { pt: 'Superstar', en: 'Superstar' },
+    desc: { pt: 'Modelo Superstar da Adidas.', en: 'Adidas Superstar model.' },
+    price: 'A consultar', priceValue: null,
+    sizes: [], colors: [], materials: [], occasions: [], collections: [],
+    images: [],
+    also: [{ cat: 'mulher', group: 'calcado', sub: 'tenis' }]
+  },
+  {
+    cat: 'homem', group: 'calcado', sub: 'tenis',
+    brand: 'Adidas',
+    name: { pt: 'Stan Smith', en: 'Stan Smith' },
+    desc: { pt: 'Modelo Stan Smith da Adidas.', en: 'Adidas Stan Smith model.' },
+    price: 'A consultar', priceValue: null,
+    sizes: [], colors: [], materials: [], occasions: [], collections: [],
+    images: [],
+    also: [{ cat: 'mulher', group: 'calcado', sub: 'tenis' }]
+  },
+  {
+    cat: 'homem', group: 'calcado', sub: 'tenis',
+    brand: 'Adidas',
+    name: { pt: 'Ultraboost', en: 'Ultraboost' },
+    desc: { pt: 'Modelo Ultraboost da Adidas.', en: 'Adidas Ultraboost model.' },
+    price: 'A consultar', priceValue: null,
+    sizes: [], colors: [], materials: [], occasions: [], collections: [],
+    images: [],
+    also: [{ cat: 'mulher', group: 'calcado', sub: 'tenis' }]
+  },
+  {
+    cat: 'homem', group: 'calcado', sub: 'tenis',
+    brand: 'Adidas',
+    name: { pt: 'Forum Low', en: 'Forum Low' },
+    desc: { pt: 'Modelo Forum Low da Adidas.', en: 'Adidas Forum Low model.' },
+    price: 'A consultar', priceValue: null,
+    sizes: [], colors: [], materials: [], occasions: [], collections: [],
+    images: [],
+    also: [{ cat: 'mulher', group: 'calcado', sub: 'tenis' }]
+  },
+  {
+    cat: 'homem', group: 'calcado', sub: 'tenis',
+    brand: 'Adidas',
+    name: { pt: 'Adizero', en: 'Adizero' },
+    desc: { pt: 'Modelo Adizero da Adidas.', en: 'Adidas Adizero model.' },
+    price: 'A consultar', priceValue: null,
+    sizes: [], colors: [], materials: [], occasions: [], collections: [],
+    images: [],
+    also: [{ cat: 'mulher', group: 'calcado', sub: 'tenis' }]
+  },
+  {
+    cat: 'homem', group: 'calcado', sub: 'tenis',
+    brand: 'Gucci',
+    name: { pt: 'Ace', en: 'Ace' },
+    desc: { pt: 'Modelo Ace da Gucci.', en: 'Gucci Ace model.' },
+    price: 'A consultar', priceValue: null,
+    sizes: [], colors: [], materials: [], occasions: [], collections: [],
+    images: [],
+    also: [{ cat: 'mulher', group: 'calcado', sub: 'tenis' }]
+  },
+  {
+    cat: 'homem', group: 'calcado', sub: 'tenis',
+    brand: 'Gucci',
+    name: { pt: 'Rhyton', en: 'Rhyton' },
+    desc: { pt: 'Modelo Rhyton da Gucci.', en: 'Gucci Rhyton model.' },
+    price: 'A consultar', priceValue: null,
+    sizes: [], colors: [], materials: [], occasions: [], collections: [],
+    images: [],
+    also: [{ cat: 'mulher', group: 'calcado', sub: 'tenis' }]
+  },
+  {
+    cat: 'homem', group: 'calcado', sub: 'tenis',
+    brand: 'Gucci',
+    name: { pt: 'Screener', en: 'Screener' },
+    desc: { pt: 'Modelo Screener da Gucci.', en: 'Gucci Screener model.' },
+    price: 'A consultar', priceValue: null,
+    sizes: [], colors: [], materials: [], occasions: [], collections: [],
+    images: [],
+    also: [{ cat: 'mulher', group: 'calcado', sub: 'tenis' }]
+  },
+  {
+    cat: 'homem', group: 'calcado', sub: 'tenis',
+    brand: 'Gucci',
+    name: { pt: 'G75', en: 'G75' },
+    desc: { pt: 'Modelo G75 da Gucci.', en: 'Gucci G75 model.' },
+    price: 'A consultar', priceValue: null,
+    sizes: [], colors: [], materials: [], occasions: [], collections: [],
+    images: [],
+    also: [{ cat: 'mulher', group: 'calcado', sub: 'tenis' }]
+  },
+  {
+    cat: 'homem', group: 'calcado', sub: 'tenis',
+    brand: 'Gucci',
+    name: { pt: 'Re-Web', en: 'Re-Web' },
+    desc: { pt: 'Modelo Re-Web da Gucci.', en: 'Gucci Re-Web model.' },
+    price: 'A consultar', priceValue: null,
+    sizes: [], colors: [], materials: [], occasions: [], collections: [],
+    images: [],
+    also: [{ cat: 'mulher', group: 'calcado', sub: 'tenis' }]
+  },
+  {
+    cat: 'homem', group: 'calcado', sub: 'tenis',
+    brand: 'Louis Vuitton',
+    name: { pt: 'LV Trainer', en: 'LV Trainer' },
+    desc: { pt: 'Modelo LV Trainer da Louis Vuitton.', en: 'Louis Vuitton LV Trainer model.' },
+    price: 'A consultar', priceValue: null,
+    sizes: [], colors: [], materials: [], occasions: [], collections: [],
+    images: [],
+    also: [{ cat: 'mulher', group: 'calcado', sub: 'tenis' }]
+  },
+  {
+    cat: 'homem', group: 'calcado', sub: 'tenis',
+    brand: 'Louis Vuitton',
+    name: { pt: 'Run Away', en: 'Run Away' },
+    desc: { pt: 'Modelo Run Away da Louis Vuitton.', en: 'Louis Vuitton Run Away model.' },
+    price: 'A consultar', priceValue: null,
+    sizes: [], colors: [], materials: [], occasions: [], collections: [],
+    images: [],
+    also: [{ cat: 'mulher', group: 'calcado', sub: 'tenis' }]
+  },
+  {
+    cat: 'homem', group: 'calcado', sub: 'tenis',
+    brand: 'Louis Vuitton',
+    name: { pt: 'LV Skate', en: 'LV Skate' },
+    desc: { pt: 'Modelo LV Skate da Louis Vuitton.', en: 'Louis Vuitton LV Skate model.' },
+    price: 'A consultar', priceValue: null,
+    sizes: [], colors: [], materials: [], occasions: [], collections: [],
+    images: [],
+    also: [{ cat: 'mulher', group: 'calcado', sub: 'tenis' }]
+  },
+  {
+    cat: 'homem', group: 'calcado', sub: 'tenis',
+    brand: 'Louis Vuitton',
+    name: { pt: 'Charlie', en: 'Charlie' },
+    desc: { pt: 'Modelo Charlie da Louis Vuitton.', en: 'Louis Vuitton Charlie model.' },
+    price: 'A consultar', priceValue: null,
+    sizes: [], colors: [], materials: [], occasions: [], collections: [],
+    images: [],
+    also: [{ cat: 'mulher', group: 'calcado', sub: 'tenis' }]
+  },
 
   // botas  (vazio — acrescentar produtos aqui)
 
@@ -249,7 +499,10 @@ const products = [
     sizes:  ['Único'],
     colors: ['Prata', 'Prata/Dourado'],
     materials: ['prata'], occasions: ['casual', 'festa'], collections: [],
-    images: []
+    images: [
+      'assets/images/products/cartier-anel-trinity-1.webp',
+      'assets/images/products/cartier-anel-trinity-2.webp'
+    ]
   },
   {
     cat: 'mulher', group: 'acessorios', sub: 'joias',
@@ -262,8 +515,8 @@ const products = [
     colors: ['Tri-color Gold'],
     materials: ['ouro'], occasions: ['festa'], collections: [],
     images: [
-      'assets/images/products/cartier-anel-trinity-1.webp',
-      'assets/images/products/cartier-anel-trinity-2.webp'
+      'assets/images/products/tiffany-and-co-pulseira-t-wire-1.webp',
+      'assets/images/products/tiffany-and-co-pulseira-t-wire-2.webp'
     ]
   },
   {
@@ -277,8 +530,8 @@ const products = [
     colors: ['Ouro Amarelo', 'Ouro Branco', 'Ouro Rosé'],
     materials: ['ouro'], occasions: ['casual', 'festa'], collections: [],
     images: [
-      'assets/images/products/tiffany-and-co-pulseira-t-wire-1.webp',
-      'assets/images/products/tiffany-and-co-pulseira-t-wire-2.webp'
+      'assets/images/products/gucci-anel-gg-running-1.webp',
+      'assets/images/products/gucci-anel-gg-running-2.webp'
     ]
   },
   {
@@ -291,10 +544,7 @@ const products = [
     sizes:  ['6', '7', '8', '9', '10'],
     colors: ['Prata', 'Ouro Amarelo'],
     materials: ['prata'], occasions: ['casual'], collections: [],
-    images: [
-      'assets/images/products/gucci-anel-gg-running-1.webp',
-      'assets/images/products/gucci-anel-gg-running-2.webp'
-    ]
+    images: ['assets/images/products/versace-cordao-medusa-1.webp']
   },
   {
     cat: 'mulher', group: 'acessorios', sub: 'joias',
@@ -306,7 +556,10 @@ const products = [
     sizes:  ['45cm', '50cm', '55cm'],
     colors: ['Dourado', 'Prateado'],
     materials: ['aco'], occasions: ['festa'], collections: [],
-    images: ['assets/images/products/versace-cordao-medusa-1.webp']
+    images: [
+      'assets/images/products/gucci-cinto-gg-pele-1.webp',
+      'assets/images/products/gucci-cinto-gg-pele-2.webp'
+    ],
   },
 
   // cintos
@@ -320,10 +573,7 @@ const products = [
     sizes:  ['80cm', '85cm', '90cm', '95cm', '100cm'],
     colors: ['Preto/Dourado', 'Castanho/Dourado'],
     materials: ['pele'], occasions: ['casual', 'formal'], collections: [],
-    images: [
-      'assets/images/products/gucci-cinto-gg-pele-1.webp',
-      'assets/images/products/gucci-cinto-gg-pele-2.webp'
-    ],
+    images: [],
     also: [{ cat: 'homem', group: 'acessorios', sub: 'cintos' }]
   },
   {
@@ -336,7 +586,7 @@ const products = [
     sizes:  ['70cm', '75cm', '80cm', '85cm'],
     colors: ['Dourado', 'Prateado'],
     materials: ['metal'], occasions: ['festa'], collections: [],
-    images: ['assets/images/products/chanel-cinto-corrente-1.webp']
+    images: ['assets/images/products/chanel-cinto-corrente-1.webp','assets/images/products/Chain-Belt.webp']
   },
 
   // oculos  (vazio — acrescentar produtos aqui)
