@@ -17,19 +17,20 @@
 
 /* ── TEMA CLARO ── */
 html.light{
-  --bg:#f5f0ea;
-  --bg2:#ede8e0;
-  --bg3:#e4ddd3;
-  --gold:#c2b32a;
-  --gold2:#b8872e;
-  --white:#1a1612;
-  --gray:#666;
-  --border:#d0c8bc;
+  --bg:#f7f3ed;
+  --bg2:#eee8df;
+  --bg3:#e5ddd1;
+  --gold:#9a7133;
+  --gold2:#c49a52;
+  --white:#211b15;
+  --gray:#746b60;
+  --border:#d7cdbd;
+  --hero-bg-opacity:1;
 }
 html.light body{background:var(--bg);color:var(--white)}
-html.light nav{background:rgba(245,240,234,.95)}
+html.light nav{background:rgba(247,243,237,.95)}
 html.light .mobile-menu{background:var(--bg)}
-html.light .hero-bg::after{background:linear-gradient(to bottom,rgba(245,240,234,0.15) 0%,rgba(245,240,234,0.05) 40%,rgba(245,240,234,0.4) 100%)}
+html.light .hero-bg::after{background:linear-gradient(to bottom,rgba(10,10,10,.25) 0%,rgba(10,10,10,.12) 40%,rgba(10,10,10,.58) 100%)}
 html.light .hero-grid{opacity:0.12}
 html.light ::-webkit-scrollbar-track{background:var(--bg)}
 html.light .product-card{background:var(--bg)}
@@ -43,20 +44,25 @@ html.light .featured-card{background:var(--bg)}
 html.light .featured-card:hover{background:var(--bg2)}
 html.light footer{background:var(--bg)}
 html.light .stats-strip{background:var(--bg2)}
-html.light .toast{background:var(--gold);color:#f5f0ea}
-html.light .toast{background:var(--gold);color:#f5f0ea}
+html.light .toast{background:var(--gold);color:#fffaf2}
 html.light .size-btn{background:none;color:var(--gray)}
 html.light .q-opt{background:var(--bg2)}
 html.light #contact{background:var(--bg2)}
 html.light nav{box-shadow:0 2px 24px rgba(70,50,20,.06)}
-html.light .hero-content{text-shadow:0 2px 24px rgba(255,250,240,.65),0 1px 3px rgba(255,250,240,.85)}
-html.light .brands-strip{background:linear-gradient(135deg,#f2e3bd,#e7cd93);box-shadow:inset 0 14px 20px rgba(122,84,26,.18),inset 0 -14px 20px rgba(122,84,26,.18),0 4px 18px rgba(122,84,26,.12)}
+html.light .hero-content{color:#fffaf2;text-shadow:0 2px 24px rgba(0,0,0,.55),0 1px 3px rgba(0,0,0,.75)}
+html.light .hero-tag{color:#fffaf2}
+html.light .hero-title em,html.light .hero-sub{color:var(--gold2)}
+html.light .hero-cta{border-color:var(--gold2);color:var(--gold2)}
+html.light .hero-cta:hover{background:var(--gold2);color:#211b15}
+html.light .hero-line{background:linear-gradient(var(--gold2),transparent)}
+html.light .brands-strip{background:linear-gradient(135deg,#f0e4cc,#e5d2aa);box-shadow:inset 0 14px 20px rgba(122,84,26,.12),inset 0 -14px 20px rgba(122,84,26,.12),0 4px 18px rgba(122,84,26,.08)}
 html.light .modal-overlay{background:rgba(32,24,16,.75)}
 html.light .modal{box-shadow:0 20px 60px rgba(60,40,15,.25)}
-html.light .carousel-btn{background:linear-gradient(145deg,rgba(255,255,255,.48),rgba(184,135,46,.2));color:var(--white);border-color:rgba(154,111,42,.45);box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 5px 18px rgba(60,40,15,.18)}
+html.light .carousel-btn{background:linear-gradient(145deg,rgba(255,255,255,.72),rgba(196,154,82,.16));color:var(--gold);border-color:rgba(154,113,51,.4);box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 5px 18px rgba(60,40,15,.12)}
+html.light .product-zoom-controls{background:rgba(247,243,237,.88);border-color:rgba(154,113,51,.35)}
 html.light .featured-card:hover{box-shadow:0 10px 30px rgba(122,84,26,.10)}
 html.light .toast{box-shadow:0 8px 24px rgba(122,84,26,.28)}
-html.light .form-group input:focus,html.light .form-group textarea:focus{box-shadow:0 0 0 3px rgba(154,111,42,.10)}
+html.light .form-group input:focus,html.light .form-group textarea:focus{box-shadow:0 0 0 3px rgba(154,113,51,.12)}
 html.light .product-card:hover{box-shadow:0 10px 26px rgba(60,40,15,.10)}
 
 /* ── THEME TOGGLE BUTTON ── */
@@ -396,7 +402,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:3rem 4rem
 .modal-meta{font-size:.7rem;line-height:1.8;color:var(--gray);margin-bottom:1.8rem}
 .modal-meta span{display:inline-block;min-width:80px;font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--white)}
 html.light .filter-panel{background:var(--bg2)}
-html.light .filter-chip.active,html.light .collection-chip.active{color:#f5f0ea}
+html.light .filter-chip.active,html.light .collection-chip.active{color:#fffaf2}
 @media(max-width:600px){
   section{padding-left:1.2rem;padding-right:1.2rem}
   .sub-level2{margin-top:-1.2rem}
