@@ -197,7 +197,7 @@ html.light .shop-search::placeholder{color:var(--gray)}
 .product-info{padding:1rem 1.2rem;position:absolute;bottom:0;left:0;right:0;background:var(--bg)}
 .product-brand{font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.3rem}
 .product-name{font-family:var(--font-display);font-size:1rem;font-weight:300;margin-bottom:.2rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.product-price{font-size:.65rem;letter-spacing:.1em;color:var(--gray)}
+.product-price{font-size:15px;letter-spacing:.1em;color:var(--gray)}
 .product-brand-link{position:relative;z-index:1;display:inline-block;margin-top:.4rem;color:var(--gold);font-size:.55rem;letter-spacing:.08em;text-decoration:underline;text-underline-offset:2px}
 .product-overlay{position:absolute;inset:0;background:rgba(10,10,10,.4);opacity:0;transition:opacity .3s;display:flex;align-items:center;justify-content:center;pointer-events:none}
 .product-overlay span{font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:var(--white);border:1px solid var(--white);padding:.5rem 1.5rem}
@@ -225,7 +225,7 @@ html.light .shop-search::placeholder{color:var(--gray)}
 .modal-info{padding:3rem 2.5rem;display:flex;flex-direction:column}
 .modal-brand{font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:.8rem}
 .modal-name{font-family:var(--font-display);font-size:2rem;font-weight:300;line-height:1.2;margin-bottom:.5rem}
-.modal-price{font-size:.8rem;letter-spacing:.1em;color:var(--gray);margin-bottom:1.5rem}
+.modal-price{font-size:2rem;letter-spacing:.1em;color:var(--gray);margin-bottom:1.5rem}
 .modal-divider{width:30px;height:1px;background:var(--gold);margin-bottom:1.5rem}
 .modal-desc{font-size:.75rem;line-height:1.9;color:var(--gray);margin-bottom:2rem;flex:1}
 .modal-sizes-label{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--white);margin-bottom:.8rem}

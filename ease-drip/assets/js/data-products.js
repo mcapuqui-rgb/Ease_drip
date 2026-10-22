@@ -44,7 +44,7 @@ const products = [
     name:  { pt: 'Vestido Midi Elegante', en: 'Elegant Midi Dress' },
     desc:  { pt: 'Vestido midi em crepe de seda com corte evasé. Sofisticação pura.',
              en: 'Midi dress in silk crepe with evasé cut. Pure sophistication.' },
-    price: 'A consultar', priceValue: null,
+    price: '35.000 Kz', priceValue: 35000,
     sizes:  ['34', '36', '38', '40', '42'],
     colors: ['Preto', 'Bordeaux', 'Navy'],
     materials: ['seda'], occasions: ['festa', 'formal', 'cerimonia'], collections: [],
@@ -63,7 +63,7 @@ const products = [
     name:  { pt: 'Top Cropped Seda', en: 'Silk Cropped Top' },
     desc:  { pt: 'Top cropped em seda natural. Elegante e versátil para qualquer ocasião.',
              en: 'Natural silk cropped top. Elegant and versatile for any occasion.' },
-    price: 'A consultar', priceValue: null,
+    price: '18.000 Kz', priceValue: 18000,
     sizes:  ['XS', 'S', 'M', 'L'],
     colors: ['Branco', 'Preto', 'Nude'],
     materials: ['seda'], occasions: ['casual', 'festa'], collections: [],
@@ -79,7 +79,7 @@ const products = [
     name:  { pt: 'Blusa Floral', en: 'Floral Blouse' },
     desc:  { pt: 'Blusa fluída com estampado floral. Tecido leve e cómodo.',
              en: 'Fluid blouse with floral print. Light and comfortable fabric.' },
-    price: 'A consultar', priceValue: null,
+    price: '15.000 Kz', priceValue: 15000,
     sizes:  ['XS', 'S', 'M', 'L', 'XL'],
     colors: ['Multicolor', 'Azul', 'Rosa'],
     materials: [], occasions: ['casual'], collections: [],
@@ -95,7 +95,7 @@ const products = [
     name:  { pt: 'Camisa Oversized', en: 'Oversized Shirt' },
     desc:  { pt: 'Camisa oversized em algodão orgânico. Corte relaxado e moderno.',
              en: 'Oversized organic cotton shirt. Relaxed and modern cut.' },
-    price: 'A consultar', priceValue: null,
+    price: '22.000 Kz', priceValue: 22000,
     sizes:  ['XS', 'S', 'M', 'L'],
     colors: ['Branco', 'Azul Claro', 'Às Riscas'],
     materials: ['algodao'], occasions: ['casual'], collections: [],
@@ -113,7 +113,7 @@ const products = [
     name:  { pt: 'Leggings 7/8', en: '7/8 Leggings' },
     desc:  { pt: 'Leggings de alta performance em Techfit. Suporte e conforto para treinos intensos.',
              en: 'High-performance leggings in Techfit. Support and comfort for intense workouts.' },
-    price: 'A consultar', priceValue: null,
+    price: '12.000 Kz', priceValue: 12000,
     sizes:  ['XS', 'S', 'M', 'L', 'XL'],
     colors: ['Preto', 'Cinza', 'Azul Marinho'],
     materials: ['tecnico'], occasions: ['desporto'], collections: [],
@@ -128,7 +128,7 @@ const products = [
     name:  { pt: 'Calças Monogram', en: 'Monogram Trousers' },
     desc:  { pt: 'Calças de corte flare com o icónico padrão monogram LV. Luxo contemporâneo.',
              en: 'Flare cut trousers with the iconic LV monogram pattern. Contemporary luxury.' },
-    price: 'A consultar', priceValue: null,
+    price: '45.000 Kz', priceValue: 45000,
     sizes:  ['34', '36', '38', '40'],
     colors: ['Bege/Castanho'],
     materials: [], occasions: ['casual'], collections: [],
@@ -147,7 +147,7 @@ const products = [
     name:  { pt: 'Saia Lápis', en: 'Pencil Skirt' },
     desc:  { pt: 'Saia lápis com estampado Versace. Silhueta elegante e marcada.',
              en: 'Pencil skirt with Versace print. Elegant and defined silhouette.' },
-    price: 'A consultar', priceValue: null,
+    price: '18.000 Kz', priceValue: 18000,
     sizes:  ['XS', 'S', 'M', 'L'],
     colors: ['Preto', 'Dourado'],
     materials: [], occasions: ['festa', 'formal'], collections: [],
@@ -165,7 +165,7 @@ const products = [
     name:  { pt: 'Fato de Treino', en: 'Tracksuit' },
     desc:  { pt: 'Fato de treino em Tech Fleece. Design elegante que transita do ginásio para a rua.',
              en: 'Tech Fleece tracksuit. Elegant design that transitions from gym to street.' },
-    price: 'A consultar', priceValue: null,
+    price: '45.000 Kz', priceValue: 45000,
     sizes:  ['XS', 'S', 'M', 'L', 'XL'],
     colors: ['Preto', 'Rosa', 'Roxo'],
     materials: ['tecnico'], occasions: ['desporto', 'casual'], collections: [],
@@ -185,7 +185,7 @@ const products = [
     name:  { pt: 'Casaco Tweed', en: 'Tweed Jacket' },
     desc:  { pt: 'O icónico casaco tweed Chanel. Artesanato de excelência, elegância intemporal.',
              en: 'The iconic Chanel tweed jacket. Exceptional craftsmanship, timeless elegance.' },
-    price: 'A consultar', priceValue: null,
+    price: '65.000 Kz', priceValue: 65000,
     sizes:  ['34', '36', '38', '40'],
     colors: ['Creme/Dourado', 'Preto/Branco'],
     materials: ['tweed'], occasions: ['formal', 'festa'], collections: [],
@@ -200,7 +200,7 @@ const products = [
     name:  { pt: 'Hoodie Nylon', en: 'Nylon Hoodie' },
     desc:  { pt: 'Hoodie em nylon técnico premium com logo Prada. Design contemporâneo.',
              en: 'Premium technical nylon hoodie with Prada logo. Contemporary design.' },
-    price: 'A consultar', priceValue: null,
+    price: '35.000 Kz', priceValue: 35000,
     sizes:  ['XS', 'S', 'M', 'L'],
     colors: ['Preto', 'Re-Nylon'],
     materials: ['nylon'], occasions: ['casual'], collections: [],
@@ -222,9 +222,12 @@ const products = [
     brand: 'Nike',
     name: { pt: 'Air Force 1', en: 'Air Force 1' },
     desc: { pt: 'Modelo Air Force 1 da Nike.', en: 'Nike Air Force 1 model.' },
-    price: 'A consultar', priceValue: null,
+    price: '125.000 Kz', priceValue: 125000,
     sizes: [], colors: [], materials: [], occasions: [], collections: [],
-    images: [],
+    images: [
+      'assets/images/products/nike-air-force-1-1.webp',
+      'assets/images/products/nike-air-force-1-2.webp'
+    ],
     also: [{ cat: 'mulher', group: 'calcado', sub: 'tenis' }]
   },
   {
@@ -232,9 +235,12 @@ const products = [
     brand: 'Nike',
     name: { pt: 'Air Max 90', en: 'Air Max 90' },
     desc: { pt: 'Modelo Air Max 90 da Nike.', en: 'Nike Air Max 90 model.' },
-    price: 'A consultar', priceValue: null,
+    price: '135.000 Kz', priceValue: 135000,
     sizes: [], colors: [], materials: [], occasions: [], collections: [],
-    images: [],
+    images: [
+      'assets/images/products/nike-air-max-90-1.webp',
+      'assets/images/products/nike-air-max-90-2.webp'
+    ],
     also: [{ cat: 'mulher', group: 'calcado', sub: 'tenis' }]
   },
   {
@@ -242,9 +248,12 @@ const products = [
     brand: 'Nike',
     name: { pt: 'Air Max 270', en: 'Air Max 270' },
     desc: { pt: 'Modelo Air Max 270 da Nike.', en: 'Nike Air Max 270 model.' },
-    price: 'A consultar', priceValue: null,
+    price: '150.000 Kz', priceValue: 150000,
     sizes: [], colors: [], materials: [], occasions: [], collections: [],
-    images: [],
+    images: [
+      'assets/images/products/nike-air-max-270-1.webp',
+      'assets/images/products/nike-air-max-270-2.webp'
+    ],
     also: [{ cat: 'mulher', group: 'calcado', sub: 'tenis' }]
   },
   {
@@ -252,9 +261,12 @@ const products = [
     brand: 'Nike',
     name: { pt: 'Dunk Low', en: 'Dunk Low' },
     desc: { pt: 'Modelo Dunk Low da Nike.', en: 'Nike Dunk Low model.' },
-    price: 'A consultar', priceValue: null,
+    price: '130.000 Kz', priceValue: 130000,
     sizes: [], colors: [], materials: [], occasions: [], collections: [],
-    images: [],
+    images: [
+      'assets/images/products/nike-dunk-low-1.webp',
+      'assets/images/products/nike-dunk-low-2.webp'
+    ],
     also: [{ cat: 'mulher', group: 'calcado', sub: 'tenis' }]
   },
   {
@@ -262,9 +274,12 @@ const products = [
     brand: 'Nike',
     name: { pt: 'Air Jordan 1', en: 'Air Jordan 1' },
     desc: { pt: 'Modelo Air Jordan 1 da Nike.', en: 'Nike Air Jordan 1 model.' },
-    price: 'A consultar', priceValue: null,
+    price: '145.000 Kz', priceValue: 145000,
     sizes: [], colors: [], materials: [], occasions: [], collections: [],
-    images: [],
+    images: [
+      'assets/images/products/nike-air-jordan-1-1.webp',
+      'assets/images/products/nike-air-jordan-1-2.webp'
+    ],
     also: [{ cat: 'mulher', group: 'calcado', sub: 'tenis' }]
   },
   {
@@ -272,9 +287,12 @@ const products = [
     brand: 'Nike',
     name: { pt: 'Blazer Mid', en: 'Blazer Mid' },
     desc: { pt: 'Modelo Blazer Mid da Nike.', en: 'Nike Blazer Mid model.' },
-    price: 'A consultar', priceValue: null,
+    price: '110.000 Kz', priceValue: 110000,
     sizes: [], colors: [], materials: [], occasions: [], collections: [],
-    images: [],
+    images: [
+      'assets/images/products/nike-blazer-mid-1.webp',
+      'assets/images/products/nike-blazer-mid-2.webp'
+    ],
     also: [{ cat: 'mulher', group: 'calcado', sub: 'tenis' }]
   },
   {
@@ -282,9 +300,12 @@ const products = [
     brand: 'Nike',
     name: { pt: 'Pegasus', en: 'Pegasus' },
     desc: { pt: 'Modelo Pegasus da Nike.', en: 'Nike Pegasus model.' },
-    price: 'A consultar', priceValue: null,
+    price: '120.000 Kz', priceValue: 120000,
     sizes: [], colors: [], materials: [], occasions: [], collections: [],
-    images: [],
+    images: [
+      'assets/images/products/nike-pegasus-1.webp',
+      'assets/images/products/nike-pegasus-2.webp'
+    ],
     also: [{ cat: 'mulher', group: 'calcado', sub: 'tenis' }]
   },
   {
@@ -292,9 +313,12 @@ const products = [
     brand: 'Nike',
     name: { pt: 'Vomero', en: 'Vomero' },
     desc: { pt: 'Modelo Vomero da Nike.', en: 'Nike Vomero model.' },
-    price: 'A consultar', priceValue: null,
+    price: '155.000 Kz', priceValue: 155000,
     sizes: [], colors: [], materials: [], occasions: [], collections: [],
-    images: [],
+    images: [
+      'assets/images/products/nike-vomero-1.webp',
+      'assets/images/products/nike-vomero-2.webp'
+    ],
     also: [{ cat: 'mulher', group: 'calcado', sub: 'tenis' }]
   },
   {
@@ -302,9 +326,12 @@ const products = [
     brand: 'Adidas',
     name: { pt: 'Samba OG', en: 'Samba OG' },
     desc: { pt: 'Modelo Samba OG da Adidas.', en: 'Adidas Samba OG model.' },
-    price: 'A consultar', priceValue: null,
+    price: '125.000 Kz', priceValue: 125000,
     sizes: [], colors: [], materials: [], occasions: [], collections: [],
-    images: [],
+    images: [
+      'assets/images/products/adidas-samba-og-1.webp',
+      'assets/images/products/adidas-samba-og-2.webp'
+    ],
     also: [{ cat: 'mulher', group: 'calcado', sub: 'tenis' }]
   },
   {
@@ -312,9 +339,12 @@ const products = [
     brand: 'Adidas',
     name: { pt: 'Gazelle', en: 'Gazelle' },
     desc: { pt: 'Modelo Gazelle da Adidas.', en: 'Adidas Gazelle model.' },
-    price: 'A consultar', priceValue: null,
+    price: '120.000 Kz', priceValue: 120000,
     sizes: [], colors: [], materials: [], occasions: [], collections: [],
-    images: [],
+    images: [
+      'assets/images/products/adidas-gazelle-1.webp',
+      'assets/images/products/adidas-gazelle-2.webp'
+    ],
     also: [{ cat: 'mulher', group: 'calcado', sub: 'tenis' }]
   },
   {
@@ -322,9 +352,12 @@ const products = [
     brand: 'Adidas',
     name: { pt: 'Campus 00s', en: 'Campus 00s' },
     desc: { pt: 'Modelo Campus 00s da Adidas.', en: 'Adidas Campus 00s model.' },
-    price: 'A consultar', priceValue: null,
+    price: '145.000 Kz', priceValue: 145000,
     sizes: [], colors: [], materials: [], occasions: [], collections: [],
-    images: [],
+    images: [
+      'assets/images/products/adidas-campus-00s-1.webp',
+      'assets/images/products/adidas-campus-00s-2.webp'
+    ],
     also: [{ cat: 'mulher', group: 'calcado', sub: 'tenis' }]
   },
   {
@@ -332,9 +365,12 @@ const products = [
     brand: 'Adidas',
     name: { pt: 'Superstar', en: 'Superstar' },
     desc: { pt: 'Modelo Superstar da Adidas.', en: 'Adidas Superstar model.' },
-    price: 'A consultar', priceValue: null,
+    price: '100.000 Kz', priceValue: 100000,
     sizes: [], colors: [], materials: [], occasions: [], collections: [],
-    images: [],
+    images: [
+      'assets/images/products/adidas-superstar-1.webp',
+      'assets/images/products/adidas-superstar-2.webp'
+    ],
     also: [{ cat: 'mulher', group: 'calcado', sub: 'tenis' }]
   },
   {
@@ -342,9 +378,12 @@ const products = [
     brand: 'Adidas',
     name: { pt: 'Stan Smith', en: 'Stan Smith' },
     desc: { pt: 'Modelo Stan Smith da Adidas.', en: 'Adidas Stan Smith model.' },
-    price: 'A consultar', priceValue: null,
+    price: '105.000 Kz', priceValue: 105000,
     sizes: [], colors: [], materials: [], occasions: [], collections: [],
-    images: [],
+    images: [
+      'assets/images/products/adidas-stan-smith-1.webp',
+      'assets/images/products/adidas-stan-smith-2.webp'
+    ],
     also: [{ cat: 'mulher', group: 'calcado', sub: 'tenis' }]
   },
   {
@@ -352,9 +391,12 @@ const products = [
     brand: 'Adidas',
     name: { pt: 'Ultraboost', en: 'Ultraboost' },
     desc: { pt: 'Modelo Ultraboost da Adidas.', en: 'Adidas Ultraboost model.' },
-    price: 'A consultar', priceValue: null,
+    price: '160.000 Kz', priceValue: 160000,
     sizes: [], colors: [], materials: [], occasions: [], collections: [],
-    images: [],
+    images: [
+      'assets/images/products/adidas-ultraboost-1.webp',
+      'assets/images/products/adidas-ultraboost-2.webp'
+    ],
     also: [{ cat: 'mulher', group: 'calcado', sub: 'tenis' }]
   },
   {
@@ -362,9 +404,12 @@ const products = [
     brand: 'Adidas',
     name: { pt: 'Forum Low', en: 'Forum Low' },
     desc: { pt: 'Modelo Forum Low da Adidas.', en: 'Adidas Forum Low model.' },
-    price: 'A consultar', priceValue: null,
+    price: '90.000 Kz', priceValue: 90000,
     sizes: [], colors: [], materials: [], occasions: [], collections: [],
-    images: [],
+    images: [
+      'assets/images/products/adidas-forum-low-1.webp',
+      'assets/images/products/adidas-forum-low-2.webp'
+    ],
     also: [{ cat: 'mulher', group: 'calcado', sub: 'tenis' }]
   },
   {
@@ -372,9 +417,12 @@ const products = [
     brand: 'Adidas',
     name: { pt: 'Adizero', en: 'Adizero' },
     desc: { pt: 'Modelo Adizero da Adidas.', en: 'Adidas Adizero model.' },
-    price: 'A consultar', priceValue: null,
+    price: '150.000 Kz', priceValue: 150000,
     sizes: [], colors: [], materials: [], occasions: [], collections: [],
-    images: [],
+    images: [
+      'assets/images/products/adidas-adizero-1.webp',
+      'assets/images/products/adidas-adizero-2.webp'
+    ],
     also: [{ cat: 'mulher', group: 'calcado', sub: 'tenis' }]
   },
   {
@@ -382,9 +430,12 @@ const products = [
     brand: 'Gucci',
     name: { pt: 'Ace', en: 'Ace' },
     desc: { pt: 'Modelo Ace da Gucci.', en: 'Gucci Ace model.' },
-    price: 'A consultar', priceValue: null,
+    price: '550.000 Kz', priceValue: 550000,
     sizes: [], colors: [], materials: [], occasions: [], collections: [],
-    images: [],
+    images: [
+      'assets/images/products/gucci-ace-1.webp',
+      'assets/images/products/gucci-ace-2.webp'
+    ],
     also: [{ cat: 'mulher', group: 'calcado', sub: 'tenis' }]
   },
   {
@@ -392,9 +443,12 @@ const products = [
     brand: 'Gucci',
     name: { pt: 'Rhyton', en: 'Rhyton' },
     desc: { pt: 'Modelo Rhyton da Gucci.', en: 'Gucci Rhyton model.' },
-    price: 'A consultar', priceValue: null,
+    price: '750.000 Kz', priceValue: 750000,
     sizes: [], colors: [], materials: [], occasions: [], collections: [],
-    images: [],
+    images: [
+      'assets/images/products/gucci-rhyton-1.webp',
+      'assets/images/products/gucci-rhyton-2.webp'
+    ],
     also: [{ cat: 'mulher', group: 'calcado', sub: 'tenis' }]
   },
   {
@@ -402,9 +456,12 @@ const products = [
     brand: 'Gucci',
     name: { pt: 'Screener', en: 'Screener' },
     desc: { pt: 'Modelo Screener da Gucci.', en: 'Gucci Screener model.' },
-    price: 'A consultar', priceValue: null,
+    price: '650.000 Kz', priceValue: 650000,
     sizes: [], colors: [], materials: [], occasions: [], collections: [],
-    images: [],
+    images: [
+      'assets/images/products/gucci-screener-1.webp',
+      'assets/images/products/gucci-screener-2.webp'
+    ],
     also: [{ cat: 'mulher', group: 'calcado', sub: 'tenis' }]
   },
   {
@@ -412,9 +469,12 @@ const products = [
     brand: 'Gucci',
     name: { pt: 'G75', en: 'G75' },
     desc: { pt: 'Modelo G75 da Gucci.', en: 'Gucci G75 model.' },
-    price: 'A consultar', priceValue: null,
+    price: '700.000 Kz', priceValue: 700000,
     sizes: [], colors: [], materials: [], occasions: [], collections: [],
-    images: [],
+    images: [
+      'assets/images/products/gucci-g75-1.webp',
+      'assets/images/products/gucci-g75-2.webp'
+    ],
     also: [{ cat: 'mulher', group: 'calcado', sub: 'tenis' }]
   },
   {
@@ -422,9 +482,12 @@ const products = [
     brand: 'Gucci',
     name: { pt: 'Re-Web', en: 'Re-Web' },
     desc: { pt: 'Modelo Re-Web da Gucci.', en: 'Gucci Re-Web model.' },
-    price: 'A consultar', priceValue: null,
+    price: '600.000 Kz', priceValue: 600000,
     sizes: [], colors: [], materials: [], occasions: [], collections: [],
-    images: [],
+    images: [
+      'assets/images/products/gucci-re-web-1.webp',
+      'assets/images/products/gucci-re-web-2.webp'
+    ],
     also: [{ cat: 'mulher', group: 'calcado', sub: 'tenis' }]
   },
   {
@@ -432,9 +495,12 @@ const products = [
     brand: 'Louis Vuitton',
     name: { pt: 'LV Trainer', en: 'LV Trainer' },
     desc: { pt: 'Modelo LV Trainer da Louis Vuitton.', en: 'Louis Vuitton LV Trainer model.' },
-    price: 'A consultar', priceValue: null,
+    price: '1.500.000 Kz', priceValue: 1500000,
     sizes: [], colors: [], materials: [], occasions: [], collections: [],
-    images: [],
+    images: [
+      'assets/images/products/louis-vuitton-lv-trainer-1.webp',
+      'assets/images/products/louis-vuitton-lv-trainer-2.webp'
+    ],
     also: [{ cat: 'mulher', group: 'calcado', sub: 'tenis' }]
   },
   {
@@ -442,9 +508,12 @@ const products = [
     brand: 'Louis Vuitton',
     name: { pt: 'Run Away', en: 'Run Away' },
     desc: { pt: 'Modelo Run Away da Louis Vuitton.', en: 'Louis Vuitton Run Away model.' },
-    price: 'A consultar', priceValue: null,
+    price: '1.100.000 Kz', priceValue: 1100000,
     sizes: [], colors: [], materials: [], occasions: [], collections: [],
-    images: [],
+    images: [
+      'assets/images/products/louis-vuitton-run-away-1.webp',
+      'assets/images/products/louis-vuitton-run-away-2.webp'
+    ],
     also: [{ cat: 'mulher', group: 'calcado', sub: 'tenis' }]
   },
   {
@@ -452,9 +521,12 @@ const products = [
     brand: 'Louis Vuitton',
     name: { pt: 'LV Skate', en: 'LV Skate' },
     desc: { pt: 'Modelo LV Skate da Louis Vuitton.', en: 'Louis Vuitton LV Skate model.' },
-    price: 'A consultar', priceValue: null,
+    price: '1.400.000 Kz', priceValue: 1400000,
     sizes: [], colors: [], materials: [], occasions: [], collections: [],
-    images: [],
+    images: [
+      'assets/images/products/louis-vuitton-lv-skate-1.webp',
+      'assets/images/products/louis-vuitton-lv-skate-2.webp'
+    ],
     also: [{ cat: 'mulher', group: 'calcado', sub: 'tenis' }]
   },
   {
@@ -462,9 +534,12 @@ const products = [
     brand: 'Louis Vuitton',
     name: { pt: 'Charlie', en: 'Charlie' },
     desc: { pt: 'Modelo Charlie da Louis Vuitton.', en: 'Louis Vuitton Charlie model.' },
-    price: 'A consultar', priceValue: null,
+    price: '950.000 Kz', priceValue: 950000,
     sizes: [], colors: [], materials: [], occasions: [], collections: [],
-    images: [],
+    images: [
+      'assets/images/products/louis-vuitton-charlie-1.webp',
+      'assets/images/products/louis-vuitton-charlie-2.webp'
+    ],
     also: [{ cat: 'mulher', group: 'calcado', sub: 'tenis' }]
   },
 
@@ -483,7 +558,7 @@ const products = [
     name:  { pt: 'Pulseira Love', en: 'Love Bracelet' },
     desc:  { pt: 'A icónica pulseira Love da Cartier em ouro amarelo 18k. Símbolo de amor eterno.',
              en: 'The iconic Cartier Love bracelet in 18k yellow gold. Symbol of eternal love.' },
-    price: 'A consultar', priceValue: null,
+    price: '2.500.000 Kz', priceValue: 2500000,
     sizes:  ['15', '16', '17', '18', '19', '20'],
     colors: ['Ouro Amarelo', 'Ouro Branco', 'Ouro Rosé'],
     materials: ['ouro'], occasions: ['festa', 'cerimonia'], collections: [],
@@ -495,14 +570,11 @@ const products = [
     name:  { pt: 'Colar Return to Tiffany', en: 'Return to Tiffany Necklace' },
     desc:  { pt: 'Colar em prata esterlina com charm oval gravado. Um clássico Tiffany atemporal.',
              en: 'Sterling silver necklace with engraved oval charm. A timeless Tiffany classic.' },
-    price: 'A consultar', priceValue: null,
+    price: '450.000 Kz', priceValue: 450000,
     sizes:  ['Único'],
     colors: ['Prata', 'Prata/Dourado'],
     materials: ['prata'], occasions: ['casual', 'festa'], collections: [],
-    images: [
-      'assets/images/products/cartier-anel-trinity-1.webp',
-      'assets/images/products/cartier-anel-trinity-2.webp'
-    ]
+    images: ['assets/images/products/tiffany-and-co-colar-return-to-tiffany-1.webp']
   },
   {
     cat: 'mulher', group: 'acessorios', sub: 'joias',
@@ -510,13 +582,13 @@ const products = [
     name:  { pt: 'Anel Trinity', en: 'Trinity Ring' },
     desc:  { pt: 'O anel Trinity da Cartier com três argolas em ouro amarelo, branco e rosé. Ícone desde 1924.',
              en: 'The Cartier Trinity ring with three bands in yellow, white and rose gold. An icon since 1924.' },
-    price: 'A consultar', priceValue: null,
+    price: '1.200.000 Kz', priceValue: 1200000,
     sizes:  ['48', '50', '52', '54', '56', '58'],
     colors: ['Tri-color Gold'],
     materials: ['ouro'], occasions: ['festa'], collections: [],
     images: [
-      'assets/images/products/tiffany-and-co-pulseira-t-wire-1.webp',
-      'assets/images/products/tiffany-and-co-pulseira-t-wire-2.webp'
+      'assets/images/products/cartier-anel-trinity-1.webp',
+      'assets/images/products/cartier-anel-trinity-2.webp'
     ]
   },
   {
@@ -525,13 +597,13 @@ const products = [
     name:  { pt: 'Pulseira T Wire', en: 'T Wire Bracelet' },
     desc:  { pt: 'Pulseira T Wire em ouro amarelo 18k. Design contemporâneo e minimalista.',
              en: 'T Wire bracelet in 18k yellow gold. Contemporary and minimalist design.' },
-    price: 'A consultar', priceValue: null,
+    price: '1.000.000 Kz', priceValue: 1000000,
     sizes:  ['Pequeno', 'Médio', 'Grande'],
     colors: ['Ouro Amarelo', 'Ouro Branco', 'Ouro Rosé'],
     materials: ['ouro'], occasions: ['casual', 'festa'], collections: [],
     images: [
-      'assets/images/products/gucci-anel-gg-running-1.webp',
-      'assets/images/products/gucci-anel-gg-running-2.webp'
+      'assets/images/products/tiffany-and-co-pulseira-t-wire-1.webp',
+      'assets/images/products/tiffany-and-co-pulseira-t-wire-2.webp'
     ]
   },
   {
@@ -540,11 +612,14 @@ const products = [
     name:  { pt: 'Anel GG Running', en: 'GG Running Ring' },
     desc:  { pt: 'Anel em prata esterlina com motivo GG gravado. Elegância urbana com o toque Gucci.',
              en: 'Sterling silver ring with engraved GG motif. Urban elegance with the Gucci touch.' },
-    price: 'A consultar', priceValue: null,
+    price: '350.000 Kz', priceValue: 350000,
     sizes:  ['6', '7', '8', '9', '10'],
     colors: ['Prata', 'Ouro Amarelo'],
     materials: ['prata'], occasions: ['casual'], collections: [],
-    images: ['assets/images/products/versace-cordao-medusa-1.webp']
+    images: [
+      'assets/images/products/gucci-anel-gg-running-1.webp',
+      'assets/images/products/gucci-anel-gg-running-2.webp'
+    ]
   },
   {
     cat: 'mulher', group: 'acessorios', sub: 'joias',
@@ -552,14 +627,11 @@ const products = [
     name:  { pt: 'Cordão Medusa', en: 'Medusa Chain Necklace' },
     desc:  { pt: 'Cordão em aço inoxidável dourado com pendente Medusa. Impacto e atitude Versace.',
              en: 'Gold stainless steel chain with Medusa pendant. Versace impact and attitude.' },
-    price: 'A consultar', priceValue: null,
+    price: '450.000 Kz', priceValue: 450000,
     sizes:  ['45cm', '50cm', '55cm'],
     colors: ['Dourado', 'Prateado'],
     materials: ['aco'], occasions: ['festa'], collections: [],
-    images: [
-      'assets/images/products/gucci-cinto-gg-pele-1.webp',
-      'assets/images/products/gucci-cinto-gg-pele-2.webp'
-    ],
+    images: ['assets/images/products/versace-cordao-medusa-1.webp']
   },
 
   // cintos
@@ -569,11 +641,14 @@ const products = [
     name:  { pt: 'Cinto GG Pele', en: 'GG Leather Belt' },
     desc:  { pt: 'Cinto em pele italiana com fivela GG dourada. O acessório de luxo por excelência.',
              en: 'Italian leather belt with gold GG buckle. The ultimate luxury accessory.' },
-    price: 'A consultar', priceValue: null,
+    price: '300.000 Kz', priceValue: 300000,
     sizes:  ['80cm', '85cm', '90cm', '95cm', '100cm'],
     colors: ['Preto/Dourado', 'Castanho/Dourado'],
     materials: ['pele'], occasions: ['casual', 'formal'], collections: [],
-    images: [],
+    images: [
+      'assets/images/products/gucci-cinto-gg-pele-1.webp',
+      'assets/images/products/gucci-cinto-gg-pele-2.webp'
+    ],
     also: [{ cat: 'homem', group: 'acessorios', sub: 'cintos' }]
   },
   {
@@ -582,11 +657,14 @@ const products = [
     name:  { pt: 'Cinto Corrente', en: 'Chain Belt' },
     desc:  { pt: 'Cinto de corrente dourada com fecho CC. Glamour atemporal Chanel.',
              en: 'Gold chain belt with CC clasp. Timeless Chanel glamour.' },
-    price: 'A consultar', priceValue: null,
+    price: '35.000 Kz', priceValue: 35000,
     sizes:  ['70cm', '75cm', '80cm', '85cm'],
     colors: ['Dourado', 'Prateado'],
     materials: ['metal'], occasions: ['festa'], collections: [],
-    images: ['assets/images/products/chanel-cinto-corrente-1.webp','assets/images/products/Chain-Belt.webp']
+    images: [
+      'assets/images/products/chanel-cinto-corrente-1.webp',
+      'assets/images/products/chanel-cinto-corrente-2.webp'
+    ]
   },
 
   // oculos  (vazio — acrescentar produtos aqui)
@@ -598,7 +676,7 @@ const products = [
     name:  { pt: 'Cachecol Xadrez', en: 'Check Scarf' },
     desc:  { pt: 'O icónico cachecol xadrez Burberry em cashmere e lã. Artesanato britânico.',
              en: 'The iconic Burberry check scarf in cashmere and wool. British craftsmanship.' },
-    price: 'A consultar', priceValue: null,
+    price: '180.000 Kz', priceValue: 180000,
     sizes:  ['Único'],
     colors: ['Bege/Vermelho', 'Preto/Xadrez'],
     materials: ['la', 'cashmere'], occasions: ['casual'], collections: [],
@@ -618,7 +696,7 @@ const products = [
     name:  { pt: 'T-Shirt Essentials', en: 'Essentials T-Shirt' },
     desc:  { pt: 'T-shirt clássica em algodão premium. Corte regular, confortável para o dia a dia.',
              en: 'Classic premium cotton t-shirt. Regular fit, comfortable for everyday wear.' },
-    price: 'A consultar', priceValue: null,
+    price: '25.000 Kz', priceValue: 25000,
     sizes:  ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
     colors: ['Branco', 'Preto', 'Cinza'],
     materials: ['algodao'], occasions: ['casual'], collections: [],
@@ -635,7 +713,7 @@ const products = [
     name:  { pt: 'Polo Classic Fit', en: 'Classic Fit Polo' },
     desc:  { pt: 'O polo icónico Lacoste em piqué de algodão. Um clássico atemporal.',
              en: 'The iconic Lacoste polo in cotton piqué. A timeless classic.' },
-    price: 'A consultar', priceValue: null,
+    price: '30.000 Kz', priceValue: 30000,
     sizes:  ['S', 'M', 'L', 'XL', 'XXL'],
     colors: ['Branco', 'Verde', 'Azul Marinho'],
     materials: ['algodao'], occasions: ['casual'], collections: [],
@@ -653,7 +731,7 @@ const products = [
     name:  { pt: 'Camisa Oxford', en: 'Oxford Shirt' },
     desc:  { pt: 'Camisa Oxford de algodão com colarinho italiano. Ideal para ocasiões formais e casuais.',
              en: 'Oxford cotton shirt with Italian collar. Ideal for formal and casual occasions.' },
-    price: 'A consultar', priceValue: null,
+    price: '28.000 Kz', priceValue: 28000,
     sizes:  ['S', 'M', 'L', 'XL'],
     colors: ['Branco', 'Azul'],
     materials: ['algodao'], occasions: ['casual', 'formal'], collections: [],
@@ -667,7 +745,7 @@ const products = [
     name:  { pt: 'Calças 501 Original', en: '501 Original Jeans' },
     desc:  { pt: 'O jean original desde 1873. Corte straight leg com botões. Um ícone do denim.',
              en: 'The original jean since 1873. Straight leg cut with buttons. A denim icon.' },
-    price: 'A consultar', priceValue: null,
+    price: '45.000 Kz', priceValue: 45000,
     sizes:  ['28', '30', '32', '34', '36', '38'],
     colors: ['Azul Escuro', 'Preto', 'Azul Claro'],
     materials: ['denim'], occasions: ['casual'], collections: [],
@@ -682,7 +760,7 @@ const products = [
     name:  { pt: 'Chinos Slim Fit', en: 'Slim Fit Chinos' },
     desc:  { pt: 'Calças chino em algodão stretch com corte slim. Elegância casual refinada.',
              en: 'Stretch cotton chino trousers with slim cut. Refined casual elegance.' },
-    price: 'A consultar', priceValue: null,
+    price: '30.000 Kz', priceValue: 30000,
     sizes:  ['30', '32', '34', '36'],
     colors: ['Bege', 'Navy', 'Cáqui'],
     materials: ['algodao'], occasions: ['casual', 'formal'], collections: [],
@@ -701,7 +779,7 @@ const products = [
     name:  { pt: 'Calções Chino', en: 'Chino Shorts' },
     desc:  { pt: 'Calções chino em algodão com acabamento premium. Ideais para o verão.',
              en: 'Cotton chino shorts with premium finish. Ideal for summer.' },
-    price: 'A consultar', priceValue: null,
+    price: '22.000 Kz', priceValue: 22000,
     sizes:  ['S', 'M', 'L', 'XL'],
     colors: ['Bege', 'Branco', 'Azul'],
     materials: ['algodao'], occasions: ['casual', 'praia'], collections: [],
@@ -719,7 +797,7 @@ const products = [
     name:  { pt: 'Fato de Cerimónia', en: 'Ceremony Suit' },
     desc:  { pt: 'Fato slim fit em lã italiana. Perfeito para cerimónias e eventos especiais.',
              en: 'Slim fit suit in Italian wool. Perfect for ceremonies and special events.' },
-    price: 'A consultar', priceValue: null,
+    price: '150.000 Kz', priceValue: 150000,
     sizes:  ['44', '46', '48', '50', '52'],
     colors: ['Preto', 'Cinza Chumbo', 'Azul Marinho'],
     materials: ['la'], occasions: ['cerimonia', 'formal'], collections: [],
@@ -736,7 +814,7 @@ const products = [
     name:  { pt: 'Hoodie Trefoil', en: 'Trefoil Hoodie' },
     desc:  { pt: 'Hoodie em fleece de algodão com o icónico logótipo Trefoil bordado.',
              en: 'Cotton fleece hoodie with the iconic embroidered Trefoil logo.' },
-    price: 'A consultar', priceValue: null,
+    price: '40.000 Kz', priceValue: 40000,
     sizes:  ['S', 'M', 'L', 'XL'],
     colors: ['Preto', 'Cinza', 'Azul'],
     materials: ['algodao'], occasions: ['casual', 'desporto'], collections: [],
@@ -752,7 +830,7 @@ const products = [
     name:  { pt: 'Casaco Trench', en: 'Trench Coat' },
     desc:  { pt: 'O icónico trench coat Burberry em gabardine de algodão. Sofisticação atemporal.',
              en: 'The iconic Burberry trench coat in cotton gabardine. Timeless sophistication.' },
-    price: 'A consultar', priceValue: null,
+    price: '85.000 Kz', priceValue: 85000,
     sizes:  ['S', 'M', 'L', 'XL'],
     colors: ['Bege', 'Preto'],
     materials: ['algodao'], occasions: ['formal', 'casual'], collections: [],
@@ -781,7 +859,7 @@ const products = [
     name:  { pt: 'Relógio Oyster Perpetual', en: 'Oyster Perpetual Watch' },
     desc:  { pt: 'O relógio mais icónico do mundo. Caixa em Oystersteel, mostrador lacado, movimento automático.',
              en: 'The world\'s most iconic watch. Oystersteel case, lacquered dial, automatic movement.' },
-    price: 'A consultar', priceValue: null,
+    price: '5.500.000 Kz', priceValue: 5500000,
     sizes:  ['36mm', '41mm'],
     colors: ['Preto', 'Branco', 'Azul', 'Verde'],
     materials: ['aco'], occasions: ['formal', 'casual'], collections: [],
@@ -796,7 +874,7 @@ const products = [
     name:  { pt: 'Relógio Classic', en: 'Classic Watch' },
     desc:  { pt: 'Relógio minimalista com bracelete em couro italiano. Design escandinavo elegante.',
              en: 'Minimalist watch with Italian leather strap. Elegant Scandinavian design.' },
-    price: 'A consultar', priceValue: null,
+    price: '45.000 Kz', priceValue: 45000,
     sizes:  ['36mm', '40mm'],
     colors: ['Preto/Ouro', 'Branco/Prata', 'Branco/Ouro'],
     materials: ['pele'], occasions: ['casual'], collections: [],
@@ -811,7 +889,7 @@ const products = [
     name:  { pt: 'Relógio Originals', en: 'Originals Watch' },
     desc:  { pt: 'Relógio colorido e leve em plástico de alta qualidade. Ícone do design suíço.',
              en: 'Colorful and light watch in high-quality plastic. Icon of Swiss design.' },
-    price: 'A consultar', priceValue: null,
+    price: '60.000 Kz', priceValue: 60000,
     sizes:  ['34mm', '41mm'],
     colors: ['Transparente', 'Preto', 'Branco', 'Colorido'],
     materials: ['plastico'], occasions: ['casual'], collections: [],
@@ -826,7 +904,7 @@ const products = [
     name:  { pt: 'Relógio Exchange Classic', en: 'Exchange Classic Watch' },
     desc:  { pt: 'Relógio elegante com bracelete em malha de aço. Mostrador com logo Armani. Resistente à água.',
              en: 'Elegant watch with steel mesh bracelet. Dial with Armani logo. Water resistant.' },
-    price: 'A consultar', priceValue: null,
+    price: '150.000 Kz', priceValue: 150000,
     sizes:  ['32mm', '42mm'],
     colors: ['Preto/Dourado', 'Prateado', 'Dourado'],
     materials: ['aco'], occasions: ['formal', 'casual'], collections: [],
@@ -849,7 +927,7 @@ const products = [
     name:  { pt: 'Boné Monogram', en: 'Monogram Cap' },
     desc:  { pt: 'Boné em lona monogram LV com pala estruturada. Ícone do streetwear de luxo.',
              en: 'LV monogram canvas cap with structured brim. Luxury streetwear icon.' },
-    price: 'A consultar', priceValue: null,
+    price: '250.000 Kz', priceValue: 250000,
     sizes:  ['S/M', 'M/L', 'L/XL'],
     colors: ['Bege/Castanho'],
     materials: ['canvas'], occasions: ['casual'], collections: [],
@@ -861,7 +939,7 @@ const products = [
     name:  { pt: 'Boné Speed', en: 'Speed Cap' },
     desc:  { pt: 'Boné estruturado com logo Balenciaga bordado. Estética high fashion streetwear.',
              en: 'Structured cap with embroidered Balenciaga logo. High fashion streetwear aesthetic.' },
-    price: 'A consultar', priceValue: null,
+    price: '180.000 Kz', priceValue: 180000,
     sizes:  ['S/M', 'M/L'],
     colors: ['Preto', 'Branco'],
     materials: [], occasions: ['casual'], collections: [],
@@ -876,7 +954,7 @@ const products = [
     name:  { pt: 'Boné Oblique', en: 'Oblique Cap' },
     desc:  { pt: 'Boné em canvas Oblique com viseira curva. O streetwear de alta costura.',
              en: 'Oblique canvas cap with curved visor. High couture streetwear.' },
-    price: 'A consultar', priceValue: null,
+    price: '300.000 Kz', priceValue: 300000,
     sizes:  ['S/M', 'M/L'],
     colors: ['Bege/Preto'],
     materials: ['canvas'], occasions: ['casual'], collections: [],
@@ -896,7 +974,7 @@ const products = [
     name:  { pt: 'Vestido Menina', en: 'Girls Dress' },
     desc:  { pt: 'Vestido de algodão com laço na cintura. Elegante e confortável.',
              en: 'Cotton dress with waist bow. Elegant and comfortable.' },
-    price: 'A consultar', priceValue: null,
+    price: '18.000 Kz', priceValue: 18000,
     sizes:  ['2A', '4A', '6A', '8A'],
     colors: ['Rosa', 'Branco', 'Azul Claro'],
     materials: ['algodao'], occasions: ['casual', 'festa'], collections: [],
@@ -923,7 +1001,7 @@ const products = [
     name:  { pt: 'T-Shirt Criança', en: 'Kids T-Shirt' },
     desc:  { pt: 'T-shirt de algodão 100% para criança. Estampado divertido e lavável.',
              en: '100% cotton t-shirt for kids. Fun and washable print.' },
-    price: 'A consultar', priceValue: null,
+    price: '8.000 Kz', priceValue: 8000,
     sizes:  ['2A', '4A', '6A', '8A', '10A', '12A'],
     colors: ['Branco', 'Azul', 'Vermelho'],
     materials: ['algodao'], occasions: ['casual'], collections: [],
@@ -943,7 +1021,7 @@ const products = [
     name:  { pt: 'Calças Ganga', en: 'Denim Jeans' },
     desc:  { pt: 'Calças de ganga slim para criança. Denim resistente e confortável.',
              en: 'Slim denim jeans for kids. Resistant and comfortable denim.' },
-    price: 'A consultar', priceValue: null,
+    price: '18.000 Kz', priceValue: 18000,
     sizes:  ['2A', '4A', '6A', '8A', '10A'],
     colors: ['Azul Médio', 'Preto'],
     materials: ['denim'], occasions: ['casual'], collections: [],
@@ -958,7 +1036,7 @@ const products = [
     name:  { pt: 'Calças de Fato', en: 'Tracksuit Bottoms' },
     desc:  { pt: 'Calças de fato em fleece suave. Elástico na cintura para maior conforto.',
              en: 'Soft fleece tracksuit bottoms. Elastic waist for added comfort.' },
-    price: 'A consultar', priceValue: null,
+    price: '25.000 Kz', priceValue: 25000,
     sizes:  ['4A', '6A', '8A', '10A', '12A'],
     colors: ['Preto', 'Cinza', 'Azul Marinho'],
     materials: ['fleece'], occasions: ['casual', 'desporto'], collections: [],
@@ -975,7 +1053,7 @@ const products = [
     name:  { pt: 'Calções Praia', en: 'Beach Shorts' },
     desc:  { pt: 'Calções de praia em microfibra de secagem rápida. Estampados coloridos.',
              en: 'Quick-dry microfiber beach shorts. Colorful prints.' },
-    price: 'A consultar', priceValue: null,
+    price: '10.000 Kz', priceValue: 10000,
     sizes:  ['4A', '6A', '8A', '10A', '12A'],
     colors: ['Azul Tropical', 'Laranja'],
     materials: ['microfibra'], occasions: ['praia'], collections: [],
@@ -1007,10 +1085,13 @@ const productsSemCategoria = [
     name:  { pt: 'Meias Logo Premium', en: 'Premium Logo Socks' },
     desc:  { pt: 'Pack de meias em algodão premium com o monograma GG bordado.',
              en: 'Premium cotton socks pack with embroidered GG monogram.' },
-    price: 'A consultar', priceValue: null,
+    price: '6.000 Kz', priceValue: 6000,
     sizes:  ['38-42', '43-46'],
     colors: ['Preto/Dourado', 'Branco/Verde'],
-    images: []
+    images: [
+      'assets/images/products/gucci-meias-logo-premium-1.webp',
+      'assets/images/products/gucci-meias-logo-premium-2.webp'
+    ]
   },
 
   // ─── Criança e bebé ────────────────────────────────────────────────────────
@@ -1019,50 +1100,65 @@ const productsSemCategoria = [
     name:  { pt: 'Body Bebé', en: 'Baby Bodysuit' },
     desc:  { pt: 'Body de algodão macio com fecho snap. Confortável e fácil de vestir.',
              en: 'Soft cotton bodysuit with snap closure. Comfortable and easy to put on.' },
-    price: 'A consultar', priceValue: null,
+    price: '7.000 Kz', priceValue: 7000,
     sizes:  ['0-3m', '3-6m', '6-12m', '12-18m'],
     colors: ['Branco', 'Cinza', 'Rosa'],
-    images: []
+    images: [
+      'assets/images/products/nike-body-bebe-1.webp',
+      'assets/images/products/nike-body-bebe-2.webp'
+    ]
   },
   {
     brand: 'H&M',
     name:  { pt: 'Pijama Conjunto', en: 'Pyjama Set' },
     desc:  { pt: 'Conjunto de pijama em algodão suave. Estampado com motivos divertidos.',
              en: 'Soft cotton pyjama set. Printed with fun motifs.' },
-    price: 'A consultar', priceValue: null,
+    price: '15.000 Kz', priceValue: 15000,
     sizes:  ['2A', '4A', '6A', '8A'],
     colors: ['Azul Estrelas', 'Rosa Unicórnio'],
-    images: []
+    images: [
+      'assets/images/products/handm-pijama-conjunto-1.webp',
+      'assets/images/products/handm-pijama-conjunto-2.webp'
+    ]
   },
   {
     brand: 'Adidas',
     name:  { pt: 'Casaco Criança', en: 'Kids Jacket' },
     desc:  { pt: 'Casaco desportivo em fleece leve. Perfeito para dias mais frescos.',
              en: 'Sports fleece jacket. Perfect for cooler days.' },
-    price: 'A consultar', priceValue: null,
+    price: '22.000 Kz', priceValue: 22000,
     sizes:  ['4A', '6A', '8A', '10A', '12A'],
     colors: ['Preto', 'Azul', 'Verde'],
-    images: []
+    images: [
+      'assets/images/products/adidas-casaco-crianca-1.webp',
+      'assets/images/products/adidas-casaco-crianca-2.webp'
+    ]
   },
   {
     brand: 'H&M',
     name:  { pt: 'Roupa Interior Pack 5', en: 'Underwear 5-Pack' },
     desc:  { pt: 'Pack de 5 cuecas de algodão. Confortáveis e duráveis.',
              en: '5-pack cotton underwear. Comfortable and durable.' },
-    price: 'A consultar', priceValue: null,
+    price: '12.000 Kz', priceValue: 12000,
     sizes:  ['2-4A', '4-6A', '6-8A', '8-10A'],
     colors: ['Sortido'],
-    images: []
+    images: [
+      'assets/images/products/handm-roupa-interior-pack-5-1.webp',
+      'assets/images/products/handm-roupa-interior-pack-5-2.webp'
+    ]
   },
   {
     brand: 'Adidas',
     name:  { pt: 'Macacão Bebé', en: 'Baby Onesie' },
     desc:  { pt: 'Macacão em algodão orgânico com estampado Adidas. Suave e hipoalergénico.',
              en: 'Organic cotton onesie with Adidas print. Soft and hypoallergenic.' },
-    price: 'A consultar', priceValue: null,
+    price: '12.000 Kz', priceValue: 12000,
     sizes:  ['0-3m', '3-6m', '6-9m', '9-12m'],
     colors: ['Branco', 'Cinza Claro'],
-    images: []
+    images: [
+      'assets/images/products/adidas-macacao-bebe-1.webp',
+      'assets/images/products/adidas-macacao-bebe-2.webp'
+    ]
   },
 
   // ─── Roupa interior — menina ───────────────────────────────────────────────
@@ -1071,50 +1167,65 @@ const productsSemCategoria = [
     name:  { pt: 'Pack 5 Cuecas Menina', en: 'Girls Briefs 5-Pack' },
     desc:  { pt: 'Pack de 5 cuecas de algodão suave com elástico confortável. Estampados florais e unicórnios.',
              en: '5-pack soft cotton briefs with comfortable elastic. Floral and unicorn prints.' },
-    price: 'A consultar', priceValue: null,
+    price: '10.000 Kz', priceValue: 10000,
     sizes:  ['2A', '4A', '6A', '8A', '10A', '12A'],
     colors: ['Rosa', 'Lilás', 'Branco', 'Sortido'],
-    images: []
+    images: [
+      'assets/images/products/petit-bateau-pack-5-cuecas-menina-1.webp',
+      'assets/images/products/petit-bateau-pack-5-cuecas-menina-2.webp'
+    ]
   },
   {
     brand: 'H&M Kids',
     name:  { pt: 'Conjunto Roupa Interior Menina', en: 'Girls Underwear Set' },
     desc:  { pt: 'Conjunto de cueca e camisola interior em algodão orgânico. Suave e respirável.',
              en: 'Brief and undershirt set in organic cotton. Soft and breathable.' },
-    price: 'A consultar', priceValue: null,
+    price: '12.000 Kz', priceValue: 12000,
     sizes:  ['2-4A', '4-6A', '6-8A', '8-10A', '10-12A'],
     colors: ['Branco', 'Rosa Claro', 'Estampado'],
-    images: []
+    images: [
+      'assets/images/products/handm-kids-conjunto-roupa-interior-menina-1.webp',
+      'assets/images/products/handm-kids-conjunto-roupa-interior-menina-2.webp'
+    ]
   },
   {
     brand: 'Zara Kids',
     name:  { pt: 'Cuecas Renda Menina Pack 3', en: 'Girls Lace Briefs 3-Pack' },
     desc:  { pt: 'Pack de 3 cuecas com detalhe em renda. Algodão premium, corte confortável.',
              en: '3-pack briefs with lace detail. Premium cotton, comfortable cut.' },
-    price: 'A consultar', priceValue: null,
+    price: '9.000 Kz', priceValue: 9000,
     sizes:  ['4A', '6A', '8A', '10A', '12A'],
     colors: ['Branco', 'Rosa', 'Preto'],
-    images: []
+    images: [
+      'assets/images/products/zara-kids-cuecas-renda-menina-pack-3-1.webp',
+      'assets/images/products/zara-kids-cuecas-renda-menina-pack-3-2.webp'
+    ]
   },
   {
     brand: 'Calvin Klein Kids',
     name:  { pt: 'Cuecas Logo Menina Pack 3', en: 'Girls Logo Briefs 3-Pack' },
     desc:  { pt: 'Pack de 3 cuecas com elástico Calvin Klein. Algodão stretch de alta qualidade.',
              en: '3-pack briefs with Calvin Klein waistband. High-quality stretch cotton.' },
-    price: 'A consultar', priceValue: null,
+    price: '10.000 Kz', priceValue: 10000,
     sizes:  ['6A', '8A', '10A', '12A', '14A'],
     colors: ['Preto', 'Branco', 'Rosa'],
-    images: []
+    images: [
+      'assets/images/products/calvin-klein-kids-cuecas-logo-menina-pack-3-1.webp',
+      'assets/images/products/calvin-klein-kids-cuecas-logo-menina-pack-3-2.webp'
+    ]
   },
   {
     brand: 'Nike Kids',
     name:  { pt: 'Conjunto Desportivo Interior Menina', en: 'Girls Sports Underwear Set' },
     desc:  { pt: 'Conjunto de soutien desportivo e cueca em tecido técnico. Ideal para actividade física.',
              en: 'Sports bra and brief set in technical fabric. Ideal for physical activity.' },
-    price: 'A consultar', priceValue: null,
+    price: '15.000 Kz', priceValue: 15000,
     sizes:  ['6A', '8A', '10A', '12A'],
     colors: ['Preto', 'Rosa', 'Azul'],
-    images: []
+    images: [
+      'assets/images/products/nike-kids-conjunto-desportivo-interior-menina-1.webp',
+      'assets/images/products/nike-kids-conjunto-desportivo-interior-menina-2.webp'
+    ]
   },
 
   // ─── Roupa interior — rapaz ────────────────────────────────────────────────
@@ -1123,50 +1234,65 @@ const productsSemCategoria = [
     name:  { pt: 'Pack 5 Cuecas Rapaz', en: 'Boys Briefs 5-Pack' },
     desc:  { pt: 'Pack de 5 cuecas de algodão suave. Estampados de dinossauros, carros e super-heróis.',
              en: '5-pack soft cotton briefs. Dinosaur, car and superhero prints.' },
-    price: 'A consultar', priceValue: null,
+    price: '10.000 Kz', priceValue: 10000,
     sizes:  ['2A', '4A', '6A', '8A', '10A', '12A'],
     colors: ['Azul', 'Cinza', 'Sortido'],
-    images: []
+    images: [
+      'assets/images/products/petit-bateau-pack-5-cuecas-rapaz-1.webp',
+      'assets/images/products/petit-bateau-pack-5-cuecas-rapaz-2.webp'
+    ]
   },
   {
     brand: 'H&M Kids',
     name:  { pt: 'Pack 5 Boxers Rapaz', en: 'Boys Boxers 5-Pack' },
     desc:  { pt: 'Pack de 5 boxers em algodão Jersey. Elástico largo e confortável.',
              en: '5-pack Jersey cotton boxers. Wide and comfortable waistband.' },
-    price: 'A consultar', priceValue: null,
+    price: '14.000 Kz', priceValue: 14000,
     sizes:  ['2-4A', '4-6A', '6-8A', '8-10A', '10-12A'],
     colors: ['Azul', 'Cinza', 'Preto', 'Sortido'],
-    images: []
+    images: [
+      'assets/images/products/handm-kids-pack-5-boxers-rapaz-1.webp',
+      'assets/images/products/handm-kids-pack-5-boxers-rapaz-2.webp'
+    ]
   },
   {
     brand: 'Calvin Klein Kids',
     name:  { pt: 'Boxers Logo Rapaz Pack 3', en: 'Boys Logo Boxers 3-Pack' },
     desc:  { pt: 'Pack de 3 boxers com elástico Calvin Klein bordado. Algodão stretch premium.',
              en: '3-pack boxers with embroidered Calvin Klein waistband. Premium stretch cotton.' },
-    price: 'A consultar', priceValue: null,
+    price: '12.000 Kz', priceValue: 12000,
     sizes:  ['6A', '8A', '10A', '12A', '14A'],
     colors: ['Preto', 'Branco', 'Cinza'],
-    images: []
+    images: [
+      'assets/images/products/calvin-klein-kids-boxers-logo-rapaz-pack-3-1.webp',
+      'assets/images/products/calvin-klein-kids-boxers-logo-rapaz-pack-3-2.webp'
+    ]
   },
   {
     brand: 'Nike Kids',
     name:  { pt: 'Pack 3 Boxers Desportivos', en: 'Boys Sports Boxers 3-Pack' },
     desc:  { pt: 'Pack de 3 boxers em tecido Dri-FIT. Mantém o conforto durante a prática desportiva.',
              en: '3-pack Dri-FIT fabric boxers. Keeps comfort during sports activity.' },
-    price: 'A consultar', priceValue: null,
+    price: '15.000 Kz', priceValue: 15000,
     sizes:  ['6A', '8A', '10A', '12A'],
     colors: ['Preto', 'Azul Marinho', 'Cinza'],
-    images: []
+    images: [
+      'assets/images/products/nike-kids-pack-3-boxers-desportivos-1.webp',
+      'assets/images/products/nike-kids-pack-3-boxers-desportivos-2.webp'
+    ]
   },
   {
     brand: 'Adidas Kids',
     name:  { pt: 'Conjunto Interior Rapaz', en: 'Boys Underwear Set' },
     desc:  { pt: 'Conjunto de boxer e camisola interior com logo Adidas. Algodão orgânico certificado.',
              en: 'Boxer and undershirt set with Adidas logo. Certified organic cotton.' },
-    price: 'A consultar', priceValue: null,
+    price: '12.000 Kz', priceValue: 12000,
     sizes:  ['4A', '6A', '8A', '10A', '12A'],
     colors: ['Branco', 'Azul', 'Preto'],
-    images: []
+    images: [
+      'assets/images/products/adidas-kids-conjunto-interior-rapaz-1.webp',
+      'assets/images/products/adidas-kids-conjunto-interior-rapaz-2.webp'
+    ]
   },
 
   // ─── Acessórios (gravatas, laços, luvas) ───────────────────────────────────
@@ -1175,30 +1301,39 @@ const productsSemCategoria = [
     name:  { pt: 'Gravata Seda', en: 'Silk Tie' },
     desc:  { pt: 'Gravata em seda pura italiana. Acabamento impecável, padrão elegante.',
              en: 'Pure Italian silk tie. Impeccable finish, elegant pattern.' },
-    price: 'A consultar', priceValue: null,
+    price: '18.000 Kz', priceValue: 18000,
     sizes:  ['Único'],
     colors: ['Azul Marinho', 'Cinza', 'Bordô'],
-    images: []
+    images: [
+      'assets/images/products/armani-gravata-seda-1.webp',
+      'assets/images/products/armani-gravata-seda-2.webp'
+    ]
   },
   {
     brand: 'Versace',
     name:  { pt: 'Laço Medusa', en: 'Medusa Bow Tie' },
     desc:  { pt: 'Laço em seda com o emblema Medusa de Versace bordado. Impacto garantido.',
              en: 'Silk bow tie with embroidered Versace Medusa emblem. Guaranteed impact.' },
-    price: 'A consultar', priceValue: null,
+    price: '35.000 Kz', priceValue: 35000,
     sizes:  ['Único'],
     colors: ['Preto/Dourado'],
-    images: []
+    images: [
+      'assets/images/products/versace-laco-medusa-1.webp',
+      'assets/images/products/versace-laco-medusa-2.webp'
+    ]
   },
   {
     brand: 'Hermès',
     name:  { pt: 'Luvas em Pele', en: 'Leather Gloves' },
     desc:  { pt: 'Luvas em pele de veado com forro em cashmere. Luxo e calor incomparáveis.',
              en: 'Deerskin gloves with cashmere lining. Incomparable luxury and warmth.' },
-    price: 'A consultar', priceValue: null,
+    price: '30.000 Kz', priceValue: 30000,
     sizes:  ['6.5', '7', '7.5', '8', '8.5'],
     colors: ['Preto', 'Castanho', 'Bordeaux'],
-    images: []
+    images: [
+      'assets/images/products/hermes-luvas-em-pele-1.webp',
+      'assets/images/products/hermes-luvas-em-pele-2.webp'
+    ]
   },
 
   // ─── Acessórios (chapéus) ──────────────────────────────────────────────────
@@ -1207,10 +1342,13 @@ const productsSemCategoria = [
     name:  { pt: 'Chapéu de Aba', en: 'Wide Brim Hat' },
     desc:  { pt: 'Chapéu em lã com aba larga e logo Prada. Elegância com atitude.',
              en: 'Wool hat with wide brim and Prada logo. Elegance with attitude.' },
-    price: 'A consultar', priceValue: null,
+    price: '25.000 Kz', priceValue: 25000,
     sizes:  ['S', 'M', 'L'],
     colors: ['Preto', 'Camel'],
-    images: []
+    images: [
+      'assets/images/products/prada-chapeu-de-aba-1.webp',
+      'assets/images/products/prada-chapeu-de-aba-2.webp'
+    ]
   },
 ];
 
