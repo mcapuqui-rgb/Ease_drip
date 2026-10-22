@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ease Drip — Boutique</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0a0a0a;
+  --bg2:#111111;
+  --bg3:#1a1a1a;
+  --gold:#c9a84c;
+  --gold2:#e8c878;
+  --white:#f5f0ea;
+  --gray:#888;
+  --border:#222;
+  --font-display:'Cormorant Garamond',serif;
+  --font-body:'Montserrat',sans-serif;
+}
+
+/* ── TEMA CLARO ── */
+html.light{
+  --bg:#f5f0ea;
+  --bg2:#ede8e0;
+  --bg3:#e4ddd3;
+  --gold:#9a6f2a;
+  --gold2:#b8872e;
+  --white:#1a1612;
+  --gray:#666;
+  --border:#d0c8bc;
+}
+html.light body{background:var(--bg);color:var(--white)}
+html.light nav{background:rgba(245,240,234,.95)}
+html.light .mobile-menu{background:var(--bg)}
+html.light .hero-bg::after{background:linear-gradient(to bottom,rgba(245,240,234,0.15) 0%,rgba(245,240,234,0.05) 40%,rgba(245,240,234,0.4) 100%)}
+html.light .hero-grid{opacity:.12}
+html.light ::-webkit-scrollbar-track{background:var(--bg)}
+html.light .product-card{background:var(--bg)}
+html.light .product-info{background:var(--bg)}
+html.light .modal{background:var(--bg2)}
+html.light .modal-gallery{background:var(--bg3)}
+html.light .carousel-placeholder{background:var(--bg3)}
+html.light .form-group input,
+html.light .form-group textarea{background:var(--bg3);color:var(--white)}
+html.light .featured-card{background:var(--bg)}
+html.light .featured-card:hover{background:var(--bg2)}
+html.light footer{background:var(--bg)}
+html.light .brands-strip{background:var(--bg)}
+html.light .brands-strip::before{background:linear-gradient(90deg,var(--bg),transparent)}
+html.light .brands-strip::after{background:linear-gradient(-90deg,var(--bg),transparent)}
+html.light .stats-strip{background:var(--bg2)}
+html.light .toast{background:var(--gold);color:#f5f0ea}
+html.light .size-btn{background:none;color:var(--gray)}
+html.light .q-opt{background:var(--bg2)}
+html.light #contact{background:var(--bg2)}
+
+/* ── THEME TOGGLE BUTTON ── */
+.theme-btn{background:none;border:1px solid var(--border);color:var(--gray);font-family:var(--font-body);font-size:.65rem;letter-spacing:.1em;padding:.3rem .6rem;cursor:pointer;transition:all .3s;display:flex;align-items:center;gap:.4rem;white-space:nowrap}
+.theme-btn:hover{border-color:var(--gold);color:var(--gold)}
+.theme-icon{font-size:.75rem;transition:transform .4s}
+html.light .theme-icon{transform:rotate(180deg)}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--white);font-family:var(--font-body);overflow-x:hidden}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--gold)}
+
+/* ── NAV ── */
+nav{position:fixed;top:0px;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 4rem;height:72px;border-bottom:1px solid var(--border);background:rgba(10,10,10,.92);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.nav-logo{font-family:var(--font-display);font-size:1.6rem;font-weight:300;letter-spacing:.2em;color:var(--gold);text-decoration:none;text-transform:uppercase}
+.nav-logo span{color:var(--white)}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gray);text-decoration:none;transition:color .3s}
+.nav-links a:hover,.nav-links a.active{color:var(--gold)}
+.nav-right{display:flex;align-items:center;gap:1.5rem}
+.lang-toggle{display:flex;gap:.4rem}
+.lang-btn{background:none;border:1px solid var(--border);color:var(--gray);font-family:var(--font-body);font-size:.65rem;letter-spacing:.12em;padding:.3rem .7rem;cursor:pointer;transition:all .3s;text-transform:uppercase}
+.lang-btn.active{border-color:var(--gold);color:var(--gold)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:.3rem}
+.hamburger span{display:block;width:22px;height:1px;background:var(--white);transition:all .3s}
+
+/* ── MOBILE NAV ── */
+.mobile-menu{display:none;position:fixed;inset:0;background:var(--bg);z-index:99;flex-direction:column;align-items:center;justify-content:center;gap:2rem}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-family:var(--font-display);font-size:2.2rem;font-weight:300;color:var(--white);text-decoration:none;letter-spacing:.1em}
+.mobile-menu a:hover{color:var(--gold)}
+
+/* ── HERO ── */
+#home{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding-top:1px}
+.hero-bg{position:absolute; top:72px;left:0;right:0;bottom:0;background:linear-gradient(135deg,#0a0a0a 0%,#1a1208 50%,#0a0a0a 100%)}
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  opacity: 0.25;
+  z-index: 1;
+}
+
+/* Imagem de fundo separada — ocupa sempre 100% sem cortes */
+.hero-bg {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("Ease_drip_imagens/Ease_drip_1.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+/* Gradiente escuro por baixo do texto para legibilidade */
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(10,10,10,0.3) 0%,
+    rgba(10,10,10,0.15) 40%,
+    rgba(10,10,10,0.55) 100%
+  );
+}
+
+@media (max-width: 600px) and (orientation: portrait) {
+  .hero-bg {
+    background-position: center center;
+    background-size: cover;
+  }
+  .hero-grid { opacity: 0.15; }
+}
+.hero-content{position:relative;text-align:center;max-width:800px;padding:2rem;z-index:2;text-shadow:0 2px 20px rgba(0,0,0,0.7)}
+.hero-tag{font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:2rem;display:block}
+.hero-title{font-family:var(--font-display);font-size:clamp(3.5rem,8vw,7rem);font-weight:300;line-height:1;letter-spacing:.05em;margin-bottom:1.5rem}
+.hero-title em{font-style:italic;color:var(--gold)}
+.hero-sub{font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:rgb(255, 230, 1);margin-bottom:3rem;line-height:2}
+.hero-cta{display:inline-block;padding:.9rem 3rem;border:1px solid var(--gold);color:var(--gold);font-family:var(--font-body);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;transition:all .4s;background:transparent}
+.hero-cta:hover{background:var(--gold);color:var(--bg)}
+.hero-line{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:1px;height:60px;background:linear-gradient(var(--gold),transparent);z-index:2}
+
+/* ── SECTIONS ── */
+section{padding:6rem 4rem}
+.section-header{text-align:center;margin-bottom:4rem}
+.section-tag{font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:1rem}
+.section-title{font-family:var(--font-display);font-size:clamp(2rem,4vw,3.5rem);font-weight:300;letter-spacing:.05em}
+.section-title em{font-style:italic;color:var(--gold)}
+.divider{width:40px;height:1px;background:var(--gold);margin:1.5rem auto 0}
+
+/* ── SHOP ── */
+#shop{background:var(--bg)}
+.category-tabs{display:flex;gap:0;margin-bottom:3rem;border-bottom:1px solid var(--border);overflow-x:auto}
+.cat-tab{background:none;border:none;border-bottom:2px solid transparent;padding:1rem 2rem;font-family:var(--font-body);font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gray);cursor:pointer;transition:all .3s;white-space:nowrap;margin-bottom:-1px}
+.cat-tab:hover{color:var(--white)}
+.cat-tab.active{color:var(--gold);border-bottom-color:var(--gold)}
+
+.subcategory-tabs{display:flex;gap:.5rem;margin-bottom:2.5rem;flex-wrap:wrap}
+.sub-tab{background:none;border:1px solid var(--border);padding:.4rem 1.2rem;font-family:var(--font-body);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gray);cursor:pointer;transition:all .3s}
+.sub-tab:hover{border-color:var(--white);color:var(--white)}
+.sub-tab.active{border-color:var(--gold);color:var(--gold)}
+
+.category-panel{display:none}
+.category-panel.active{display:block}
+
+.products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.5px;background:var(--border)}
+.product-card{background:var(--bg);cursor:pointer;overflow:hidden;position:relative;aspect-ratio:3/4}
+.product-card:hover .product-img-wrap img{transform:scale(1.06)}
+.product-card:hover .product-overlay{opacity:1}
+.product-img-wrap{width:100%;height:75%;overflow:hidden;background:var(--bg3);display:flex;align-items:center;justify-content:center}
+.product-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.product-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;background:var(--bg3)}
+.product-placeholder svg{opacity:.15}
+.product-info{padding:1rem 1.2rem;position:absolute;bottom:0;left:0;right:0;background:var(--bg)}
+.product-brand{font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.3rem}
+.product-name{font-family:var(--font-display);font-size:1rem;font-weight:300;margin-bottom:.2rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.product-price{font-size:.65rem;letter-spacing:.1em;color:var(--gray)}
+.product-overlay{position:absolute;inset:0;background:rgba(10,10,10,.4);opacity:0;transition:opacity .3s;display:flex;align-items:center;justify-content:center}
+.product-overlay span{font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:var(--white);border:1px solid var(--white);padding:.5rem 1.5rem}
+
+/* ── MODAL ── */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:200;display:none;align-items:center;justify-content:center;padding:2rem}
+.modal-overlay.open{display:flex}
+.modal{background:var(--bg2);width:100%;max-width:1000px;max-height:90vh;overflow-y:auto;display:grid;grid-template-columns:1fr 1fr;position:relative}
+.modal-close{position:absolute;top:1.5rem;right:1.5rem;background:none;border:none;color:var(--white);font-size:1.2rem;cursor:pointer;z-index:10;line-height:1;opacity:.6;transition:opacity .3s}
+.modal-close:hover{opacity:1}
+.modal-gallery{background:var(--bg3);position:relative;overflow:hidden;min-height:500px}
+.carousel-track{display:flex;transition:transform .4s ease;height:100%}
+.carousel-slide{min-width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--bg3)}
+.carousel-slide img{width:100%;height:100%;object-fit:cover}
+.carousel-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;width:100%;height:100%;min-height:500px}
+.carousel-placeholder svg{opacity:.12}
+.carousel-placeholder p{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gray)}
+.carousel-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(10,10,10,.7);border:1px solid var(--border);color:var(--white);width:38px;height:38px;cursor:pointer;font-size:.9rem;transition:all .3s;display:flex;align-items:center;justify-content:center}
+.carousel-btn:hover{border-color:var(--gold);color:var(--gold)}
+.carousel-prev{left:1rem}
+.carousel-next{right:1rem}
+.carousel-dots{position:absolute;bottom:1rem;left:50%;transform:translateX(-50%);display:flex;gap:.4rem}
+.carousel-dot{width:5px;height:5px;border-radius:50%;background:var(--gray);cursor:pointer;transition:all .3s}
+.carousel-dot.active{background:var(--gold);width:16px;border-radius:3px}
+.modal-info{padding:3rem 2.5rem;display:flex;flex-direction:column}
+.modal-brand{font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:.8rem}
+.modal-name{font-family:var(--font-display);font-size:2rem;font-weight:300;line-height:1.2;margin-bottom:.5rem}
+.modal-price{font-size:.8rem;letter-spacing:.1em;color:var(--gray);margin-bottom:1.5rem}
+.modal-divider{width:30px;height:1px;background:var(--gold);margin-bottom:1.5rem}
+.modal-desc{font-size:.75rem;line-height:1.9;color:var(--gray);margin-bottom:2rem;flex:1}
+.modal-sizes-label{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--white);margin-bottom:.8rem}
+.modal-sizes{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:2rem}
+.size-btn{background:none;border:1px solid var(--border);color:var(--gray);padding:.4rem .8rem;font-size:.65rem;letter-spacing:.1em;cursor:pointer;transition:all .3s;font-family:var(--font-body)}
+.size-btn:hover,.size-btn.active{border-color:var(--gold);color:var(--gold)}
+.modal-avail{font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:#4a7c59;margin-bottom:2rem;display:flex;align-items:center;gap:.5rem}
+.modal-avail::before{content:'';width:6px;height:6px;border-radius:50%;background:#4a7c59;display:inline-block}
+.modal-wa{display:flex;align-items:center;gap:.8rem;padding:1rem 2rem;background:var(--gold);color:var(--bg);font-family:var(--font-body);font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;transition:all .3s;border:1px solid var(--gold);cursor:pointer;width:fit-content}
+.modal-wa:hover{background:transparent;color:var(--gold)}
+.modal-wa svg{flex-shrink:0}
+
+/* ── CONTACT ── */
+#contact{background:var(--bg2)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;max-width:900px;margin:0 auto}
+.contact-info h3{font-family:var(--font-display);font-size:1.6rem;font-weight:300;margin-bottom:2rem}
+.contact-item{display:flex;gap:1rem;margin-bottom:1.5rem;align-items:flex-start}
+.contact-icon{color:var(--gold);margin-top:.1rem;flex-shrink:0}
+.contact-item-label{font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.3rem}
+.contact-item-value{font-size:.8rem;color:var(--gray);line-height:1.7}
+.hours-grid{display:grid;grid-template-columns:1fr 1fr;gap:.3rem .5rem;font-size:.72rem;color:var(--gray);line-height:1.8}
+.hours-grid .day{color:var(--white)}
+.contact-form h3{font-family:var(--font-display);font-size:1.6rem;font-weight:300;margin-bottom:2rem}
+.form-group{margin-bottom:1.2rem}
+.form-group label{display:block;font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem}
+.form-group input,.form-group textarea{width:100%;background:var(--bg3);border:1px solid var(--border);color:var(--white);font-family:var(--font-body);font-size:.8rem;padding:.8rem 1rem;outline:none;transition:border-color .3s}
+.form-group input:focus,.form-group textarea:focus{border-color:var(--gold)}
+.form-group textarea{resize:vertical;min-height:100px}
+.form-submit{padding:.9rem 2.5rem;background:transparent;border:1px solid var(--gold);color:var(--gold);font-family:var(--font-body);font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:all .4s}
+.form-submit:hover{background:var(--gold);color:var(--bg)}
+
+/* ── FOOTER ── */
+footer{background:var(--bg);border-top:1px solid var(--border);padding:3rem 4rem;text-align:center}
+.footer-logo{font-family:var(--font-display);font-size:1.4rem;font-weight:300;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;margin-bottom:1rem}
+.footer-tagline{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gray);margin-bottom:2rem}
+.footer-copy{font-size:.6rem;letter-spacing:.1em;color:var(--border)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  nav{padding:0 1.5rem}
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  section{padding:4rem 1.5rem}
+  .modal{grid-template-columns:1fr}
+  .modal-gallery{min-height:300px}
+  .contact-grid{grid-template-columns:1fr;gap:2rem}
+  .hero-content{padding:1rem}
+}
+@media(max-width:600px){
+  .products-grid{grid-template-columns:repeat(2,1fr)}
+  .cat-tab{padding:.8rem 1.2rem}
+}
+
+@media(max-width:600px) and (orientation:portrait){
+  .products-grid{grid-template-columns:1fr}
+  .product-img-wrap{aspect-ratio:16/9}
+  .hero-content{padding:.75rem}
+  .hero-title{font-size:clamp(2.5rem,12vw,4rem)}
+}
+
+/* ── PROMO BANNER ── */
+
+@keyframes shimmer{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+/* ── FEATURED ── */
+#featured{background:var(--bg2);padding:5rem 4rem}
+.featured-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;background:var(--border);margin-top:3rem}
+.featured-card{background:var(--bg);padding:3rem 2.5rem;display:flex;flex-direction:column;gap:1rem;position:relative;overflow:hidden;transition:background .3s}
+.featured-card:hover{background:var(--bg3)}
+.featured-card::before{content:'';position:absolute;top:0;left:0;width:2px;height:0;background:var(--gold);transition:height .4s}
+.featured-card:hover::before{height:100%}
+.featured-icon{font-size:1.8rem;margin-bottom:.5rem}
+.featured-title{font-family:var(--font-display);font-size:1.4rem;font-weight:300;letter-spacing:.05em}
+.featured-desc{font-size:.7rem;color:var(--gray);line-height:1.8}
+.featured-link{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);text-decoration:none;margin-top:auto;display:flex;align-items:center;gap:.5rem;transition:gap .3s}
+.featured-link:hover{gap:1rem}
+
+/* ── BRANDS STRIP ── */
+.brands-strip{background:var(--bg);padding:3rem 4rem;border-top:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden;position:relative;z-index:-1}
+.brands-strip::before,.brands-strip::after{content:'';position:absolute;top:0;bottom:0;width:100px;z-index:2}
+.brands-strip::before{left:0;background:linear-gradient(90deg,var(--bg),transparent)}
+.brands-strip::after{right:0;background:linear-gradient(-90deg,var(--bg),transparent)}
+.brands{display:flex;gap:4rem;align-items:center;animation:scroll 30s linear infinite;width:max-content}
+.brands:hover{animation-play-state:paused}
+.brands img{width:120px;height:60px;object-fit:contain;}
+@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.brand-name{font-family:var(--font-display);font-size:1.1rem;font-weight:300;letter-spacing:.15em;text-transform:uppercase;color:var(--border);transition:color .3s;white-space:nowrap;cursor:default}
+.brand-name:hover{color:var(--gold)}
+
+/* ── STATS ── */
+.stats-strip{background:var(--bg3);padding:3rem 4rem;display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--border)}
+.stat-item{text-align:center;padding:1.5rem;border-right:1px solid var(--border)}
+.stat-item:last-child{border-right:none}
+.stat-number{font-family:var(--font-display);font-size:2.5rem;font-weight:300;color:var(--gold);line-height:1}
+.stat-label{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gray);margin-top:.5rem}
+
+/* ── PRODUCT CARD ANIMATIONS ── */
+.product-card{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease,background .3s}
+.product-card.visible{opacity:1;transform:translateY(0)}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.hero-content>*{animation:fadeUp .8s ease both}
+.hero-tag{animation-delay:.1s}
+.hero-title{animation-delay:.25s}
+.hero-sub{animation-delay:.4s}
+.hero-cta{animation-delay:.55s}
+
+/* ── TOAST ── */
+.toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(100px);background:var(--gold);color:var(--bg);font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;padding:.8rem 2rem;z-index:300;transition:transform .4s;pointer-events:none}
+.toast.show{transform:translateX(-50%) translateY(0)}
+
+@media(max-width:900px){
+  .featured-grid{grid-template-columns:1fr}
+  .stats-strip{grid-template-columns:repeat(2,1fr)}
+  .stat-item:nth-child(2){border-right:none}
+  
+  #featured{padding:4rem 1.5rem}
+  .brands-strip{padding:2rem 1.5rem}
+}
+@media(max-width:600px){
+  .stats-strip{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+
+<!-- PROMO BANNER -->
+
+<!-- NAV -->
+<nav>
+  <a href="#home" class="nav-logo">Ease <span>Drip</span></a>
+  <ul class="nav-links">
+    <li><a href="#home" class="active" data-pt="Início" data-en="Home">Início</a></li>
+    <li><a href="#shop" data-pt="Loja" data-en="Shop">Loja</a></li>
+    <li><a href="#contact" data-pt="Contacto" data-en="Contact">Contacto</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="setLang('pt')">PT</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+    </div>
+    <button class="theme-btn" onclick="toggleTheme()" id="themeBtn" title="Alternar tema">
+      <span class="theme-icon">☀</span>
+      <span id="themeLbl">Claro</span>
+    </button>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home" onclick="toggleMenu()" data-pt="Início" data-en="Home">Início</a>
+  <a href="#shop" onclick="toggleMenu()" data-pt="Loja" data-en="Shop">Loja</a>
+  <a href="#contact" onclick="toggleMenu()" data-pt="Contacto" data-en="Contact">Contacto</a>
+</div>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <span class="hero-tag" data-pt="Boutique de Moda — Lubango, Angola" data-en="Fashion Boutique — Lubango, Angola">Boutique de Moda — Lubango, Angola</span>
+    <h1 class="hero-title">Ease <em>Drip</em></h1>
+    <p class="hero-sub" data-pt="Estilo que define. Qualidade que permanece." data-en="Style that defines. Quality that lasts.">Estilo que define. Qualidade que permanece.</p>
+    <a href="#shop" class="hero-cta" data-pt="Ver Coleção" data-en="View Collection">Ver Coleção</a>
+  </div>
+  <div class="hero-line"></div>
+</section>
+
+<!-- BRANDS STRIP -->
+<div class="brands-strip">
+  <div class="brands" id="brandsTrack"></div>
+</div>
+<!-- FEATURED -->
+<section id="featured">
+  <div class="section-header">
+    <span class="section-tag" data-pt="Porquê a Ease Drip" data-en="Why Ease Drip">Porquê a Ease Drip</span>
+    <h2 class="section-title" data-pt="O Nosso <em>Compromisso</em>" data-en="Our <em>Commitment</em>">O Nosso <em>Compromisso</em></h2>
+    <div class="divider"></div>
+  </div>
+  <div class="featured-grid">
+    <div class="featured-card">
+      <div class="featured-icon">✦</div>
+      <div class="featured-title" data-pt="Marcas Premium" data-en="Premium Brands">Marcas Premium</div>
+      <div class="featured-desc" data-pt="Curadoria exclusiva das melhores marcas mundiais — de Nike e Adidas a Gucci e Louis Vuitton. Autenticidade garantida em cada peça." data-en="Exclusive curation of the world's best brands — from Nike and Adidas to Gucci and Louis Vuitton. Authenticity guaranteed in every piece.">Curadoria exclusiva das melhores marcas mundiais — de Nike e Adidas a Gucci e Louis Vuitton. Autenticidade garantida em cada peça.</div>
+      <a href="#shop" class="featured-link" data-pt="Explorar loja →" data-en="Explore shop →">Explorar loja →</a>
+    </div>
+    <div class="featured-card">
+      <div class="featured-icon">◈</div>
+      <div class="featured-title" data-pt="Atendimento Personalizado" data-en="Personal Service">Atendimento Personalizado</div>
+      <div class="featured-desc" data-pt="A nossa equipa está disponível para ajudar a encontrar o look perfeito. Atendimento presencial em Lubango e via WhatsApp." data-en="Our team is available to help find the perfect look. In-person service in Lubango and via WhatsApp.">A nossa equipa está disponível para ajudar a encontrar o look perfeito. Atendimento presencial em Lubango e via WhatsApp.</div>
+      <a href="#contact" class="featured-link" data-pt="Falar connosco →" data-en="Talk to us →">Falar connosco →</a>
+    </div>
+    <div class="featured-card">
+      <div class="featured-icon">◇</div>
+      <div class="featured-title" data-pt="Para Toda a Família" data-en="For the Whole Family">Para Toda a Família</div>
+      <div class="featured-desc" data-pt="Moda para homem, mulher e criança. Uma só paragem para equipar toda a família com estilo e qualidade premium." data-en="Fashion for men, women and children. One stop to dress the whole family with premium style and quality.">Moda para homem, mulher e criança. Uma só paragem para equipar toda a família com estilo e qualidade premium.</div>
+      <a href="#shop" class="featured-link" data-pt="Ver coleções →" data-en="View collections →">Ver coleções →</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-strip">
+  <div class="stat-item">
+    <div class="stat-number">40+</div>
+    <div class="stat-label" data-pt="Produtos em loja" data-en="Products in store">Produtos em loja</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">20+</div>
+    <div class="stat-label" data-pt="Marcas premium" data-en="Premium brands">Marcas premium</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">4</div>
+    <div class="stat-label" data-pt="Categorias" data-en="Categories">Categorias</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">100%</div>
+    <div class="stat-label" data-pt="Produtos autênticos" data-en="Authentic products">Produtos autênticos</div>
+  </div>
+</div>
+
+<!-- SHOP -->
+<section id="shop">
+  <div class="section-header">
+    <span class="section-tag" data-pt="Coleção" data-en="Collection">Coleção</span>
+    <h2 class="section-title" data-pt="A Nossa <em>Loja</em>" data-en="Our <em>Shop</em>">A Nossa <em>Loja</em></h2>
+    <div class="divider"></div>
+  </div>
+
+  <!-- CATEGORY TABS -->
+  <div class="category-tabs">
+    <button class="cat-tab active" onclick="showCategory('homem')" data-pt="Homem" data-en="Men">Homem</button>
+    <button class="cat-tab" onclick="showCategory('mulher')" data-pt="Mulher" data-en="Women">Mulher</button>
+    <button class="cat-tab" onclick="showCategory('crianca')" data-pt="Criança & Bebé" data-en="Kids & Baby">Criança & Bebé</button>
+    <button class="cat-tab" onclick="showCategory('acessorios')" data-pt="Acessórios" data-en="Accessories">Acessórios</button>
+  </div>
+
+  <!-- HOMEM -->
+  <div class="category-panel active" id="panel-homem">
+    <div class="subcategory-tabs">
+      <button class="sub-tab active" onclick="showSub('homem','tudo')" data-pt="Tudo" data-en="All">Tudo</button>
+      <button class="sub-tab" onclick="showSub('homem','tops')" data-pt="Tops & Camisas" data-en="Tops & Shirts">Tops & Camisas</button>
+      <button class="sub-tab" onclick="showSub('homem','bottoms')" data-pt="Calças & Calções" data-en="Trousers & Shorts">Calças & Calções</button>
+    </div>
+    <div class="products-grid" id="grid-homem"></div>
+  </div>
+
+  <!-- MULHER -->
+  <div class="category-panel" id="panel-mulher">
+    <div class="subcategory-tabs">
+      <button class="sub-tab active" onclick="showSub('mulher','tudo')" data-pt="Tudo" data-en="All">Tudo</button>
+      <button class="sub-tab" onclick="showSub('mulher','tops')" data-pt="Tops & Blusas" data-en="Tops & Blouses">Tops & Blusas</button>
+      <button class="sub-tab" onclick="showSub('mulher','vestidos')" data-pt="Vestidos & Saias" data-en="Dresses & Skirts">Vestidos & Saias</button>
+    </div>
+    <div class="products-grid" id="grid-mulher"></div>
+  </div>
+
+  <!-- CRIANÇA -->
+  <div class="category-panel" id="panel-crianca">
+    <div class="subcategory-tabs">
+      <button class="sub-tab active" onclick="showSub('crianca','tudo')" data-pt="Tudo" data-en="All">Tudo</button>
+      <button class="sub-tab" onclick="showSub('crianca','tops')" data-pt="T-shirts & Bodies" data-en="T-shirts & Bodies">T-shirts & Bodies</button>
+      <button class="sub-tab" onclick="showSub('crianca','bottoms')" data-pt="Calças & Calções" data-en="Trousers & Shorts">Calças & Calções</button>
+      <button class="sub-tab" onclick="showSub('crianca','interior-menina')" data-pt="Roupa Interior Menina" data-en="Girls Underwear">Roupa Interior Menina</button>
+      <button class="sub-tab" onclick="showSub('crianca','interior-rapaz')" data-pt="Roupa Interior Rapaz" data-en="Boys Underwear">Roupa Interior Rapaz</button>
+    </div>
+    <div class="products-grid" id="grid-crianca"></div>
+  </div>
+
+  <!-- ACESSÓRIOS -->
+  <div class="category-panel" id="panel-acessorios">
+    <div class="subcategory-tabs">
+      <button class="sub-tab active" onclick="showSub('acessorios','tudo')" data-pt="Tudo" data-en="All">Tudo</button>
+      <button class="sub-tab" onclick="showSub('acessorios','cabeca')" data-pt="Chapéus & Bonés" data-en="Hats & Caps">Chapéus & Bonés</button>
+      <button class="sub-tab" onclick="showSub('acessorios','outros')" data-pt="Cintos & Cachecóis" data-en="Belts & Scarves">Cintos & Cachecóis</button>
+      <button class="sub-tab" onclick="showSub('acessorios','joalharia')" data-pt="Joalharia & Relógios" data-en="Jewellery & Watches">Joalharia & Relógios</button>
+    </div>
+    <div class="products-grid" id="grid-acessorios"></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-header">
+    <span class="section-tag" data-pt="Visite-nos" data-en="Visit Us">Visite-nos</span>
+    <h2 class="section-title" data-pt="<em>Contacto</em>" data-en="<em>Contact</em>"><em>Contacto</em></h2>
+    <div class="divider"></div>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h3 data-pt="A Nossa Loja" data-en="Our Store">A Nossa Loja</h3>
+      <div class="contact-item">
+        <div class="contact-icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        </div>
+        <div class="contact-item-content">
+          <div class="contact-item-label" data-pt="Morada" data-en="Address">Morada</div>
+          <div class="contact-item-value">Rua Principal, Lubango<br>Angola</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        </div>
+        <div class="contact-item-content">
+          <div class="contact-item-label" data-pt="Telefone / WhatsApp" data-en="Phone / WhatsApp">Telefone / WhatsApp</div>
+          <div class="contact-item-value">+244 900 000 000</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div class="contact-item-content">
+          <div class="contact-item-label" data-pt="Horário" data-en="Hours">Horário</div>
+          <div class="hours-grid">
+            <span class="day" data-pt="Seg – Sex" data-en="Mon – Fri">Seg – Sex</span><span>09:00 – 20:00</span>
+            <span class="day" data-pt="Sábado" data-en="Saturday">Sábado</span><span>10:00 – 18:00</span>
+            <span class="day" data-pt="Domingo" data-en="Sunday">Domingo</span><span data-pt="Fechado" data-en="Closed">Fechado</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form">
+      <h3 data-pt="Envie uma Mensagem" data-en="Send a Message">Envie uma Mensagem</h3>
+      <div class="form-group">
+        <label data-pt="Nome" data-en="Name">Nome</label>
+        <input type="text" placeholder="João Silva">
+      </div>
+      <div class="form-group">
+        <label data-pt="Telefone" data-en="Phone">Telefone</label>
+        <input type="tel" placeholder="+244 900 000 000">
+      </div>
+      <div class="form-group">
+        <label data-pt="Mensagem" data-en="Message">Mensagem</label>
+        <textarea data-pt-placeholder="Tenho interesse num produto..." data-en-placeholder="I'm interested in a product..." placeholder="Tenho interesse num produto..."></textarea>
+      </div>
+      <button class="form-submit" onclick="sendWhatsApp()" data-pt="Enviar via WhatsApp" data-en="Send via WhatsApp">Enviar via WhatsApp</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Ease Drip</div>
+  <div class="footer-tagline" data-pt="Boutique de Moda — Lubango, Angola" data-en="Fashion Boutique — Lubango, Angola">Boutique de Moda — Lubango, Angola</div>
+  <div class="footer-copy">© 2025 Ease Drip. <span data-pt="Todos os direitos reservados." data-en="All rights reserved.">Todos os direitos reservados.</span></div>
+</footer>
+
+<!-- PRODUCT MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
+  <div class="modal" id="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-gallery">
+      <div class="carousel-track" id="carouselTrack"></div>
+      <button class="carousel-btn carousel-prev" onclick="carousel(-1)">&#8592;</button>
+      <button class="carousel-btn carousel-next" onclick="carousel(1)">&#8594;</button>
+      <div class="carousel-dots" id="carouselDots"></div>
+    </div>
+    <div class="modal-info">
+      <div class="modal-brand" id="modalBrand"></div>
+      <h2 class="modal-name" id="modalName"></h2>
+      <div class="modal-price" id="modalPrice"></div>
+      <div class="modal-divider"></div>
+      <p class="modal-desc" id="modalDesc"></p>
+      <div class="modal-sizes-label" data-pt="Tamanhos disponíveis" data-en="Available sizes">Tamanhos disponíveis</div>
+      <div class="modal-sizes" id="modalSizes"></div>
+      <div class="modal-avail" id="modalAvail"></div>
+      <a class="modal-wa" id="modalWA" href="#" target="_blank">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span data-pt="Contactar via WhatsApp" data-en="Contact via WhatsApp">Contactar via WhatsApp</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+const WHATSAPP = '244900000000';
+let currentLang = 'pt';
+let carouselIndex = 0;
+let currentImages = [];
+let currentProductName = '';
+
+// ── PRODUCT DATA ──
+const products = {
+  homem: [
+    {brand:'Nike',name:{pt:'T-Shirt Essentials',en:'Essentials T-Shirt'},price:'A consultar',sub:'tops',sizes:['XS','S','M','L','XL','XXL'],desc:{pt:'T-shirt clássica em algodão premium. Corte regular, confortável para o dia a dia.',en:'Classic premium cotton t-shirt. Regular fit, comfortable for everyday wear.'},colors:['Branco','Preto','Cinza'],images:[]},
+    {brand:'Zara',name:{pt:'Camisa Oxford',en:'Oxford Shirt'},price:'A consultar',sub:'tops',sizes:['S','M','L','XL'],desc:{pt:'Camisa Oxford de algodão com colarinho italiano. Ideal para ocasiões formais e casuais.',en:'Oxford cotton shirt with Italian collar. Ideal for formal and casual occasions.'},colors:['Branco','Azul'],images:[]},
+    {brand:'Lacoste',name:{pt:'Polo Classic Fit',en:'Classic Fit Polo'},price:'A consultar',sub:'tops',sizes:['S','M','L','XL','XXL'],desc:{pt:'O polo icónico Lacoste em piqué de algodão. Um clássico atemporal.',en:'The iconic Lacoste polo in cotton piqué. A timeless classic.'},colors:['Branco','Verde','Azul Marinho'],images:[]},
+    {brand:'Adidas',name:{pt:'Hoodie Trefoil',en:'Trefoil Hoodie'},price:'A consultar',sub:'tops',sizes:['S','M','L','XL'],desc:{pt:'Hoodie em fleece de algodão com o icónico logótipo Trefoil bordado.',en:'Cotton fleece hoodie with the iconic embroidered Trefoil logo.'},colors:['Preto','Cinza','Azul'],images:[]},
+    {brand:'Burberry',name:{pt:'Casaco Trench',en:'Trench Coat'},price:'A consultar',sub:'tops',sizes:['S','M','L','XL'],desc:{pt:'O icónico trench coat Burberry em gabardine de algodão. Sofisticação atemporal.',en:'The iconic Burberry trench coat in cotton gabardine. Timeless sophistication.'},colors:['Bege','Preto'],images:[]},
+    {brand:"Levi's",name:{pt:'Calças 501 Original',en:'501 Original Jeans'},price:'A consultar',sub:'bottoms',sizes:['28','30','32','34','36','38'],desc:{pt:'O jean original desde 1873. Corte straight leg com botões. Um ícone do denim.',en:'The original jean since 1873. Straight leg cut with buttons. A denim icon.'},colors:['Azul Escuro','Preto','Azul Claro'],images:[]},
+    {brand:'Armani',name:{pt:'Chinos Slim Fit',en:'Slim Fit Chinos'},price:'A consultar',sub:'bottoms',sizes:['30','32','34','36'],desc:{pt:'Calças chino em algodão stretch com corte slim. Elegância casual refinada.',en:'Stretch cotton chino trousers with slim cut. Refined casual elegance.'},colors:['Bege','Navy','Cáqui'],images:[]},
+    {brand:'Diesel',name:{pt:'Fato de Cerimónia',en:'Ceremony Suit'},price:'A consultar',sub:'bottoms',sizes:['44','46','48','50','52'],desc:{pt:'Fato slim fit em lã italiana. Perfeito para cerimónias e eventos especiais.',en:'Slim fit suit in Italian wool. Perfect for ceremonies and special events.'},colors:['Preto','Cinza Chumbo','Azul Marinho'],images:[]},
+    {brand:'Calvin Klein',name:{pt:'Calções Chino',en:'Chino Shorts'},price:'A consultar',sub:'bottoms',sizes:['S','M','L','XL'],desc:{pt:'Calções chino em algodão com acabamento premium. Ideais para o verão.',en:'Cotton chino shorts with premium finish. Ideal for summer.'},colors:['Bege','Branco','Azul'],images:[]},
+    {brand:'Gucci',name:{pt:'Meias Logo Premium',en:'Premium Logo Socks'},price:'A consultar',sub:'tops',sizes:['38-42','43-46'],desc:{pt:'Pack de meias em algodão premium com o monograma GG bordado.',en:'Premium cotton socks pack with embroidered GG monogram.'},colors:['Preto/Dourado','Branco/Verde'],images:[]},
+  ],
+  mulher: [
+    {brand:'Zara',name:{pt:'Top Cropped Seda',en:'Silk Cropped Top'},price:'A consultar',sub:'tops',sizes:['XS','S','M','L'],desc:{pt:'Top cropped em seda natural. Elegante e versátil para qualquer ocasião.',en:'Natural silk cropped top. Elegant and versatile for any occasion.'},colors:['Branco','Preto','Nude'],images:[]},
+    {brand:'Mango',name:{pt:'Blusa Floral',en:'Floral Blouse'},price:'A consultar',sub:'tops',sizes:['XS','S','M','L','XL'],desc:{pt:'Blusa fluída com estampado floral. Tecido leve e cómodo.',en:'Fluid blouse with floral print. Light and comfortable fabric.'},colors:['Multicolor','Azul','Rosa'],images:[]},
+    {brand:'H&M',name:{pt:'Camisa Oversized',en:'Oversized Shirt'},price:'A consultar',sub:'tops',sizes:['XS','S','M','L'],desc:{pt:'Camisa oversized em algodão orgânico. Corte relaxado e moderno.',en:'Oversized organic cotton shirt. Relaxed and modern cut.'},colors:['Branco','Azul Claro','Às Riscas'],images:[]},
+    {brand:'Dior',name:{pt:'Vestido Midi Elegante',en:'Elegant Midi Dress'},price:'A consultar',sub:'vestidos',sizes:['34','36','38','40','42'],desc:{pt:'Vestido midi em crepe de seda com corte evasé. Sofisticação pura.',en:'Midi dress in silk crepe with evasé cut. Pure sophistication.'},colors:['Preto','Bordeaux','Navy'],images:[]},
+    {brand:'Versace',name:{pt:'Saia Lápis',en:'Pencil Skirt'},price:'A consultar',sub:'vestidos',sizes:['XS','S','M','L'],desc:{pt:'Saia lápis com estampado Versace. Silhueta elegante e marcada.',en:'Pencil skirt with Versace print. Elegant and defined silhouette.'},colors:['Preto','Dourado'],images:[]},
+    {brand:'Chanel',name:{pt:'Casaco Tweed',en:'Tweed Jacket'},price:'A consultar',sub:'tops',sizes:['34','36','38','40'],desc:{pt:'O icónico casaco tweed Chanel. Artesanato de excelência, elegância intemporal.',en:'The iconic Chanel tweed jacket. Exceptional craftsmanship, timeless elegance.'},colors:['Creme/Dourado','Preto/Branco'],images:[]},
+    {brand:'Prada',name:{pt:'Hoodie Nylon',en:'Nylon Hoodie'},price:'A consultar',sub:'tops',sizes:['XS','S','M','L'],desc:{pt:'Hoodie em nylon técnico premium com logo Prada. Design contemporâneo.',en:'Premium technical nylon hoodie with Prada logo. Contemporary design.'},colors:['Preto','Re-Nylon'],images:[]},
+    {brand:'Adidas',name:{pt:'Leggings 7/8',en:'7/8 Leggings'},price:'A consultar',sub:'vestidos',sizes:['XS','S','M','L','XL'],desc:{pt:'Leggings de alta performance em Techfit. Suporte e conforto para treinos intensos.',en:'High-performance leggings in Techfit. Support and comfort for intense workouts.'},colors:['Preto','Cinza','Azul Marinho'],images:[]},
+    {brand:'Louis Vuitton',name:{pt:'Calças Monogram',en:'Monogram Trousers'},price:'A consultar',sub:'vestidos',sizes:['34','36','38','40'],desc:{pt:'Calças de corte flare com o icónico padrão monogram LV. Luxo contemporâneo.',en:'Flare cut trousers with the iconic LV monogram pattern. Contemporary luxury.'},colors:['Bege/Castanho'],images:[]},
+    {brand:'Nike',name:{pt:'Fato de Treino',en:'Tracksuit'},price:'A consultar',sub:'tops',sizes:['XS','S','M','L','XL'],desc:{pt:'Fato de treino em Tech Fleece. Design elegante que transita do ginásio para a rua.',en:'Tech Fleece tracksuit. Elegant design that transitions from gym to street.'},colors:['Preto','Rosa','Roxo'],images:[]},
+  ],
+  crianca: [
+    {brand:'Nike',name:{pt:'Body Bebé',en:'Baby Bodysuit'},price:'A consultar',sub:'tops',sizes:['0-3m','3-6m','6-12m','12-18m'],desc:{pt:'Body de algodão macio com fecho snap. Confortável e fácil de vestir.',en:'Soft cotton bodysuit with snap closure. Comfortable and easy to put on.'},colors:['Branco','Cinza','Rosa'],images:[]},
+    {brand:'Zara',name:{pt:'T-Shirt Criança',en:'Kids T-Shirt'},price:'A consultar',sub:'tops',sizes:['2A','4A','6A','8A','10A','12A'],desc:{pt:'T-shirt de algodão 100% para criança. Estampado divertido e lavável.',en:'100% cotton t-shirt for kids. Fun and washable print.'},colors:['Branco','Azul','Vermelho'],images:[]},
+    {brand:'H&M',name:{pt:'Pijama Conjunto',en:'Pyjama Set'},price:'A consultar',sub:'tops',sizes:['2A','4A','6A','8A'],desc:{pt:'Conjunto de pijama em algodão suave. Estampado com motivos divertidos.',en:'Soft cotton pyjama set. Printed with fun motifs.'},colors:['Azul Estrelas','Rosa Unicórnio'],images:[]},
+    {brand:'Adidas',name:{pt:'Casaco Criança',en:'Kids Jacket'},price:'A consultar',sub:'tops',sizes:['4A','6A','8A','10A','12A'],desc:{pt:'Casaco desportivo em fleece leve. Perfeito para dias mais frescos.',en:'Sports fleece jacket. Perfect for cooler days.'},colors:['Preto','Azul','Verde'],images:[]},
+    {brand:'Gap',name:{pt:'Calças Ganga',en:'Denim Jeans'},price:'A consultar',sub:'bottoms',sizes:['2A','4A','6A','8A','10A'],desc:{pt:'Calças de ganga slim para criança. Denim resistente e confortável.',en:'Slim denim jeans for kids. Resistant and comfortable denim.'},colors:['Azul Médio','Preto'],images:[]},
+    {brand:'Primark',name:{pt:'Calções Praia',en:'Beach Shorts'},price:'A consultar',sub:'bottoms',sizes:['4A','6A','8A','10A','12A'],desc:{pt:'Calções de praia em microfibra de secagem rápida. Estampados coloridos.',en:'Quick-dry microfiber beach shorts. Colorful prints.'},colors:['Azul Tropical','Laranja'],images:[]},
+    {brand:'Zara',name:{pt:'Vestido Menina',en:'Girls Dress'},price:'A consultar',sub:'bottoms',sizes:['2A','4A','6A','8A'],desc:{pt:'Vestido de algodão com laço na cintura. Elegante e confortável.',en:'Cotton dress with waist bow. Elegant and comfortable.'},colors:['Rosa','Branco','Azul Claro'],images:[]},
+    {brand:'Nike',name:{pt:'Calças de Fato',en:'Tracksuit Bottoms'},price:'A consultar',sub:'bottoms',sizes:['4A','6A','8A','10A','12A'],desc:{pt:'Calças de fato em fleece suave. Elástico na cintura para maior conforto.',en:'Soft fleece tracksuit bottoms. Elastic waist for added comfort.'},colors:['Preto','Cinza','Azul Marinho'],images:[]},
+    {brand:'H&M',name:{pt:'Roupa Interior Pack 5',en:'Underwear 5-Pack'},price:'A consultar',sub:'tops',sizes:['2-4A','4-6A','6-8A','8-10A'],desc:{pt:'Pack de 5 cuecas de algodão. Confortáveis e duráveis.',en:'5-pack cotton underwear. Comfortable and durable.'},colors:['Sortido'],images:[]},
+    {brand:'Adidas',name:{pt:'Macacão Bebé',en:'Baby Onesie'},price:'A consultar',sub:'tops',sizes:['0-3m','3-6m','6-9m','9-12m'],desc:{pt:'Macacão em algodão orgânico com estampado Adidas. Suave e hipoalergénico.',en:'Organic cotton onesie with Adidas print. Soft and hypoallergenic.'},colors:['Branco','Cinza Claro'],images:[]},
+    // ── Roupa Interior Menina ──
+    {brand:'Petit Bateau',name:{pt:'Pack 5 Cuecas Menina',en:'Girls Briefs 5-Pack'},price:'A consultar',sub:'interior-menina',sizes:['2A','4A','6A','8A','10A','12A'],desc:{pt:'Pack de 5 cuecas de algodão suave com elástico confortável. Estampados florais e unicórnios.',en:'5-pack soft cotton briefs with comfortable elastic. Floral and unicorn prints.'},colors:['Rosa','Lilás','Branco','Sortido'],images:[]},
+    {brand:'H&M Kids',name:{pt:'Conjunto Roupa Interior Menina',en:'Girls Underwear Set'},price:'A consultar',sub:'interior-menina',sizes:['2-4A','4-6A','6-8A','8-10A','10-12A'],desc:{pt:'Conjunto de cueca e camisola interior em algodão orgânico. Suave e respirável.',en:'Brief and undershirt set in organic cotton. Soft and breathable.'},colors:['Branco','Rosa Claro','Estampado'],images:[]},
+    {brand:'Zara Kids',name:{pt:'Cuecas Renda Menina Pack 3',en:'Girls Lace Briefs 3-Pack'},price:'A consultar',sub:'interior-menina',sizes:['4A','6A','8A','10A','12A'],desc:{pt:'Pack de 3 cuecas com detalhe em renda. Algodão premium, corte confortável.',en:'3-pack briefs with lace detail. Premium cotton, comfortable cut.'},colors:['Branco','Rosa','Preto'],images:[]},
+    {brand:'Calvin Klein Kids',name:{pt:'Cuecas Logo Menina Pack 3',en:'Girls Logo Briefs 3-Pack'},price:'A consultar',sub:'interior-menina',sizes:['6A','8A','10A','12A','14A'],desc:{pt:'Pack de 3 cuecas com elástico Calvin Klein. Algodão stretch de alta qualidade.',en:'3-pack briefs with Calvin Klein waistband. High-quality stretch cotton.'},colors:['Preto','Branco','Rosa'],images:[]},
+    {brand:'Nike Kids',name:{pt:'Conjunto Desportivo Interior Menina',en:'Girls Sports Underwear Set'},price:'A consultar',sub:'interior-menina',sizes:['6A','8A','10A','12A'],desc:{pt:'Conjunto de soutien desportivo e cueca em tecido técnico. Ideal para actividade física.',en:'Sports bra and brief set in technical fabric. Ideal for physical activity.'},colors:['Preto','Rosa','Azul'],images:[]},
+    // ── Roupa Interior Rapaz ──
+    {brand:'Petit Bateau',name:{pt:'Pack 5 Cuecas Rapaz',en:'Boys Briefs 5-Pack'},price:'A consultar',sub:'interior-rapaz',sizes:['2A','4A','6A','8A','10A','12A'],desc:{pt:'Pack de 5 cuecas de algodão suave. Estampados de dinossauros, carros e super-heróis.',en:'5-pack soft cotton briefs. Dinosaur, car and superhero prints.'},colors:['Azul','Cinza','Sortido'],images:[]},
+    {brand:'H&M Kids',name:{pt:'Pack 5 Boxers Rapaz',en:'Boys Boxers 5-Pack'},price:'A consultar',sub:'interior-rapaz',sizes:['2-4A','4-6A','6-8A','8-10A','10-12A'],desc:{pt:'Pack de 5 boxers em algodão Jersey. Elástico largo e confortável.',en:'5-pack Jersey cotton boxers. Wide and comfortable waistband.'},colors:['Azul','Cinza','Preto','Sortido'],images:[]},
+    {brand:'Calvin Klein Kids',name:{pt:'Boxers Logo Rapaz Pack 3',en:'Boys Logo Boxers 3-Pack'},price:'A consultar',sub:'interior-rapaz',sizes:['6A','8A','10A','12A','14A'],desc:{pt:'Pack de 3 boxers com elástico Calvin Klein bordado. Algodão stretch premium.',en:'3-pack boxers with embroidered Calvin Klein waistband. Premium stretch cotton.'},colors:['Preto','Branco','Cinza'],images:[]},
+    {brand:'Nike Kids',name:{pt:'Pack 3 Boxers Desportivos',en:'Boys Sports Boxers 3-Pack'},price:'A consultar',sub:'interior-rapaz',sizes:['6A','8A','10A','12A'],desc:{pt:'Pack de 3 boxers em tecido Dri-FIT. Mantém o conforto durante a prática desportiva.',en:'3-pack Dri-FIT fabric boxers. Keeps comfort during sports activity.'},colors:['Preto','Azul Marinho','Cinza'],images:[]},
+    {brand:'Adidas Kids',name:{pt:'Conjunto Interior Rapaz',en:'Boys Underwear Set'},price:'A consultar',sub:'interior-rapaz',sizes:['4A','6A','8A','10A','12A'],desc:{pt:'Conjunto de boxer e camisola interior com logo Adidas. Algodão orgânico certificado.',en:'Boxer and undershirt set with Adidas logo. Certified organic cotton.'},colors:['Branco','Azul','Preto'],images:[]},
+  ],
+  acessorios: [
+    {brand:'Gucci',name:{pt:'Cinto GG Pele',en:'GG Leather Belt'},price:'A consultar',sub:'outros',sizes:['80cm','85cm','90cm','95cm','100cm'],desc:{pt:'Cinto em pele italiana com fivela GG dourada. O acessório de luxo por excelência.',en:'Italian leather belt with gold GG buckle. The ultimate luxury accessory.'},colors:['Preto/Dourado','Castanho/Dourado'],images:[]},
+    {brand:'Louis Vuitton',name:{pt:'Boné Monogram',en:'Monogram Cap'},price:'A consultar',sub:'cabeca',sizes:['S/M','M/L','L/XL'],desc:{pt:'Boné em lona monogram LV com pala estruturada. Ícone do streetwear de luxo.',en:'LV monogram canvas cap with structured brim. Luxury streetwear icon.'},colors:['Bege/Castanho'],images:[]},
+    {brand:'Burberry',name:{pt:'Cachecol Xadrez',en:'Check Scarf'},price:'A consultar',sub:'outros',sizes:['Único'],desc:{pt:'O icónico cachecol xadrez Burberry em cashmere e lã. Artesanato britânico.',en:'The iconic Burberry check scarf in cashmere and wool. British craftsmanship.'},colors:['Bege/Vermelho','Preto/Xadrez'],images:[]},
+    {brand:'Armani',name:{pt:'Gravata Seda',en:'Silk Tie'},price:'A consultar',sub:'outros',sizes:['Único'],desc:{pt:'Gravata em seda pura italiana. Acabamento impecável, padrão elegante.',en:'Pure Italian silk tie. Impeccable finish, elegant pattern.'},colors:['Azul Marinho','Cinza','Bordô'],images:[]},
+    {brand:'Prada',name:{pt:'Chapéu de Aba',en:'Wide Brim Hat'},price:'A consultar',sub:'cabeca',sizes:['S','M','L'],desc:{pt:'Chapéu em lã com aba larga e logo Prada. Elegância com atitude.',en:'Wool hat with wide brim and Prada logo. Elegance with attitude.'},colors:['Preto','Camel'],images:[]},
+    {brand:'Versace',name:{pt:'Laço Medusa',en:'Medusa Bow Tie'},price:'A consultar',sub:'outros',sizes:['Único'],desc:{pt:'Laço em seda com o emblema Medusa de Versace bordado. Impacto garantido.',en:'Silk bow tie with embroidered Versace Medusa emblem. Guaranteed impact.'},colors:['Preto/Dourado'],images:[]},
+    {brand:'Balenciaga',name:{pt:'Boné Speed',en:'Speed Cap'},price:'A consultar',sub:'cabeca',sizes:['S/M','M/L'],desc:{pt:'Boné estruturado com logo Balenciaga bordado. Estética high fashion streetwear.',en:'Structured cap with embroidered Balenciaga logo. High fashion streetwear aesthetic.'},colors:['Preto','Branco'],images:[]},
+    {brand:'Hermès',name:{pt:'Luvas em Pele',en:'Leather Gloves'},price:'A consultar',sub:'outros',sizes:['6.5','7','7.5','8','8.5'],desc:{pt:'Luvas em pele de veado com forro em cashmere. Luxo e calor incomparáveis.',en:'Deerskin gloves with cashmere lining. Incomparable luxury and warmth.'},colors:['Preto','Castanho','Bordeaux'],images:[]},
+    {brand:'Dior',name:{pt:'Boné Oblique',en:'Oblique Cap'},price:'A consultar',sub:'cabeca',sizes:['S/M','M/L'],desc:{pt:'Boné em canvas Oblique com viseira curva. O streetwear de alta costura.',en:'Oblique canvas cap with curved visor. High couture streetwear.'},colors:['Bege/Preto'],images:[]},
+    {brand:'Chanel',name:{pt:'Cinto Corrente',en:'Chain Belt'},price:'A consultar',sub:'outros',sizes:['70cm','75cm','80cm','85cm'],desc:{pt:'Cinto de corrente dourada com fecho CC. Glamour atemporal Chanel.',en:'Gold chain belt with CC clasp. Timeless Chanel glamour.'},colors:['Dourado','Prateado'],images:[]},
+    // ── Joalharia & Relógios ──
+    {brand:'Rolex',name:{pt:'Relógio Oyster Perpetual',en:'Oyster Perpetual Watch'},price:'A consultar',sub:'joalharia',sizes:['36mm','41mm'],desc:{pt:'O relógio mais icónico do mundo. Caixa em Oystersteel, mostrador lacado, movimento automático.',en:'The world\'s most iconic watch. Oystersteel case, lacquered dial, automatic movement.'},colors:['Preto','Branco','Azul','Verde'],images:[]},
+    {brand:'Cartier',name:{pt:'Pulseira Love',en:'Love Bracelet'},price:'A consultar',sub:'joalharia',sizes:['15','16','17','18','19','20'],desc:{pt:'A icónica pulseira Love da Cartier em ouro amarelo 18k. Símbolo de amor eterno.',en:'The iconic Cartier Love bracelet in 18k yellow gold. Symbol of eternal love.'},colors:['Ouro Amarelo','Ouro Branco','Ouro Rosé'],images:[]},
+    {brand:'Tiffany & Co.',name:{pt:'Colar Return to Tiffany',en:'Return to Tiffany Necklace'},price:'A consultar',sub:'joalharia',sizes:['Único'],desc:{pt:'Colar em prata esterlina com charm oval gravado. Um clássico Tiffany atemporal.',en:'Sterling silver necklace with engraved oval charm. A timeless Tiffany classic.'},colors:['Prata','Prata/Dourado'],images:[]},
+    {brand:'Cartier',name:{pt:'Anel Trinity',en:'Trinity Ring'},price:'A consultar',sub:'joalharia',sizes:['48','50','52','54','56','58'],desc:{pt:'O anel Trinity da Cartier com três argolas em ouro amarelo, branco e rosé. Ícone desde 1924.',en:'The Cartier Trinity ring with three bands in yellow, white and rose gold. An icon since 1924.'},colors:['Tri-color Gold'],images:[]},
+    {brand:'Daniel Wellington',name:{pt:'Relógio Classic',en:'Classic Watch'},price:'A consultar',sub:'joalharia',sizes:['36mm','40mm'],desc:{pt:'Relógio minimalista com bracelete em couro italiano. Design escandinavo elegante.',en:'Minimalist watch with Italian leather strap. Elegant Scandinavian design.'},colors:['Preto/Ouro','Branco/Prata','Branco/Ouro'],images:[]},
+    {brand:'Tiffany & Co.',name:{pt:'Pulseira T Wire',en:'T Wire Bracelet'},price:'A consultar',sub:'joalharia',sizes:['Pequeno','Médio','Grande'],desc:{pt:'Pulseira T Wire em ouro amarelo 18k. Design contemporâneo e minimalista.',en:'T Wire bracelet in 18k yellow gold. Contemporary and minimalist design.'},colors:['Ouro Amarelo','Ouro Branco','Ouro Rosé'],images:[]},
+    {brand:'Swatch',name:{pt:'Relógio Originals',en:'Originals Watch'},price:'A consultar',sub:'joalharia',sizes:['34mm','41mm'],desc:{pt:'Relógio colorido e leve em plástico de alta qualidade. Ícone do design suíço.',en:'Colorful and light watch in high-quality plastic. Icon of Swiss design.'},colors:['Transparente','Preto','Branco','Colorido'],images:[]},
+    {brand:'Gucci',name:{pt:'Anel GG Running',en:'GG Running Ring'},price:'A consultar',sub:'joalharia',sizes:['6','7','8','9','10'],desc:{pt:'Anel em prata esterlina com motivo GG gravado. Elegância urbana com o toque Gucci.',en:'Sterling silver ring with engraved GG motif. Urban elegance with the Gucci touch.'},colors:['Prata','Ouro Amarelo'],images:[]},
+    {brand:'Versace',name:{pt:'Cordão Medusa',en:'Medusa Chain Necklace'},price:'A consultar',sub:'joalharia',sizes:['45cm','50cm','55cm'],desc:{pt:'Cordão em aço inoxidável dourado com pendente Medusa. Impacto e atitude Versace.',en:'Gold stainless steel chain with Medusa pendant. Versace impact and attitude.'},colors:['Dourado','Prateado'],images:[]},
+    {brand:'Armani',name:{pt:'Relógio Exchange Classic',en:'Exchange Classic Watch'},price:'A consultar',sub:'joalharia',sizes:['32mm','42mm'],desc:{pt:'Relógio elegante com bracelete em malha de aço. Mostrador com logo Armani. Resistente à água.',en:'Elegant watch with steel mesh bracelet. Dial with Armani logo. Water resistant.'},colors:['Preto/Dourado','Prateado','Dourado'],images:[]},
+  ]
+};
+
+// ── RENDER GRIDS ──
+function renderGrid(cat, sub) {
+  const grid = document.getElementById('grid-' + cat);
+  const items = sub === 'tudo' ? products[cat] : products[cat].filter(p => p.sub === sub);
+  grid.innerHTML = items.map((p,i) => `
+    <div class="product-card" onclick="openModal('${cat}',${products[cat].indexOf(p)})">
+      <div class="product-img-wrap">
+        <div class="product-placeholder">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1">
+            <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
+            <polyline points="21 15 16 10 5 21"/>
+          </svg>
+        </div>
+      </div>
+      <div class="product-info">
+        <div class="product-brand">${p.brand}</div>
+        <div class="product-name">${p.name[currentLang]}</div>
+        <div class="product-price">${p.price}</div>
+      </div>
+      <div class="product-overlay"><span data-pt="Ver Produto" data-en="View Product">${currentLang==='pt'?'Ver Produto':'View Product'}</span></div>
+    </div>`).join('');
+}
+
+function renderAllGrids() {
+  ['homem','mulher','crianca','acessorios'].forEach(cat => renderGrid(cat,'tudo'));
+}
+
+// ── CATEGORY TABS ──
+function showCategory(cat) {
+  document.querySelectorAll('.category-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('panel-' + cat).classList.add('active');
+  event.currentTarget.classList.add('active');
+}
+
+// ── SUBCATEGORY ──
+function showSub(cat, sub) {
+  document.querySelectorAll('#panel-' + cat + ' .sub-tab').forEach(t => t.classList.remove('active'));
+  event.currentTarget.classList.add('active');
+  renderGrid(cat, sub);
+}
+
+// ── MODAL ──
+let currentProduct = null;
+
+function openModal(cat, idx) {
+  const p = products[cat][idx];
+  currentProduct = p;
+  currentImages = p.images.length > 0 ? p.images : ['placeholder'];
+  carouselIndex = 0;
+  currentProductName = p.name[currentLang];
+
+  document.getElementById('modalBrand').textContent = p.brand;
+  document.getElementById('modalName').textContent = p.name[currentLang];
+  document.getElementById('modalPrice').textContent = p.price;
+  document.getElementById('modalDesc').textContent = p.desc[currentLang];
+
+  const avail = document.getElementById('modalAvail');
+  avail.textContent = currentLang === 'pt' ? 'Disponível na loja física' : 'Available in store';
+
+  // Sizes
+  const sizesEl = document.getElementById('modalSizes');
+  sizesEl.innerHTML = p.sizes.map(s => `<button class="size-btn" onclick="selectSize(this)">${s}</button>`).join('');
+
+  // Carousel
+  buildCarousel();
+
+  // WhatsApp link
+  const msg = encodeURIComponent(`Olá! Tenho interesse no produto: ${p.brand} – ${p.name.pt}. Podiam dar mais informações?`);
+  document.getElementById('modalWA').href = `https://wa.me/${WHATSAPP}?text=${msg}`;
+
+  document.getElementById('modalOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function buildCarousel() {
+  const track = document.getElementById('carouselTrack');
+  const dots = document.getElementById('carouselDots');
+
+  track.innerHTML = currentImages.map((img,i) => img === 'placeholder' ? `
+    <div class="carousel-slide">
+      <div class="carousel-placeholder">
+        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width=".8">
+          <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
+          <polyline points="21 15 16 10 5 21"/>
+        </svg>
+        <p>${currentProductName}</p>
+      </div>
+    </div>` : `
+    <div class="carousel-slide"><img src="${img}" alt="${currentProductName}"></div>`
+  ).join('');
+
+  dots.innerHTML = currentImages.map((_,i) =>
+    `<div class="carousel-dot${i===0?' active':''}" onclick="goToSlide(${i})"></div>`
+  ).join('');
+
+  updateCarousel();
+}
+
+function updateCarousel() {
+  document.getElementById('carouselTrack').style.transform = `translateX(-${carouselIndex * 100}%)`;
+  document.querySelectorAll('.carousel-dot').forEach((d,i) => d.classList.toggle('active', i === carouselIndex));
+}
+
+function carousel(dir) {
+  carouselIndex = (carouselIndex + dir + currentImages.length) % currentImages.length;
+  updateCarousel();
+}
+
+function goToSlide(i) { carouselIndex = i; updateCarousel(); }
+
+function selectSize(btn) {
+  document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function closeModalOutside(e) {
+  if (e.target === document.getElementById('modalOverlay')) closeModal();
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+// ── LANGUAGE ──
+function setLang(lang) {
+  currentLang = lang;
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.textContent === lang.toUpperCase()));
+  document.querySelectorAll('[data-pt]').forEach(el => {
+    const val = el.getAttribute('data-' + lang);
+    if (!val) return;
+    if (el.tagName === 'INPUT') el.placeholder = val;
+    else if (el.tagName === 'TEXTAREA') {
+      const ph = el.getAttribute('data-' + lang + '-placeholder');
+      if (ph) el.placeholder = ph;
+    } else el.innerHTML = val;
+  });
+  // Actualiza label do tema
+  const isLight = document.documentElement.classList.contains('light');
+  const lbl = document.getElementById('themeLbl');
+  if (lbl) lbl.textContent = isLight
+    ? (lang === 'pt' ? 'Escuro' : 'Dark')
+    : (lang === 'pt' ? 'Claro' : 'Light');
+  renderAllGrids();
+  setTimeout(observeCards, 80);
+  showToast(lang === 'pt' ? 'Idioma: Português' : 'Language: English');
+}
+
+// ── THEME TOGGLE ──
+function toggleTheme() {
+  const isLight = document.documentElement.classList.toggle('light');
+  const lbl = document.getElementById('themeLbl');
+  const icon = document.querySelector('.theme-icon');
+  if (isLight) {
+    lbl.textContent = currentLang === 'pt' ? 'Escuro' : 'Dark';
+    icon.textContent = '☀';
+    showToast(currentLang === 'pt' ? 'Tema Claro activado' : 'Light theme on');
+  } else {
+    lbl.textContent = currentLang === 'pt' ? 'Claro' : 'Light';
+    icon.textContent = '☀';
+    showToast(currentLang === 'pt' ? 'Tema Escuro activado' : 'Dark theme on');
+  }
+  localStorage.setItem('ease-drip-theme', isLight ? 'light' : 'dark');
+}
+
+// Restaurar tema guardado
+(function() {
+  const saved = localStorage.getItem('ease-drip-theme');
+  if (saved === 'light') {
+    document.documentElement.classList.add('light');
+    setTimeout(() => {
+      const lbl = document.getElementById('themeLbl');
+      if (lbl) lbl.textContent = 'Escuro';
+    }, 0);
+  }
+})();
+
+// ── NAV MOBILE ──
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+// ── WHATSAPP CONTACT FORM ──
+function sendWhatsApp() {
+  const name = document.querySelector('#contact input[type=text]').value || 'Cliente';
+  const phone = document.querySelector('#contact input[type=tel]').value || '';
+  const msg = document.querySelector('#contact textarea').value || '';
+  const text = encodeURIComponent(`Olá! Sou ${name}${phone ? ' ('+phone+')' : ''}.\n\n${msg}`);
+  window.open(`https://wa.me/${WHATSAPP}?text=${text}`, '_blank');
+}
+
+// ── BRANDS STRIP ──
+const brands = [
+  { name: "Nike", logo: "images/brands/nike.png" },
+  { name: "Adidas", logo: "images/brands/adidas.png" },
+  { name: "Gucci", logo: "images/brands/gucci.png" },
+  { name: "Louis Vuitton", logo: "images/brands/louis-vuitton.png" },
+  { name: "Prada", logo: "images/brands/prada.png" },
+  { name: "Zara", logo: "images/brands/zara.png" },
+  { name: "Levi's", logo: "images/brands/levis.png" },
+  { name: "Chanel", logo: "images/brands/chanel.png" },
+  { name: "Dior", logo: "images/brands/dior.png" },
+  { name: "Versace", logo: "images/brands/versace.png" },
+  { name: "Balenciaga", logo: "images/brands/balenciaga.png" },
+  { name: "Armani", logo: "images/brands/armani.png" },
+  { name: "Burberry", logo: "images/brands/burberry.png" },
+  { name: "Puma", logo: "images/brands/puma.png" },
+  { name: "Calvin Klein", logo: "images/brands/calvin-klein.png" },
+  { name: "Hermès", logo: "images/brands/hermes.png" },
+  { name: "Mango", logo: "images/brands/mango.png" },
+  { name: "H&M", logo: "images/brands/h-and-m.png" },
+  { name: "Diesel", logo: "images/brands/diesel.png" },
+  { name: "Vans", logo: "images/brands/vans.png" }
+];
+function buildBrands() {
+  const track = document.getElementById('brandsTrack');
+  const doubled = [...brands, ...brands];
+  track.innerHTML = doubled.map(brand => `
+    <img class="brand-logo" src="${brand.logo}" alt="${brand.name}" title="${brand.name}">
+  `).join('');
+}
+
+// ── TOAST ──
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2500);
+}
+
+// ── SCROLL ANIMATION FOR CARDS ──
+function observeCards() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 60);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.product-card').forEach(card => observer.observe(card));
+}
+
+// ── INIT ──
+buildBrands();
+renderAllGrids();
+setTimeout(observeCards, 100);
+
+// Nav active on scroll
+window.addEventListener('scroll', () => {
+  const sections = ['home','featured','shop','contact'];
+  const scrollY = window.scrollY + 120;
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && scrollY >= el.offsetTop && scrollY < el.offsetTop + el.offsetHeight) {
+      document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+      const link = document.querySelector(`.nav-links a[href="#${id}"]`) || document.querySelector(`.nav-links a[href="#shop"]`);
+      if (link) link.classList.add('active');
+    }
+  });
+});
+
+// Re-observe after sub-tab change
+const _origRenderGrid = renderGrid;
+window.renderGrid = function(cat, sub) {
+  _origRenderGrid(cat, sub);
+  setTimeout(observeCards, 80);
+};
+</script>
+</body>
+</html>
