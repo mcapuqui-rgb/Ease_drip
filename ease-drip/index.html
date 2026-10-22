@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ease Drip — Boutique</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<meta name="description" content="Ease Drip — boutique de moda online. Peças selecionadas de marcas premium para homem, mulher e criança.">
+<meta name="theme-color" content="#0a0a0a">
+<meta property="og:title" content="Ease Drip — Boutique">
+<meta property="og:description" content="Boutique de moda online — peças selecionadas de marcas premium.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- PROMO BANNER -->
+
+<!-- NAV -->
+<nav>
+  <a href="#home" class="nav-logo">Ease <span>Drip</span></a>
+  <ul class="nav-links">
+    <li><a href="#home" class="active" data-pt="Início" data-en="Home">Início</a></li>
+    <li><a href="#shop" data-pt="Loja" data-en="Shop">Loja</a></li>
+    <li><a href="#contact" data-pt="Contacto" data-en="Contact">Contacto</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="setLang('pt')">PT</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+    </div>
+    <button class="theme-btn" onclick="toggleTheme()" id="themeBtn" title="Alternar tema">
+      <span class="theme-icon">☀</span>
+      <span id="themeLbl">Claro</span>
+    </button>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home" onclick="toggleMenu()" data-pt="Início" data-en="Home">Início</a>
+  <a href="#shop" onclick="toggleMenu()" data-pt="Loja" data-en="Shop">Loja</a>
+  <a href="#contact" onclick="toggleMenu()" data-pt="Contacto" data-en="Contact">Contacto</a>
+</div>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <span class="hero-tag" data-pt="Boutique de Moda — Lubango, Angola" data-en="Fashion Boutique — Lubango, Angola">Boutique de Moda — Lubango, Angola</span>
+    <h1 class="hero-title">Ease <em>Drip</em></h1>
+    <p class="hero-sub" data-pt="Estilo que define. Qualidade que permanece." data-en="Style that defines. Quality that lasts.">Estilo que define. Qualidade que permanece.</p>
+    <a href="#shop" class="hero-cta" data-pt="Ver Coleção" data-en="View Collection">Ver Coleção</a>
+  </div>
+  <div class="hero-line"></div>
+</section>
+
+<!-- BRANDS STRIP -->
+
+<!-- FEATURED -->
+<section id="featured">
+  <div class="section-header">
+    <span class="section-tag" data-pt="Porquê a Ease Drip" data-en="Why Ease Drip">Porquê a Ease Drip</span>
+    <h2 class="section-title" data-pt="O Nosso <em>Compromisso</em>" data-en="Our <em>Commitment</em>">O Nosso <em>Compromisso</em></h2>
+    <div class="divider"></div>
+  </div>
+  <div class="featured-grid">
+    <div class="featured-card">
+      <div class="featured-icon">✦</div>
+      <div class="featured-title" data-pt="Marcas Premium" data-en="Premium Brands">Marcas Premium</div>
+      <div class="featured-desc" data-pt="Curadoria exclusiva das melhores marcas mundiais — de Nike e Adidas a Gucci e Louis Vuitton. Autenticidade garantida em cada peça." data-en="Exclusive curation of the world's best brands — from Nike and Adidas to Gucci and Louis Vuitton. Authenticity guaranteed in every piece.">Curadoria exclusiva das melhores marcas mundiais — de Nike e Adidas a Gucci e Louis Vuitton. Autenticidade garantida em cada peça.</div>
+      <a href="#shop" class="featured-link" data-pt="Explorar loja →" data-en="Explore shop →">Explorar loja →</a>
+    </div>
+    <div class="featured-card">
+      <div class="featured-icon">◈</div>
+      <div class="featured-title" data-pt="Atendimento Personalizado" data-en="Personal Service">Atendimento Personalizado</div>
+      <div class="featured-desc" data-pt="A nossa equipa está disponível para ajudar a encontrar o look perfeito. Atendimento presencial em Lubango e via WhatsApp." data-en="Our team is available to help find the perfect look. In-person service in Lubango and via WhatsApp.">A nossa equipa está disponível para ajudar a encontrar o look perfeito. Atendimento presencial em Lubango e via WhatsApp.</div>
+      <a href="#contact" class="featured-link" data-pt="Falar connosco →" data-en="Talk to us →">Falar connosco →</a>
+    </div>
+      <div class="featured-card">
+      <div class="featured-icon">◇</div>
+      <div class="featured-title" data-pt="Para Toda a Família" data-en="For the Whole Family">Para Toda a Família</div>
+      <div class="featured-desc" data-pt="Moda para homem, mulher e criança. Uma só paragem para equipar toda a família com estilo e qualidade premium." data-en="Fashion for men, women and children. One stop to dress the whole family with premium style and quality.">Moda para homem, mulher e criança. Uma só paragem para equipar toda a família com estilo e qualidade premium.</div>
+      <a href="#shop" class="featured-link" data-pt="Ver coleções →" data-en="View collections →">Ver coleções →</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-strip">
+  <div class="stat-item">
+    <div class="stat-number" id="statProducts">40</div>
+    <div class="stat-label" data-pt="Produtos em loja" data-en="Products in store">Produtos em loja</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">20+</div>
+    <div class="stat-label" data-pt="Marcas premium" data-en="Premium brands">Marcas premium</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">3</div>
+    <div class="stat-label" data-pt="Categorias" data-en="Categories">Categorias</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">100%</div>
+    <div class="stat-label" data-pt="Produtos autênticos" data-en="Authentic products">Produtos autênticos</div>
+  </div>
+</div>
+
+<div class="brands-strip">
+  <div class="brands" id="brandsTrack"></div>
+</div>
+<!-- SHOP -->
+<section id="shop">
+  <div class="section-header">
+    <span class="section-tag" data-pt="Coleção" data-en="Collection">Coleção</span>
+    <h2 class="section-title" data-pt="A Nossa <em>Loja</em>" data-en="Our <em>Shop</em>">A Nossa <em>Loja</em></h2>
+    <div class="divider"></div>
+    <div class="shop-search-wrap">
+      <input class="shop-search" id="shopSearch" type="text"
+        data-pt-placeholder="Pesquisar produto ou marca..."
+        data-en-placeholder="Search product or brand..."
+        placeholder="Pesquisar produto ou marca..."
+        oninput="handleSearch(this.value)"
+        autocomplete="off">
+      <button type="button" class="shop-search-clear" id="searchClear" onclick="clearSearch()" aria-label="Clear search">✕</button>
+      <button type="button" class="shop-search-icon" onclick="handleSearch(document.getElementById('shopSearch').value)" aria-label="Search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+      </button>
+    </div>
+    <div class="search-results-label" id="searchLabel" style="display:none"></div>
+  </div>
+
+  <!-- COLEÇÕES (Novidades, Mais vendidos, Promoções) -->
+  <div class="collection-bar" id="collectionBar"></div>
+
+  <!-- CATEGORIAS: Mulher / Homem / Moda Infantil → grupo → subcategoria -->
+  <div class="category-tabs" id="categoryTabs"></div>
+  <div class="subcategory-tabs" id="groupTabs"></div>
+  <div class="subcategory-tabs sub-level2" id="subTabs"></div>
+
+  <!-- FILTROS: Tamanho, Cor, Preço, Material, Marca, Ocasião -->
+  <div class="filter-bar" id="filterBar"></div>
+  <div class="filter-panel" id="filterPanel"></div>
+
+  <!-- PRODUTOS -->
+  <div class="products-grid" id="productsGrid"></div>
+  <div class="shop-empty" id="shopEmpty" style="display:none"></div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-header">
+    <span class="section-tag" data-pt="Visite-nos" data-en="Visit Us">Visite-nos</span>
+    <h2 class="section-title" data-pt="<em>Contacto</em>" data-en="<em>Contact</em>"><em>Contacto</em></h2>
+    <div class="divider"></div>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h3 data-pt="A Nossa Loja" data-en="Our Store">A Nossa Loja</h3>
+      <div class="contact-item">
+        <div class="contact-icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        </div>
+        <div class="contact-item-content">
+          <div class="contact-item-label" data-pt="Morada" data-en="Address">Morada</div>
+          <div class="contact-item-value">Rua Principal, Lubango<br>Angola</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        </div>
+        <div class="contact-item-content">
+          <div class="contact-item-label" data-pt="Telefone / WhatsApp" data-en="Phone / WhatsApp">Telefone / WhatsApp</div>
+          <div class="contact-item-value">+244 947 481 524</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div class="contact-item-content">
+          <div class="contact-item-label" data-pt="Horário" data-en="Hours">Horário</div>
+          <div class="hours-grid">
+            <span class="day" data-pt="Seg – Sex" data-en="Mon – Fri">Seg – Sex</span><span>09:00 – 20:00</span>
+            <span class="day" data-pt="Sábado" data-en="Saturday">Sábado</span><span>10:00 – 18:00</span>
+            <span class="day" data-pt="Domingo" data-en="Sunday">Domingo</span><span data-pt="Fechado" data-en="Closed">Fechado</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form">
+      <h3 data-pt="Envie uma Mensagem" data-en="Send a Message">Envie uma Mensagem</h3>
+      <div class="form-group">
+        <label data-pt="Nome" data-en="Name">Nome</label>
+        <input type="text" placeholder="João Silva">
+      </div>
+      <div class="form-group">
+        <label data-pt="Telefone" data-en="Phone">Telefone</label>
+        <input type="tel" placeholder="+244 900 000 000">
+      </div>
+      <div class="form-group">
+        <label data-pt="Mensagem" data-en="Message">Mensagem</label>
+        <textarea data-pt-placeholder="Tenho interesse num produto..." data-en-placeholder="I'm interested in a product..." placeholder="Tenho interesse num produto..."></textarea>
+      </div>
+      <button class="form-submit" onclick="sendWhatsApp()" data-pt="Enviar via WhatsApp" data-en="Send via WhatsApp">Enviar via WhatsApp</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Ease Drip</div>
+  <div class="footer-tagline" data-pt="Boutique de Moda — Lubango, Angola" data-en="Fashion Boutique — Lubango, Angola">Boutique de Moda — Lubango, Angola</div>
+  <div class="footer-copy">© 2025 Ease Drip. <span data-pt="Todos os direitos reservados." data-en="All rights reserved.">Todos os direitos reservados.</span></div>
+</footer>
+
+<!-- PRODUCT MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
+  <div class="modal" id="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-gallery">
+      <div class="carousel-track" id="carouselTrack"></div>
+      <button class="carousel-btn carousel-prev" onclick="carousel(-1)">&#8592;</button>
+      <button class="carousel-btn carousel-next" onclick="carousel(1)">&#8594;</button>
+      <div class="carousel-dots" id="carouselDots"></div>
+    </div>
+    <div class="modal-info">
+      <div class="modal-brand" id="modalBrand"></div>
+      <h2 class="modal-name" id="modalName"></h2>
+      <div class="modal-price" id="modalPrice"></div>
+      <div class="modal-divider"></div>
+      <p class="modal-desc" id="modalDesc"></p>
+      <div class="modal-meta" id="modalMeta"></div>
+      <div class="modal-sizes-label" data-pt="Tamanhos disponíveis" data-en="Available sizes">Tamanhos disponíveis</div>
+      <div class="modal-sizes" id="modalSizes"></div>
+      <div class="modal-avail" id="modalAvail"></div>
+      <a class="modal-wa" id="modalWA" href="#" target="_blank">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span data-pt="Contactar via WhatsApp" data-en="Contact via WhatsApp">Contactar via WhatsApp</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/data-categories.js"></script>
+<script src="assets/js/data-products.js"></script>
+<script src="assets/js/render.js"></script>
+<script src="assets/js/language.js"></script>
+<script src="assets/js/theme.js"></script>
+<script src="assets/js/nav.js"></script>
+<script src="assets/js/contact.js"></script>
+<script src="assets/js/brands-render.js"></script>
+<script src="assets/js/ui-feedback.js"></script>
+<script src="assets/js/init.js"></script>
+<script src="assets/js/brands-carousel.js"></script>
+<script src="assets/js/search.js"></script>
+<script src="assets/js/hero-slider.js"></script>
+</body>
+</html>

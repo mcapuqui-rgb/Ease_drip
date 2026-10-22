@@ -1,0 +1,9 @@
+{
+  "name": "ease-drip",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Ease Drip — boutique online (site estático, sem build).",
+  "scripts": {
+    "start": "npx --yes serve . -l 8000"
+  }
+}
