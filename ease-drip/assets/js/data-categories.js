@@ -40,6 +40,9 @@ const taxonomy = [
       {id:'chinelos', label:{pt:'Chinelos', en:'Flip-flops'}} ]},
     { id:'acessorios', label:{pt:'Acessórios', en:'Accessories'}, subs:[
       {id:'relogios', label:{pt:'Relógios', en:'Watches'}},
+      {id:'gravatas', label:{pt:'Gravatas e laços', en:'Ties & bow ties'}},
+      {id:'luvas',    label:{pt:'Luvas',            en:'Gloves'}},
+      {id:'chapeus',  label:{pt:'Chapéus',          en:'Hats'}},
       {id:'cintos',   label:{pt:'Cintos',   en:'Belts'}},
       {id:'malas',    label:{pt:'Malas',    en:'Bags'}},
       {id:'oculos',   label:{pt:'Óculos',   en:'Sunglasses'}},
@@ -51,13 +54,15 @@ const taxonomy = [
       {id:'tops-blusas', label:{pt:'Tops e blusas', en:'Tops & blouses'}},
       {id:'calcas',      label:{pt:'Calças',        en:'Trousers'}},
       {id:'saias',       label:{pt:'Saias',         en:'Skirts'}},
-      {id:'conjuntos',   label:{pt:'Conjuntos',     en:'Sets'}} ]},
+      {id:'conjuntos',   label:{pt:'Conjuntos',     en:'Sets'}},
+      {id:'roupa-interior', label:{pt:'Roupa interior', en:'Underwear'}} ]},
     { id:'menino', label:{pt:'Menino', en:'Boys'}, subs:[
       {id:'t-shirts',  label:{pt:'T-shirts',  en:'T-shirts'}},
       {id:'camisas',   label:{pt:'Camisas',   en:'Shirts'}},
       {id:'calcas',    label:{pt:'Calças',    en:'Trousers'}},
       {id:'calcoes',   label:{pt:'Calções',   en:'Shorts'}},
-      {id:'conjuntos', label:{pt:'Conjuntos', en:'Sets'}} ]},
+      {id:'conjuntos', label:{pt:'Conjuntos', en:'Sets'}},
+      {id:'roupa-interior', label:{pt:'Roupa interior', en:'Underwear'}} ]},
     { id:'calcado-infantil', label:{pt:'Calçado infantil', en:'Kids footwear'}, subs:[
       {id:'tenis',     label:{pt:'Ténis',     en:'Sneakers'}},
       {id:'sandalias', label:{pt:'Sandálias', en:'Sandals'}},

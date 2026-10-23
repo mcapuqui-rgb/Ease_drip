@@ -723,6 +723,26 @@ const products = [
       'assets/images/products/lacoste-polo-classic-fit-3.webp'
     ]
   },
+  {
+    cat: 'homem', group: 'vestuario', sub: 't-shirts',
+    brand: 'Nike',
+    name:  { pt: 'Nike Sportswear NSW', en: 'Nike Sportswear NSW' },
+    desc:  { pt: 'T-shirt Nike Sportswear NSW.',
+             en: 'Nike Sportswear NSW T-shirt.' },
+    price: 'A consultar', priceValue: null,
+    sizes: [], colors: [], materials: [], occasions: ['casual'], collections: [],
+    images: ['assets/images/products/Nike-Jersy.webp']
+  },
+  {
+    cat: 'homem', group: 'vestuario', sub: 't-shirts',
+    brand: 'Nike',
+    name:  { pt: 'Nike Dri-FIT Elite Stripe', en: 'Nike Dri-FIT Elite Stripe' },
+    desc:  { pt: 'T-shirt Nike Dri-FIT Elite Stripe.',
+             en: 'Nike Dri-FIT Elite Stripe T-shirt.' },
+    price: 'A consultar', priceValue: null,
+    sizes: [], colors: [], materials: ['tecnico'], occasions: ['desporto'], collections: [],
+    images: ['assets/images/products/Nike-custom-jesrsy.webp']
+  },
 
   // camisas
   {
@@ -914,6 +934,72 @@ const products = [
     ]
   },
 
+  // gravatas e laços
+  {
+    cat: 'homem', group: 'acessorios', sub: 'gravatas',
+    brand: 'Armani',
+    name:  { pt: 'Gravata Seda', en: 'Silk Tie' },
+    desc:  { pt: 'Gravata em seda pura italiana. Acabamento impecável, padrão elegante.',
+             en: 'Pure Italian silk tie. Impeccable finish, elegant pattern.' },
+    price: '18.000 Kz', priceValue: 18000,
+    sizes:  ['Único'],
+    colors: ['Azul Marinho', 'Cinza', 'Bordô'],
+    materials: ['seda'], occasions: ['formal', 'cerimonia'], collections: [],
+    images: [
+      'assets/images/products/armani-gravata-seda-1.webp',
+      'assets/images/products/armani-gravata-seda-2.webp'
+    ]
+  },
+  {
+    cat: 'homem', group: 'acessorios', sub: 'gravatas',
+    brand: 'Versace',
+    name:  { pt: 'Laço Medusa', en: 'Medusa Bow Tie' },
+    desc:  { pt: 'Laço em seda com o emblema Medusa de Versace bordado. Impacto garantido.',
+             en: 'Silk bow tie with embroidered Versace Medusa emblem. Guaranteed impact.' },
+    price: '35.000 Kz', priceValue: 35000,
+    sizes:  ['Único'],
+    colors: ['Preto/Dourado'],
+    materials: ['seda'], occasions: ['formal', 'cerimonia'], collections: [],
+    images: [
+      'assets/images/products/versace-laco-medusa-1.webp',
+      'assets/images/products/versace-laco-medusa-2.webp'
+    ]
+  },
+
+  // luvas
+  {
+    cat: 'homem', group: 'acessorios', sub: 'luvas',
+    brand: 'Hermès',
+    name:  { pt: 'Luvas em Pele', en: 'Leather Gloves' },
+    desc:  { pt: 'Luvas em pele de veado com forro em cashmere. Luxo e calor incomparáveis.',
+             en: 'Deerskin gloves with cashmere lining. Incomparable luxury and warmth.' },
+    price: '30.000 Kz', priceValue: 30000,
+    sizes:  ['6.5', '7', '7.5', '8', '8.5'],
+    colors: ['Preto', 'Castanho', 'Bordeaux'],
+    materials: ['pele', 'cashmere'], occasions: ['formal', 'casual'], collections: [],
+    images: [
+      'assets/images/products/hermes-luvas-em-pele-1.webp',
+      'assets/images/products/hermes-luvas-em-pele-2.webp'
+    ]
+  },
+
+  // chapéus
+  {
+    cat: 'homem', group: 'acessorios', sub: 'chapeus',
+    brand: 'Prada',
+    name:  { pt: 'Chapéu de Aba', en: 'Wide Brim Hat' },
+    desc:  { pt: 'Chapéu em lã com aba larga e logo Prada. Elegância com atitude.',
+             en: 'Wool hat with a wide brim and Prada logo. Elegance with attitude.' },
+    price: '25.000 Kz', priceValue: 25000,
+    sizes:  ['S', 'M', 'L'],
+    colors: ['Preto', 'Camel'],
+    materials: ['la'], occasions: ['casual'], collections: [],
+    images: [
+      'assets/images/products/prada-chapeu-de-aba-1.webp',
+      'assets/images/products/prada-chapeu-de-aba-2.webp'
+    ]
+  },
+
   // cintos  (vazio — acrescentar produtos aqui)
 
   // malas  (vazio — acrescentar produtos aqui)
@@ -992,6 +1078,83 @@ const products = [
 
   // conjuntos  (vazio — acrescentar produtos aqui)
 
+  // roupa-interior
+  {
+    cat: 'infantil', group: 'menina', sub: 'roupa-interior',
+    brand: 'Petit Bateau',
+    name:  { pt: 'Pack 5 Cuecas Menina', en: 'Girls Briefs 5-Pack' },
+    desc:  { pt: 'Pack de 5 cuecas de algodão suave com elástico confortável. Estampados florais e unicórnios.',
+             en: '5-pack soft cotton briefs with comfortable elastic. Floral and unicorn prints.' },
+    price: '10.000 Kz', priceValue: 10000,
+    sizes:  ['2A', '4A', '6A', '8A', '10A', '12A'],
+    colors: ['Rosa', 'Lilás', 'Branco', 'Sortido'],
+    materials: ['algodao'], occasions: ['casual'], collections: [],
+    images: [
+      'assets/images/products/petit-bateau-pack-5-cuecas-menina-1.webp',
+      'assets/images/products/petit-bateau-pack-5-cuecas-menina-2.webp'
+    ]
+  },
+  {
+    cat: 'infantil', group: 'menina', sub: 'roupa-interior',
+    brand: 'H&M Kids',
+    name:  { pt: 'Conjunto Roupa Interior Menina', en: 'Girls Underwear Set' },
+    desc:  { pt: 'Conjunto de cueca e camisola interior em algodão orgânico. Suave e respirável.',
+             en: 'Brief and undershirt set in organic cotton. Soft and breathable.' },
+    price: '12.000 Kz', priceValue: 12000,
+    sizes:  ['2-4A', '4-6A', '6-8A', '8-10A', '10-12A'],
+    colors: ['Branco', 'Rosa Claro', 'Estampado'],
+    materials: ['algodao'], occasions: ['casual'], collections: [],
+    images: [
+      'assets/images/products/handm-kids-conjunto-roupa-interior-menina-1.webp',
+      'assets/images/products/handm-kids-conjunto-roupa-interior-menina-2.webp'
+    ]
+  },
+  {
+    cat: 'infantil', group: 'menina', sub: 'roupa-interior',
+    brand: 'Zara Kids',
+    name:  { pt: 'Cuecas Renda Menina Pack 3', en: 'Girls Lace Briefs 3-Pack' },
+    desc:  { pt: 'Pack de 3 cuecas com detalhe em renda. Algodão premium, corte confortável.',
+             en: '3-pack briefs with lace detail. Premium cotton, comfortable cut.' },
+    price: '9.000 Kz', priceValue: 9000,
+    sizes:  ['4A', '6A', '8A', '10A', '12A'],
+    colors: ['Branco', 'Rosa', 'Preto'],
+    materials: ['algodao'], occasions: ['casual'], collections: [],
+    images: [
+      'assets/images/products/zara-kids-cuecas-renda-menina-pack-3-1.webp',
+      'assets/images/products/zara-kids-cuecas-renda-menina-pack-3-2.webp'
+    ]
+  },
+  {
+    cat: 'infantil', group: 'menina', sub: 'roupa-interior',
+    brand: 'Calvin Klein Kids',
+    name:  { pt: 'Cuecas Logo Menina Pack 3', en: 'Girls Logo Briefs 3-Pack' },
+    desc:  { pt: 'Pack de 3 cuecas com elástico Calvin Klein. Algodão stretch de alta qualidade.',
+             en: '3-pack briefs with Calvin Klein waistband. High-quality stretch cotton.' },
+    price: '10.000 Kz', priceValue: 10000,
+    sizes:  ['6A', '8A', '10A', '12A', '14A'],
+    colors: ['Preto', 'Branco', 'Rosa'],
+    materials: ['algodao'], occasions: ['casual'], collections: [],
+    images: [
+      'assets/images/products/calvin-klein-kids-cuecas-logo-menina-pack-3-1.webp',
+      'assets/images/products/calvin-klein-kids-cuecas-logo-menina-pack-3-2.webp'
+    ]
+  },
+  {
+    cat: 'infantil', group: 'menina', sub: 'roupa-interior',
+    brand: 'Nike Kids',
+    name:  { pt: 'Conjunto Desportivo Interior Menina', en: 'Girls Sports Underwear Set' },
+    desc:  { pt: 'Conjunto de soutien desportivo e cueca em tecido técnico. Ideal para actividade física.',
+             en: 'Sports bra and brief set in technical fabric. Ideal for physical activity.' },
+    price: '15.000 Kz', priceValue: 15000,
+    sizes:  ['6A', '8A', '10A', '12A'],
+    colors: ['Preto', 'Rosa', 'Azul'],
+    materials: ['tecnico'], occasions: ['desporto'], collections: [],
+    images: [
+      'assets/images/products/nike-kids-conjunto-desportivo-interior-menina-1.webp',
+      'assets/images/products/nike-kids-conjunto-desportivo-interior-menina-2.webp'
+    ]
+  },
+
   // ─── MODA INFANTIL › Menino ────────────────────────────────────────────────
 
   // t-shirts
@@ -1061,6 +1224,83 @@ const products = [
   },
 
   // conjuntos  (vazio — acrescentar produtos aqui)
+
+  // roupa-interior
+  {
+    cat: 'infantil', group: 'menino', sub: 'roupa-interior',
+    brand: 'Petit Bateau',
+    name:  { pt: 'Pack 5 Cuecas Rapaz', en: 'Boys Briefs 5-Pack' },
+    desc:  { pt: 'Pack de 5 cuecas de algodão suave. Estampados de dinossauros, carros e super-heróis.',
+             en: '5-pack soft cotton briefs. Dinosaur, car and superhero prints.' },
+    price: '10.000 Kz', priceValue: 10000,
+    sizes:  ['2A', '4A', '6A', '8A', '10A', '12A'],
+    colors: ['Azul', 'Cinza', 'Sortido'],
+    materials: ['algodao'], occasions: ['casual'], collections: [],
+    images: [
+      'assets/images/products/petit-bateau-pack-5-cuecas-rapaz-1.webp',
+      'assets/images/products/petit-bateau-pack-5-cuecas-rapaz-2.webp'
+    ]
+  },
+  {
+    cat: 'infantil', group: 'menino', sub: 'roupa-interior',
+    brand: 'H&M Kids',
+    name:  { pt: 'Pack 5 Boxers Rapaz', en: 'Boys Boxers 5-Pack' },
+    desc:  { pt: 'Pack de 5 boxers em algodão Jersey. Elástico largo e confortável.',
+             en: '5-pack Jersey cotton boxers. Wide and comfortable waistband.' },
+    price: '14.000 Kz', priceValue: 14000,
+    sizes:  ['2-4A', '4-6A', '6-8A', '8-10A', '10-12A'],
+    colors: ['Azul', 'Cinza', 'Preto', 'Sortido'],
+    materials: ['algodao'], occasions: ['casual'], collections: [],
+    images: [
+      'assets/images/products/handm-kids-pack-5-boxers-rapaz-1.webp',
+      'assets/images/products/handm-kids-pack-5-boxers-rapaz-2.webp'
+    ]
+  },
+  {
+    cat: 'infantil', group: 'menino', sub: 'roupa-interior',
+    brand: 'Calvin Klein Kids',
+    name:  { pt: 'Boxers Logo Rapaz Pack 3', en: 'Boys Logo Boxers 3-Pack' },
+    desc:  { pt: 'Pack de 3 boxers com elástico Calvin Klein bordado. Algodão stretch premium.',
+             en: '3-pack boxers with embroidered Calvin Klein waistband. Premium stretch cotton.' },
+    price: '12.000 Kz', priceValue: 12000,
+    sizes:  ['6A', '8A', '10A', '12A', '14A'],
+    colors: ['Preto', 'Branco', 'Cinza'],
+    materials: ['algodao'], occasions: ['casual'], collections: [],
+    images: [
+      'assets/images/products/calvin-klein-kids-boxers-logo-rapaz-pack-3-1.webp',
+      'assets/images/products/calvin-klein-kids-boxers-logo-rapaz-pack-3-2.webp'
+    ]
+  },
+  {
+    cat: 'infantil', group: 'menino', sub: 'roupa-interior',
+    brand: 'Nike Kids',
+    name:  { pt: 'Pack 3 Boxers Desportivos', en: 'Boys Sports Boxers 3-Pack' },
+    desc:  { pt: 'Pack de 3 boxers em tecido Dri-FIT. Mantém o conforto durante a prática desportiva.',
+             en: '3-pack Dri-FIT fabric boxers. Keeps comfort during sports activity.' },
+    price: '15.000 Kz', priceValue: 15000,
+    sizes:  ['6A', '8A', '10A', '12A'],
+    colors: ['Preto', 'Azul Marinho', 'Cinza'],
+    materials: ['tecnico'], occasions: ['desporto'], collections: [],
+    images: [
+      'assets/images/products/nike-kids-pack-3-boxers-desportivos-1.webp',
+      'assets/images/products/nike-kids-pack-3-boxers-desportivos-2.webp'
+    ]
+  },
+  {
+    cat: 'infantil', group: 'menino', sub: 'roupa-interior',
+    brand: 'Adidas Kids',
+    name:  { pt: 'Conjunto Interior Rapaz', en: 'Boys Underwear Set' },
+    desc:  { pt: 'Conjunto de boxer e camisola interior com logo Adidas. Algodão orgânico certificado.',
+             en: 'Boxer and undershirt set with Adidas logo. Certified organic cotton.' },
+    price: '12.000 Kz', priceValue: 12000,
+    sizes:  ['4A', '6A', '8A', '10A', '12A'],
+    colors: ['Branco', 'Azul', 'Preto'],
+    materials: ['algodao'], occasions: ['casual'], collections: [],
+    images: [
+      'assets/images/products/adidas-kids-conjunto-interior-rapaz-1.webp',
+      'assets/images/products/adidas-kids-conjunto-interior-rapaz-2.webp'
+    ]
+  },
 
   // ─── MODA INFANTIL › Calçado infantil ──────────────────────────────────────
 
@@ -1161,195 +1401,6 @@ const productsSemCategoria = [
     ]
   },
 
-  // ─── Roupa interior — menina ───────────────────────────────────────────────
-  {
-    brand: 'Petit Bateau',
-    name:  { pt: 'Pack 5 Cuecas Menina', en: 'Girls Briefs 5-Pack' },
-    desc:  { pt: 'Pack de 5 cuecas de algodão suave com elástico confortável. Estampados florais e unicórnios.',
-             en: '5-pack soft cotton briefs with comfortable elastic. Floral and unicorn prints.' },
-    price: '10.000 Kz', priceValue: 10000,
-    sizes:  ['2A', '4A', '6A', '8A', '10A', '12A'],
-    colors: ['Rosa', 'Lilás', 'Branco', 'Sortido'],
-    images: [
-      'assets/images/products/petit-bateau-pack-5-cuecas-menina-1.webp',
-      'assets/images/products/petit-bateau-pack-5-cuecas-menina-2.webp'
-    ]
-  },
-  {
-    brand: 'H&M Kids',
-    name:  { pt: 'Conjunto Roupa Interior Menina', en: 'Girls Underwear Set' },
-    desc:  { pt: 'Conjunto de cueca e camisola interior em algodão orgânico. Suave e respirável.',
-             en: 'Brief and undershirt set in organic cotton. Soft and breathable.' },
-    price: '12.000 Kz', priceValue: 12000,
-    sizes:  ['2-4A', '4-6A', '6-8A', '8-10A', '10-12A'],
-    colors: ['Branco', 'Rosa Claro', 'Estampado'],
-    images: [
-      'assets/images/products/handm-kids-conjunto-roupa-interior-menina-1.webp',
-      'assets/images/products/handm-kids-conjunto-roupa-interior-menina-2.webp'
-    ]
-  },
-  {
-    brand: 'Zara Kids',
-    name:  { pt: 'Cuecas Renda Menina Pack 3', en: 'Girls Lace Briefs 3-Pack' },
-    desc:  { pt: 'Pack de 3 cuecas com detalhe em renda. Algodão premium, corte confortável.',
-             en: '3-pack briefs with lace detail. Premium cotton, comfortable cut.' },
-    price: '9.000 Kz', priceValue: 9000,
-    sizes:  ['4A', '6A', '8A', '10A', '12A'],
-    colors: ['Branco', 'Rosa', 'Preto'],
-    images: [
-      'assets/images/products/zara-kids-cuecas-renda-menina-pack-3-1.webp',
-      'assets/images/products/zara-kids-cuecas-renda-menina-pack-3-2.webp'
-    ]
-  },
-  {
-    brand: 'Calvin Klein Kids',
-    name:  { pt: 'Cuecas Logo Menina Pack 3', en: 'Girls Logo Briefs 3-Pack' },
-    desc:  { pt: 'Pack de 3 cuecas com elástico Calvin Klein. Algodão stretch de alta qualidade.',
-             en: '3-pack briefs with Calvin Klein waistband. High-quality stretch cotton.' },
-    price: '10.000 Kz', priceValue: 10000,
-    sizes:  ['6A', '8A', '10A', '12A', '14A'],
-    colors: ['Preto', 'Branco', 'Rosa'],
-    images: [
-      'assets/images/products/calvin-klein-kids-cuecas-logo-menina-pack-3-1.webp',
-      'assets/images/products/calvin-klein-kids-cuecas-logo-menina-pack-3-2.webp'
-    ]
-  },
-  {
-    brand: 'Nike Kids',
-    name:  { pt: 'Conjunto Desportivo Interior Menina', en: 'Girls Sports Underwear Set' },
-    desc:  { pt: 'Conjunto de soutien desportivo e cueca em tecido técnico. Ideal para actividade física.',
-             en: 'Sports bra and brief set in technical fabric. Ideal for physical activity.' },
-    price: '15.000 Kz', priceValue: 15000,
-    sizes:  ['6A', '8A', '10A', '12A'],
-    colors: ['Preto', 'Rosa', 'Azul'],
-    images: [
-      'assets/images/products/nike-kids-conjunto-desportivo-interior-menina-1.webp',
-      'assets/images/products/nike-kids-conjunto-desportivo-interior-menina-2.webp'
-    ]
-  },
-
-  // ─── Roupa interior — rapaz ────────────────────────────────────────────────
-  {
-    brand: 'Petit Bateau',
-    name:  { pt: 'Pack 5 Cuecas Rapaz', en: 'Boys Briefs 5-Pack' },
-    desc:  { pt: 'Pack de 5 cuecas de algodão suave. Estampados de dinossauros, carros e super-heróis.',
-             en: '5-pack soft cotton briefs. Dinosaur, car and superhero prints.' },
-    price: '10.000 Kz', priceValue: 10000,
-    sizes:  ['2A', '4A', '6A', '8A', '10A', '12A'],
-    colors: ['Azul', 'Cinza', 'Sortido'],
-    images: [
-      'assets/images/products/petit-bateau-pack-5-cuecas-rapaz-1.webp',
-      'assets/images/products/petit-bateau-pack-5-cuecas-rapaz-2.webp'
-    ]
-  },
-  {
-    brand: 'H&M Kids',
-    name:  { pt: 'Pack 5 Boxers Rapaz', en: 'Boys Boxers 5-Pack' },
-    desc:  { pt: 'Pack de 5 boxers em algodão Jersey. Elástico largo e confortável.',
-             en: '5-pack Jersey cotton boxers. Wide and comfortable waistband.' },
-    price: '14.000 Kz', priceValue: 14000,
-    sizes:  ['2-4A', '4-6A', '6-8A', '8-10A', '10-12A'],
-    colors: ['Azul', 'Cinza', 'Preto', 'Sortido'],
-    images: [
-      'assets/images/products/handm-kids-pack-5-boxers-rapaz-1.webp',
-      'assets/images/products/handm-kids-pack-5-boxers-rapaz-2.webp'
-    ]
-  },
-  {
-    brand: 'Calvin Klein Kids',
-    name:  { pt: 'Boxers Logo Rapaz Pack 3', en: 'Boys Logo Boxers 3-Pack' },
-    desc:  { pt: 'Pack de 3 boxers com elástico Calvin Klein bordado. Algodão stretch premium.',
-             en: '3-pack boxers with embroidered Calvin Klein waistband. Premium stretch cotton.' },
-    price: '12.000 Kz', priceValue: 12000,
-    sizes:  ['6A', '8A', '10A', '12A', '14A'],
-    colors: ['Preto', 'Branco', 'Cinza'],
-    images: [
-      'assets/images/products/calvin-klein-kids-boxers-logo-rapaz-pack-3-1.webp',
-      'assets/images/products/calvin-klein-kids-boxers-logo-rapaz-pack-3-2.webp'
-    ]
-  },
-  {
-    brand: 'Nike Kids',
-    name:  { pt: 'Pack 3 Boxers Desportivos', en: 'Boys Sports Boxers 3-Pack' },
-    desc:  { pt: 'Pack de 3 boxers em tecido Dri-FIT. Mantém o conforto durante a prática desportiva.',
-             en: '3-pack Dri-FIT fabric boxers. Keeps comfort during sports activity.' },
-    price: '15.000 Kz', priceValue: 15000,
-    sizes:  ['6A', '8A', '10A', '12A'],
-    colors: ['Preto', 'Azul Marinho', 'Cinza'],
-    images: [
-      'assets/images/products/nike-kids-pack-3-boxers-desportivos-1.webp',
-      'assets/images/products/nike-kids-pack-3-boxers-desportivos-2.webp'
-    ]
-  },
-  {
-    brand: 'Adidas Kids',
-    name:  { pt: 'Conjunto Interior Rapaz', en: 'Boys Underwear Set' },
-    desc:  { pt: 'Conjunto de boxer e camisola interior com logo Adidas. Algodão orgânico certificado.',
-             en: 'Boxer and undershirt set with Adidas logo. Certified organic cotton.' },
-    price: '12.000 Kz', priceValue: 12000,
-    sizes:  ['4A', '6A', '8A', '10A', '12A'],
-    colors: ['Branco', 'Azul', 'Preto'],
-    images: [
-      'assets/images/products/adidas-kids-conjunto-interior-rapaz-1.webp',
-      'assets/images/products/adidas-kids-conjunto-interior-rapaz-2.webp'
-    ]
-  },
-
-  // ─── Acessórios (gravatas, laços, luvas) ───────────────────────────────────
-  {
-    brand: 'Armani',
-    name:  { pt: 'Gravata Seda', en: 'Silk Tie' },
-    desc:  { pt: 'Gravata em seda pura italiana. Acabamento impecável, padrão elegante.',
-             en: 'Pure Italian silk tie. Impeccable finish, elegant pattern.' },
-    price: '18.000 Kz', priceValue: 18000,
-    sizes:  ['Único'],
-    colors: ['Azul Marinho', 'Cinza', 'Bordô'],
-    images: [
-      'assets/images/products/armani-gravata-seda-1.webp',
-      'assets/images/products/armani-gravata-seda-2.webp'
-    ]
-  },
-  {
-    brand: 'Versace',
-    name:  { pt: 'Laço Medusa', en: 'Medusa Bow Tie' },
-    desc:  { pt: 'Laço em seda com o emblema Medusa de Versace bordado. Impacto garantido.',
-             en: 'Silk bow tie with embroidered Versace Medusa emblem. Guaranteed impact.' },
-    price: '35.000 Kz', priceValue: 35000,
-    sizes:  ['Único'],
-    colors: ['Preto/Dourado'],
-    images: [
-      'assets/images/products/versace-laco-medusa-1.webp',
-      'assets/images/products/versace-laco-medusa-2.webp'
-    ]
-  },
-  {
-    brand: 'Hermès',
-    name:  { pt: 'Luvas em Pele', en: 'Leather Gloves' },
-    desc:  { pt: 'Luvas em pele de veado com forro em cashmere. Luxo e calor incomparáveis.',
-             en: 'Deerskin gloves with cashmere lining. Incomparable luxury and warmth.' },
-    price: '30.000 Kz', priceValue: 30000,
-    sizes:  ['6.5', '7', '7.5', '8', '8.5'],
-    colors: ['Preto', 'Castanho', 'Bordeaux'],
-    images: [
-      'assets/images/products/hermes-luvas-em-pele-1.webp',
-      'assets/images/products/hermes-luvas-em-pele-2.webp'
-    ]
-  },
-
-  // ─── Acessórios (chapéus) ──────────────────────────────────────────────────
-  {
-    brand: 'Prada',
-    name:  { pt: 'Chapéu de Aba', en: 'Wide Brim Hat' },
-    desc:  { pt: 'Chapéu em lã com aba larga e logo Prada. Elegância com atitude.',
-             en: 'Wool hat with wide brim and Prada logo. Elegance with attitude.' },
-    price: '25.000 Kz', priceValue: 25000,
-    sizes:  ['S', 'M', 'L'],
-    colors: ['Preto', 'Camel'],
-    images: [
-      'assets/images/products/prada-chapeu-de-aba-1.webp',
-      'assets/images/products/prada-chapeu-de-aba-2.webp'
-    ]
-  },
 ];
 
 // ───────────────────────────────────────────────────────────────────────
