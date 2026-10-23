@@ -358,7 +358,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:3rem 4rem
 .toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(100px);background:var(--gold);color:var(--bg);font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;padding:.8rem 2rem;z-index:300;transition:transform .4s;pointer-events:none}
 .toast.show{transform:translateX(-50%) translateY(0)}
 .simulation-watermark{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:250;padding:10.45rem 10.7rem;background:rgba(10, 10, 10, 0.11);font-size:2.62rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;pointer-events:none;user-select:none;animation:simulation-colors 5s ease-in-out infinite}
-html.light .simulation-watermark{background:rgba(247,243,237,.92)}
+html.light .simulation-watermark{background:rgba(247, 243, 237, 0.062)}
 @keyframes simulation-colors{
   0%,100%{color:#ff9f43}
   33%{color:#ff5a5f}
