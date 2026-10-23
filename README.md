@@ -21,11 +21,9 @@ Não tem carrinho, checkout, pagamentos, contas de utilizador ou backend.
 
 ## Executar localmente
 
-O site e o `package.json` estão na pasta `ease-drip/`. Abre um terminal na
-raiz do repositório e executa:
+O `index.html` e o `package.json` estão na raiz do repositório. Executa:
 
 ```bash
-cd ease-drip
 npm start
 ```
 
@@ -67,43 +65,28 @@ módulos ES. Como partilham variáveis globais, mantém a ordem das tags
 ## Estrutura do projeto
 
 ```text
-ease-drip/
+.
 ├── index.html
 ├── package.json
+├── .gitignore
 ├── README.md
 └── assets/
-    ├── css/
-    │   └── style.css
+    ├── css/style.css
     ├── images/
     │   ├── Background/       # Fundos do hero
     │   ├── logos/            # Logótipos apresentados
     │   └── products/         # Fotografias dos produtos
-    └── js/
-        ├── config.js           # WhatsApp e configuração do hero
-        ├── data-categories.js  # Categorias, coleções e opções dos filtros
-        ├── data-products.js    # Catálogo e links de marcas/produtos
-        ├── render.js           # Loja, filtros, cartões e modal
-        ├── language.js         # Idiomas
-        ├── theme.js            # Tema
-        ├── nav.js              # Navegação e menu móvel
-        ├── contact.js          # Formulário de WhatsApp
-        ├── brands-render.js    # Lista e construção da faixa de marcas
-        ├── brands-carousel.js  # Movimento e arrasto da faixa
-        ├── ui-feedback.js      # Animações e notificações
-        ├── init.js             # Inicialização da página
-        ├── search.js           # Pesquisa
-        └── hero-slider.js      # Slideshow do hero
+    └── js/                   # Scripts da loja e da interface
 ```
 
-Os caminhos `assets/...` usados no código são relativos à raiz publicada do
-site, isto é, à pasta `ease-drip/`. Há imagens versionadas em
-`ease-drip/assets/images/`. O HTML referencia `assets/images/favicon.png`, mas
-esse ficheiro não está atualmente presente.
+Os caminhos `assets/...` usados no código são relativos à raiz do repositório,
+que também é a raiz publicada do site. As imagens estão versionadas em `assets/images/`. O projeto ainda não inclui
+um favicon.
 
 ## Gerir produtos
 
 Os produtos apresentados estão no array `products`, em
-[`ease-drip/assets/js/data-products.js`](./ease-drip/assets/js/data-products.js).
+[`assets/js/data-products.js`](./assets/js/data-products.js).
 A ordem dos objetos define a ordem dos produtos na loja. Para adicionar um
 produto, copia um bloco existente e atualiza os campos.
 
@@ -154,17 +137,17 @@ revendedora autorizada.
 
 ## Imagens, marcas e hero
 
-- Guarda fotografias de produtos em `ease-drip/assets/images/products/` e
+- Guarda fotografias de produtos em `assets/images/products/` e
   referencia-as no catálogo com caminhos como
   `assets/images/products/produto-1.webp`.
 - Os logótipos são definidos no array `brands`, em
-  [`ease-drip/assets/js/brands-render.js`](./ease-drip/assets/js/brands-render.js).
+  [`assets/js/brands-render.js`](./assets/js/brands-render.js).
 - Os fundos do hero são definidos no array `HERO_IMAGES`, em
-  [`ease-drip/assets/js/config.js`](./ease-drip/assets/js/config.js).
+  [`assets/js/config.js`](./assets/js/config.js).
   `HERO_INTERVAL_MS` controla o intervalo e `HERO_FADE_MS` a duração da
   transição.
 - A imagem inicial do hero também está definida em
-  `ease-drip/assets/css/style.css`, na regra `.hero-bg`. Se alterares
+  `assets/css/style.css`, na regra `.hero-bg`. Se alterares
   `HERO_IMAGES[0]`, atualiza o caminho no CSS.
 
 Confirma nomes, extensões e maiúsculas/minúsculas dos caminhos. O GitHub Pages
@@ -175,7 +158,7 @@ confirma que tens autorização para usar as fotografias e os logótipos.
 ## Contacto via WhatsApp
 
 O número usado pelo formulário, pelos botões e pelo telefone visível na página
-é a constante `WHATSAPP`, em `ease-drip/assets/js/config.js`. Usa o indicativo
+é a constante `WHATSAPP`, em `assets/js/config.js`. Usa o indicativo
 do país e o número sem `+`, espaços ou pontuação, por exemplo `244900000000`.
 O número é apresentado na página e fica visível no código-fonte.
 
@@ -184,39 +167,18 @@ dados num servidor.
 
 ## Publicação no GitHub Pages
 
-O projeto não precisa de compilação. O `index.html` deve ficar na raiz do site
-publicado. Na estrutura atual, está em `ease-drip/`, por isso o GitHub Pages
-configurado para publicar diretamente a raiz do repositório não encontrará
-esse ficheiro. Usa GitHub Actions para publicar a pasta `ease-drip/`.
+O projeto não precisa de compilação. O `index.html` e a pasta `assets/` estão
+na raiz do repositório, pelo que podem ser publicados diretamente pelo GitHub
+Pages sem workflow personalizado.
 
-Em **Settings → Pages**, escolhe **GitHub Actions** como fonte e cria
-`.github/workflows/pages.yml` na raiz do repositório:
+Em **Settings → Pages**, seleciona **Deploy from a branch**, escolhe a branch
+`main` e a pasta `/(root)`, e guarda. O site do repositório deverá ficar
+disponível em <https://mcapuqui-rgb.github.io/Ease_drip/>.
 
-```yaml
-name: Deploy
-on:
-  push:
-    branches: [main]
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: ease-drip
-      - uses: actions/deploy-pages@v4
-```
-
-Confirma que o nome da branch no workflow corresponde à branch usada pelo
-repositório. Depois do primeiro deploy, verifica a consola do browser e procura
-erros 404, muitas vezes causados por imagens em falta ou por capitalização
+Os recursos usam caminhos relativos, por isso funcionam no endereço de projeto
+com o prefixo `/Ease_drip/`; não acrescentes esse prefixo aos caminhos dos
+ficheiros. Após ativar a publicação, verifica a consola do browser e procura
+erros 404, muitas vezes causados por imagens em falta ou capitalização
 incorreta.
 
 ## Conteúdo comercial a validar
@@ -238,10 +200,11 @@ confirmar:
 
 ## Antes de publicar
 
-- [ ] As imagens necessárias estão versionadas e os caminhos têm a
+- [ ] `index.html` e `assets/` estão na raiz publicada; as imagens necessárias
+      estão versionadas e os caminhos têm a
       capitalização correta.
-- [ ] Adiciona `ease-drip/assets/images/favicon.png` ou atualiza a referência
-      no `<head>` de `index.html`.
+- [ ] Adiciona um favicon se quiseres que o site tenha um ícone no separador do
+      browser.
 - [ ] Pesquisa, filtros, idioma, tema, cartões e galerias foram testados.
 - [ ] Todos os produtos têm `sizes`, mesmo que o valor seja `[]`.
 - [ ] O número de WhatsApp e o formulário foram testados, incluindo num
