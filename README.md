@@ -1,36 +1,47 @@
-# Ease Drip — Boutique Online
+# Ease Drip
 
-Website estático da Ease Drip, uma boutique de moda em Lubango, Angola. O site
-apresenta produtos para mulher, homem e crianças, e encaminha pedidos de
-informação e contactos para o WhatsApp.
+Site estático de uma boutique de moda em Lubango, Angola. Apresenta produtos
+para mulher, homem e criança; os pedidos e contactos são encaminhados para o
+WhatsApp.
 
-## Funcionalidades
+> Este projeto funciona como catálogo online. Não inclui carrinho, checkout,
+> pagamentos, contas de utilizador nem servidor/backend.
 
-- Layout responsivo para computador e dispositivos móveis.
-- Loja organizada por público, categoria e subcategoria.
-- Pesquisa de produtos e filtros por tamanho, cor, preço, material, marca e
-  ocasião.
-- Cartões de produto com miniatura e janela de detalhes com galeria de imagens.
+## Começar
+
+O site está na pasta [`ease-drip/`](./ease-drip/). Abre um terminal nessa pasta
+e inicia um servidor local:
+
+```bash
+npm start
+```
+
+O comando usa `npx` para executar `serve` na porta `8000`. Na primeira execução,
+o npm pode precisar de acesso à Internet para obter essa ferramenta. Em
+alternativa, com Python instalado:
+
+```bash
+py -m http.server 8000
+```
+
+Depois abre <http://localhost:8000>. Usa um servidor HTTP em vez de abrir
+`index.html` diretamente com `file://`.
+
+## O que o site oferece
+
+- Catálogo por público, categoria e subcategoria.
+- Pesquisa e filtros por tamanho, cor, preço, material, marca e ocasião.
 - Coleções de novidades, mais vendidos e promoções.
-- Interface em português e inglês.
-- Tema claro e escuro.
-- Faixa animada e arrastável de logótipos de marcas.
-- Slideshow de imagens de fundo na secção principal (hero).
-- Formulário e ligações de contacto que abrem uma mensagem no WhatsApp.
+- Cartões de produto com galeria de imagens.
+- Interface em português e inglês, tema claro e escuro.
+- Faixa de marcas animada e arrastável e slideshow de fundos no hero.
+- Formulário e contactos que preparam uma mensagem e abrem o WhatsApp.
 
-O site não tem carrinho, checkout, pagamentos, contas de utilizador ou
-backend. Os pedidos são tratados diretamente pelo WhatsApp.
+## Tecnologias e estrutura
 
-## Tecnologias
-
-- HTML5, CSS3 e JavaScript sem frameworks.
-- Sem processo de build ou dependências de runtime.
-- `serve`, executado por `npx` através do comando `npm start`, para
-  desenvolvimento local.
-
-## Estrutura
-
-O site está na pasta [`ease-drip/`](./ease-drip/):
+HTML, CSS e JavaScript sem frameworks ou processo de compilação. Os scripts
+são carregados diretamente pelo HTML, não são módulos ES; por isso, a ordem
+das tags `<script>` em `index.html` deve ser preservada.
 
 ```text
 ease-drip/
@@ -38,64 +49,34 @@ ease-drip/
 ├── package.json
 ├── README.md
 └── assets/
-    ├── css/
-    │   └── style.css
+    ├── css/style.css
     ├── images/
-    │   ├── Background/  # Fundos WebP do hero
-    │   ├── logos/       # Logótipos WebP das marcas
-    │   └── products/    # Fotografias de produtos
+    │   ├── Background/  # Fundos do hero
+    │   ├── logos/       # Logótipos das marcas
+    │   └── products/    # Fotografias dos produtos
     └── js/
-        ├── config.js          # WhatsApp, estado global e imagens do hero
-        ├── data-categories.js # Categorias, coleções, materiais e ocasiões
-        ├── data-products.js   # Catálogo e links oficiais
-        ├── render.js          # Loja, filtros, cartões e modal
-        ├── language.js        # Idiomas PT/EN
-        ├── theme.js           # Tema claro/escuro
-        ├── nav.js             # Navegação e menu móvel
-        ├── contact.js         # Contacto via WhatsApp
-        ├── brands-render.js   # Faixa de marcas
-        ├── brands-carousel.js # Movimento e arrasto da faixa
-        ├── ui-feedback.js     # Animações e notificações
-        ├── search.js          # Pesquisa
-        ├── hero-slider.js     # Slideshow do hero
-        └── init.js            # Inicialização da página
+        ├── config.js           # WhatsApp e imagens do hero
+        ├── data-categories.js  # Categorias e opções dos filtros
+        ├── data-products.js    # Catálogo e links de marcas/produtos
+        ├── render.js           # Loja, filtros, cartões e modal
+        ├── language.js         # Idiomas
+        ├── theme.js            # Tema
+        ├── nav.js              # Navegação
+        ├── contact.js          # Formulário de WhatsApp
+        ├── brands-render.js    # Logótipos das marcas
+        ├── brands-carousel.js  # Movimento e arrasto das marcas
+        ├── ui-feedback.js      # Animações e notificações
+        ├── search.js           # Pesquisa
+        ├── hero-slider.js      # Slideshow
+        └── init.js             # Inicialização
 ```
 
-Os scripts são carregados diretamente por `index.html`, não como módulos ES.
-A ordem das tags `<script>` é importante: os dados e as funções partilhadas
-devem carregar antes dos scripts que os utilizam.
-
-## Executar localmente
-
-Usa um servidor HTTP local em vez de abrir o HTML com `file://`.
-
-### Node.js
-
-```bash
-cd ease-drip
-npm start
-```
-
-Abre <http://localhost:8000>.
-
-### Python
-
-```bash
-cd ease-drip
-py -m http.server 8000
-```
-
-Abre <http://localhost:8000>.
-
-## Gerir produtos
+## Atualizar o catálogo
 
 Edita o array `products` em
-[`ease-drip/assets/js/data-products.js`](./ease-drip/assets/js/data-products.js).
-Cada produto usa `cat`, `group` e `sub` para indicar onde aparece. Os IDs
-disponíveis estão em
-[`ease-drip/assets/js/data-categories.js`](./ease-drip/assets/js/data-categories.js).
-
-Exemplo:
+[`data-products.js`](./ease-drip/assets/js/data-products.js). Os valores de
+`cat`, `group` e `sub` devem corresponder à árvore `taxonomy` em
+[`data-categories.js`](./ease-drip/assets/js/data-categories.js).
 
 ```js
 {
@@ -119,67 +100,43 @@ Exemplo:
 }
 ```
 
-- `price` é o texto apresentado; `priceValue` é o valor numérico usado pelo
-  filtro de preço. Usa `null` se o preço não estiver definido.
-- `oldPrice` é opcional e inclui o produto em Promoções.
+- `price` é o texto apresentado; `priceValue` é o número usado pelo filtro de
+  preço. Produtos sem valor numérico não entram nesse filtro.
+- `oldPrice` é opcional; quando definido, o produto também aparece em
+  Promoções.
 - `collections` aceita `novidades`, `mais-vendidos` e `promocoes`.
-- `also` pode indicar categorias adicionais para o mesmo produto.
+- `also` é uma lista opcional de categorias adicionais, cada uma com `cat`,
+  `group` e `sub`.
 - `images` contém caminhos relativos à raiz do site. A primeira imagem é a
-  miniatura; todas as imagens são apresentadas na galeria do produto.
-- Os valores de `materials` e `occasions` têm de estar definidos em
-  `data-categories.js`.
+  miniatura; as imagens são também usadas na galeria.
+- Os valores de `materials` e `occasions` devem existir em `MATERIALS` e
+  `OCCASIONS`, em `data-categories.js`.
 
-Produtos sem categoria ficam em `productsSemCategoria` e não aparecem na loja
-até serem associados à árvore de categorias e transferidos para `products`.
+## Imagens e configurações
 
-## Imagens e marcas
+- Guarda fotografias de produtos em `ease-drip/assets/images/products/` e usa
+  caminhos `assets/images/products/...` no catálogo.
+- Os logótipos e os respetivos nomes são configurados no array `brands`, em
+  `ease-drip/assets/js/brands-render.js`.
+- Os fundos do hero são configurados em `HERO_IMAGES`, em
+  `ease-drip/assets/js/config.js`; o intervalo e a transição são
+  `HERO_INTERVAL_MS` e `HERO_FADE_MS`.
+- O número de WhatsApp é a constante `WHATSAPP` no mesmo `config.js`. Usa o
+  indicativo do país e o número, sem `+`, espaços ou pontuação.
 
-Guarda as fotografias dos produtos em
-`ease-drip/assets/images/products/`. Os caminhos no catálogo começam por
-`assets/images/products/`. Os logótipos ficam em
-`ease-drip/assets/images/logos/` e são associados às marcas no array `brands`
-de `ease-drip/assets/js/brands-render.js`.
+Confirma sempre que nomes, extensões e maiúsculas/minúsculas dos caminhos
+correspondem aos ficheiros; alojamentos Linux distinguem maiúsculas de
+minúsculas. O HTML referencia `assets/images/favicon.png`, mas esse ficheiro
+não está incluído atualmente.
 
-Confirma que os nomes, extensões e maiúsculas/minúsculas dos caminhos
-correspondem aos ficheiros. A capitalização é relevante em alojamentos Linux.
-Prefere ficheiros WebP otimizados para reduzir o tempo de carregamento e
-confirma que tens autorização para utilizar as imagens e os logótipos.
+## Publicar
 
-### Slideshow do hero
+Publica o conteúdo completo da pasta `ease-drip/` num alojamento estático. O
+`index.html` deve ficar na raiz publicada, junto da pasta `assets/`. Não é
+necessário compilar o projeto.
 
-Os caminhos do fundo estão no array `HERO_IMAGES`, em
-`ease-drip/assets/js/config.js`. Atualmente apontam para
-`assets/images/Background/background0.webp` até
-`assets/images/Background/background10.webp`.
-
-- `HERO_INTERVAL_MS`: intervalo da rotação.
-- `HERO_FADE_MS`: duração da transição.
-
-Mantém a capitalização da pasta `Background` exatamente igual.
-
-## Contacto via WhatsApp
-
-O número é configurado pela constante `WHATSAPP` em
-`ease-drip/assets/js/config.js`. Usa o indicativo do país e o número, sem `+`,
-espaços ou pontuação. O formulário abre o WhatsApp com uma mensagem
-preenchida; não envia nem guarda dados num servidor.
-
-## Publicação
-
-O projeto não requer compilação. Para publicar, envia a pasta `ease-drip/`
-completa para um alojamento estático, como GitHub Pages, Netlify, Vercel ou
-alojamento próprio. O ficheiro `index.html` deve ficar na raiz do site
-publicado.
-
-Antes da publicação, verifica:
-
-- Recursos e imagens incluídos, com caminhos e capitalização corretos.
-- Pesquisa, filtros, idioma, temas, cartões e galerias.
-- Número, links e formulário de WhatsApp, incluindo num telemóvel.
-- Preços, descrições e disponibilidade dos produtos.
-- Favicon: o HTML referencia `assets/images/favicon.png`; adiciona esse
-  ficheiro ou atualiza a referência no `index.html`.
-- Políticas de privacidade, termos, trocas e devoluções adequadas à atividade
-  e à legislação aplicável.
-
-Não há scripts de testes automatizados configurados atualmente.
+Antes de publicar, confirma os caminhos e imagens, testa pesquisa, filtros,
+idiomas, temas, galerias e WhatsApp, e revê os preços e a disponibilidade dos
+produtos. Verifica também as autorizações de uso das imagens e prepara as
+políticas e informações legais adequadas à atividade. O projeto não tem
+atualmente testes automatizados configurados.
