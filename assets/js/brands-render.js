@@ -46,6 +46,9 @@ function buildBrands() {
   const track = document.getElementById('brandsTrack');
   const doubled = [...brands, ...brands];
   track.innerHTML = doubled.map(brand => `
-    <img class="brand-logo" src="${brand.logo}" alt="${brand.name}" title="${brand.name}">
+    <span class="brand-item">
+      <img class="brand-logo" src="${brand.logo}" alt="${brand.name}" title="${brand.name}">
+      <span class="media-ribbon prototype-ribbon" aria-hidden="true">Prototype</span>
+    </span>
   `).join('');
 }

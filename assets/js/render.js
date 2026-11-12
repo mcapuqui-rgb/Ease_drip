@@ -201,6 +201,7 @@ function cardHtml(p, id) {
   return `
     <div class="product-card" onclick="openModal(${id})">
       <div class="product-img-wrap">
+        <span class="media-ribbon preview-ribbon" aria-hidden="true">Preview</span>
         ${image ? `<img src="${esc(image)}" alt="${esc(p.name[currentLang])}">` : ''}
         <div class="product-placeholder"${image ? ' style="display:none"' : ''}>
           <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1">
