@@ -202,12 +202,10 @@ html.light .shop-search::placeholder{color:var(--gray)}
 .product-card:hover .product-overlay{opacity:1}
 .product-img-wrap{width:100%;height:75%;overflow:hidden;background:var(--bg3);display:flex;align-items:center;justify-content:center;position:relative}
 .product-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
-.media-ribbon{position:absolute;top:16px;left:-32px;z-index:4;width:132px;padding:.35rem 0;transform:rotate(-35deg);text-align:center;background:rgba(10,10,10,.86);color:var(--gold2);font-family:var(--font-body);font-size:.55rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;pointer-events:none;animation:ribbonPulse 3.2s ease-in-out infinite}
+.media-ribbon{position:absolute;top:40%;left:2%;z-index:4;width:290px;padding:1rem ;transform:rotate(45deg);text-align:center;background:rgba(10,10,10,.86);color:var(--gold2);font-family:var(--font-body);font-size:1.55rem;font-weight:1600;letter-spacing:.16em;text-transform:uppercase;pointer-events:none;animation:ribbonPulse 3.2s ease-in-out infinite}
 .product-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;background:var(--bg3)}
 .product-placeholder svg{opacity:.15}
 .product-info{padding:1rem 1.2rem;position:absolute;bottom:0;left:0;right:0;background:var(--bg)}
-.product-brand{font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.3rem}
-.product-name{font-family:var(--font-display);font-size:1rem;font-weight:300;margin-bottom:.2rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .product-price{font-size:15px;letter-spacing:.1em;color:var(--gray)}
 .product-brand-link{position:relative;z-index:1;display:inline-block;margin-top:.4rem;color:var(--gold);font-size:.55rem;letter-spacing:.08em;text-decoration:underline;text-underline-offset:2px}
 .product-overlay{position:absolute;inset:0;background:rgba(10,10,10,.4);opacity:0;transition:opacity .3s;display:flex;align-items:center;justify-content:center;pointer-events:none}
