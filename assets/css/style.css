@@ -79,7 +79,7 @@ body{background:var(--bg);color:var(--white);font-family:var(--font-body);overfl
 ::-webkit-scrollbar-thumb{background:var(--gold)}
 
 /* ── NAV ── */
-nav{position:fixed;top:0px;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 4rem;height:72px;border-bottom:1px solid var(--border);background:rgba(10,10,10,.92);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 4rem;height:72px;border-bottom:1px solid var(--border);background:var(--bg);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
 .nav-logo{font-family:var(--font-display);font-size:1.6rem;font-weight:300;letter-spacing:.2em;color:var(--gold);text-decoration:none;text-transform:uppercase}
 .nav-logo span{color:var(--white)}
 .nav-links{display:flex;gap:2.5rem;list-style:none}
@@ -93,14 +93,15 @@ nav{position:fixed;top:0px;left:0;right:0;z-index:100;display:flex;align-items:c
 .hamburger span{display:block;width:22px;height:1px;background:var(--white);transition:all .3s}
 
 /* ── MOBILE NAV ── */
-.mobile-menu{display:none;position:fixed;inset:0;background:var(--bg);z-index:99;flex-direction:column;align-items:center;justify-content:center;gap:2rem}
+.mobile-menu{display:none;position:fixed;inset:72px 0 0;background:var(--bg);z-index:99;flex-direction:column;align-items:center;justify-content:center;padding:2rem 1.5rem;box-shadow:0 12px 24px rgba(0,0,0,.18)}
 .mobile-menu.open{display:flex}
-.mobile-menu a{font-family:var(--font-display);font-size:2.2rem;font-weight:300;color:var(--white);text-decoration:none;letter-spacing:.1em}
+.mobile-menu a{width:min(100%,420px);padding:1.1rem 0;border-bottom:1px solid var(--border);font-family:var(--font-display);font-size:clamp(1.7rem,8vw,2.2rem);font-weight:300;color:var(--white);text-decoration:none;letter-spacing:.1em;text-align:center}
+.mobile-menu a:last-child{border-bottom:0}
 .mobile-menu a:hover{color:var(--gold)}
 
 /* ── HERO ── */
-#home{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding-top:1px}
-.hero-bg{position:absolute; top:72px;left:0;right:0;bottom:0;background:linear-gradient(135deg,#0a0a0a 0%,#1a1208 50%,#0a0a0a 100%)}
+#home{min-height:calc(100vh - 72px);min-height:calc(100svh - 72px);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding-top:1px}
+.hero-bg{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(135deg,#0a0a0a 0%,#1a1208 50%,#0a0a0a 100%)}
 
 .hero-grid {
   position: absolute;
@@ -115,7 +116,7 @@ nav{position:fixed;top:0px;left:0;right:0;z-index:100;display:flex;align-items:c
 /* Imagem de fundo separada — ocupa sempre 100% sem cortes */
 .hero-bg {
   position: absolute;
-  top: 10px;
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
@@ -287,6 +288,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:3rem 4rem
   nav{padding:0 1.5rem}
   .nav-links{display:none}
   .hamburger{display:flex}
+  .nav-right{gap:.8rem}
   section{padding:4rem 1.5rem}
   .modal{grid-template-columns:1fr}
   .modal-gallery{min-height:300px}
@@ -295,6 +297,17 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:3rem 4rem
   .hero-content{padding:1rem}
 }
 @media(max-width:600px){
+  nav{gap:.5rem;padding:0 1rem}
+  .nav-logo{font-size:1.25rem;letter-spacing:.1em}
+  .nav-right{gap:.35rem}
+  .lang-toggle{gap:.25rem}
+  .lang-btn{padding:.25rem .35rem}
+  .theme-btn{padding:.3rem .45rem}
+  .hamburger{padding:.2rem}
+  .theme-btn #themeLbl{display:none}
+  .hamburger[aria-expanded="true"] span:first-child{transform:translateY(6px) rotate(45deg)}
+  .hamburger[aria-expanded="true"] span:nth-child(2){opacity:0}
+  .hamburger[aria-expanded="true"] span:last-child{transform:translateY(-6px) rotate(-45deg)}
   .products-grid{grid-template-columns:repeat(2,1fr)}
   .category-tabs{margin-bottom:2rem}
   .cat-tab{padding:.85rem 1.1rem;font-size:.6rem;letter-spacing:.14em}

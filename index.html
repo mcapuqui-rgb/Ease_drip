@@ -19,7 +19,7 @@
 <!-- PROMO BANNER -->
 
 <!-- NAV -->
-<nav>
+<nav aria-label="Navegação principal">
   <a href="#home" class="nav-logo">Ease <span>Drip</span></a>
   <ul class="nav-links">
     <li><a href="#home" class="active" data-pt="Início" data-en="Home">Início</a></li>
@@ -35,14 +35,14 @@
       <span class="theme-icon">☀</span>
       <span id="themeLbl">Claro</span>
     </button>
-    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
 
 <!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobileMenu">
+<div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Navegação móvel">
   <a href="#home" onclick="toggleMenu()" data-pt="Início" data-en="Home">Início</a>
   <a href="#shop" onclick="toggleMenu()" data-pt="Loja" data-en="Shop">Loja</a>
   <a href="#contact" onclick="toggleMenu()" data-pt="Contacto" data-en="Contact">Contacto</a>

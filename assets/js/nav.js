@@ -1,7 +1,16 @@
 // ── NAV MOBILE ──
 function toggleMenu() {
-  document.getElementById('mobileMenu').classList.toggle('open');
+  const menu = document.getElementById('mobileMenu');
+  const button = document.querySelector('.hamburger');
+  const isOpen = menu.classList.toggle('open');
+  button.setAttribute('aria-expanded', String(isOpen));
 }
+
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && document.getElementById('mobileMenu').classList.contains('open')) {
+    toggleMenu();
+  }
+});
 
 // ── NAV ACTIVE ON SCROLL ──
 window.addEventListener('scroll', () => {

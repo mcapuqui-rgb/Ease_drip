@@ -197,7 +197,6 @@ function renderShop() {
 }
 
 function cardHtml(p, id) {
-  const price = (p.oldPrice ? `<s class="old-price">${esc(p.oldPrice)}</s> ` : '') + esc(p.price);
   const image = p.images && p.images.length ? p.images[0] : null;
   return `
     <div class="product-card" onclick="openModal(${id})">
@@ -213,7 +212,7 @@ function cardHtml(p, id) {
       <div class="product-info">
         <div class="product-brand">${esc(p.brand)}</div>
         <div class="product-name">${esc(p.name[currentLang])}</div>
-        <div class="product-price">${price}</div>
+        <div class="product-price">${esc(p.price)}</div>
         <a class="product-brand-link" href="${esc(getOfficialProductLink(p.cat, p))}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">
           ${esc(tr(UI.viewOfficial))}
         </a>
@@ -315,7 +314,7 @@ function openModal(id) {
 
   document.getElementById('modalBrand').textContent = p.brand;
   document.getElementById('modalName').textContent = p.name[currentLang];
-  document.getElementById('modalPrice').innerHTML = (p.oldPrice ? `<s class="old-price">${esc(p.oldPrice)}</s> ` : '') + esc(p.price);
+  document.getElementById('modalPrice').textContent = p.price;
   document.getElementById('modalDesc').textContent = p.desc[currentLang];
 
   const avail = document.getElementById('modalAvail');

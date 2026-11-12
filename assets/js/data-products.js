@@ -1312,6 +1312,23 @@ const products = [
 ];
 
 // ───────────────────────────────────────────────────────────────────────
+//  REGRA DE DESCONTO: valor acima do limite → desconto percentual
+// ───────────────────────────────────────────────────────────────────────
+const DESCONTO_LIMITE = 95000;
+const DESCONTO_PERCENT = 70;
+
+const formatarKz = n => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' Kz';
+
+products.forEach(p => {
+  if (p.priceValue > DESCONTO_LIMITE && !p.oldPrice) {
+    p.oldPrice = p.price;
+    p.priceValue = Math.round(p.priceValue * (100 - DESCONTO_PERCENT) / 100);
+    p.price = formatarKz(p.priceValue);
+    if (!p.collections.includes('promocoes')) p.collections.push('promocoes');
+  }
+});
+
+// ───────────────────────────────────────────────────────────────────────
 //  2. PRODUTOS SEM CATEGORIA (não aparecem na loja)
 // ───────────────────────────────────────────────────────────────────────
 //  Não têm lugar na árvore atual (meias, gravatas, roupa interior, bebé…).
