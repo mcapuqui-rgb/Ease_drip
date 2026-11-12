@@ -11,13 +11,14 @@ Não tem carrinho, checkout, pagamentos, contas de utilizador ou backend.
 
 1. [Executar localmente](#executar-localmente)
 2. [Funcionalidades](#funcionalidades)
-3. [Estrutura do projeto](#estrutura-do-projeto)
-4. [Gerir produtos](#gerir-produtos)
-5. [Imagens, marcas e hero](#imagens-marcas-e-hero)
-6. [Contacto via WhatsApp](#contacto-via-whatsapp)
-7. [Publicação no GitHub Pages](#publicação-no-github-pages)
-8. [Conteúdo comercial a validar](#conteúdo-comercial-a-validar)
-9. [Antes de publicar](#antes-de-publicar)
+3. [Limitações](#limitações)
+4. [Estrutura do projeto](#estrutura-do-projeto)
+5. [Gerir produtos](#gerir-produtos)
+6. [Imagens, marcas e hero](#imagens-marcas-e-hero)
+7. [Contacto via WhatsApp](#contacto-via-whatsapp)
+8. [Publicação no GitHub Pages](#publicação-no-github-pages)
+9. [Conteúdo comercial a validar](#conteúdo-comercial-a-validar)
+10. [Antes de publicar](#antes-de-publicar)
 
 ## Executar localmente
 
@@ -62,6 +63,19 @@ O site usa scripts clássicos carregados diretamente por `index.html`, não
 módulos ES. Como partilham variáveis globais, mantém a ordem das tags
 `<script>`; os dados e as funções devem carregar antes dos scripts que os usam.
 
+## Limitações
+
+- **Sem backend.** Os pedidos existem apenas como conversas de WhatsApp. Não
+  há registo estruturado, estado de pedido nem stock. Funciona para um volume
+  pequeno; deixa de funcionar quando houver muitos pedidos em simultâneo.
+- **Catálogo editado à mão.** Todo o catálogo vive em `data-products.js`. Um
+  erro de sintaxe (vírgula em falta, aspa por fechar) pode impedir a loja
+  inteira de carregar, sem mensagem visível ao visitante. Ver
+  [Gerir produtos](#gerir-produtos).
+- **Sem testes automatizados.** A verificação é manual.
+- **Disponibilidade e preços não são validados.** O site não sabe se um
+  produto está em stock.
+
 ## Estrutura do projeto
 
 ```text
@@ -80,8 +94,8 @@ módulos ES. Como partilham variáveis globais, mantém a ordem das tags
 ```
 
 Os caminhos `assets/...` usados no código são relativos à raiz do repositório,
-que também é a raiz publicada do site. As imagens estão versionadas em `assets/images/`. O projeto ainda não inclui
-um favicon.
+que também é a raiz publicada do site. As imagens estão versionadas em
+`assets/images/`. O projeto ainda não inclui um favicon.
 
 ## Gerir produtos
 
@@ -117,7 +131,7 @@ produto, copia um bloco existente e atualiza os campos.
 | `cat`, `group`, `sub` | Devem corresponder à árvore `taxonomy` em `data-categories.js`. |
 | `brand` | Usado para identificar a marca. Para disponibilizar um link externo, adiciona a marca a `officialBrandLinks`. Sem link configurado, o código usa `#`. |
 | `name`, `desc` | Objetos com valores `pt` e `en`. |
-| `price` | Texto apresentado, por exemplo `'12 000 Kz'` ou `'A consultar'`. |
+| `price` | Texto apresentado, por exemplo `'12 000 Kz'` ou `'A consultar'`. Mantém o mesmo formato em todo o catálogo. |
 | `priceValue` | Número usado pelo filtro de preço. Sem valor numérico, o produto é excluído quando esse filtro está ativo. |
 | `oldPrice` | Opcional. É apresentado riscado e inclui o produto em Promoções. |
 | `sizes` | Obrigatório; o modal chama `.map()` nesta lista. Usa `[]` se não aplicável. |
@@ -135,6 +149,19 @@ serem categorizados e movidos para `products`.
 guarda links para produtos concretos. Esses links não comprovam que a loja seja
 revendedora autorizada.
 
+### Verificar depois de cada edição
+
+Como não há testes automatizados, faz sempre estas duas verificações depois de
+editar `data-products.js`:
+
+```bash
+node --check assets/js/data-products.js
+```
+
+Este comando só deteta erros de sintaxe (vírgulas, chavetas, aspas). Não valida
+categorias nem caminhos de imagem. Depois, abre o site e confirma que a consola
+do browser não mostra erros e que o produto novo aparece na categoria certa.
+
 ## Imagens, marcas e hero
 
 - Guarda fotografias de produtos em `assets/images/products/` e
@@ -150,20 +177,37 @@ revendedora autorizada.
   `assets/css/style.css`, na regra `.hero-bg`. Se alterares
   `HERO_IMAGES[0]`, atualiza o caminho no CSS.
 
-Confirma nomes, extensões e maiúsculas/minúsculas dos caminhos. O GitHub Pages
-corre em Linux, onde `Nike.webp` e `nike.webp`, ou `Background/` e
-`background/`, são caminhos diferentes. Prefere imagens WebP otimizadas e
-confirma que tens autorização para usar as fotografias e os logótipos.
+### Maiúsculas e minúsculas nos caminhos
+
+Esta é a causa mais comum de imagens que funcionam localmente e falham depois da
+publicação. O Windows ignora a diferença entre `Nike.webp` e `nike.webp`; o
+GitHub Pages corre em Linux e trata-os como ficheiros diferentes. O mesmo vale
+para `Background/` e `background/`.
+
+- Escreve os nomes de ficheiros e pastas sempre em minúsculas, sem espaços.
+- Para renomear só a capitalização, usa `git mv` (por exemplo
+  `git mv assets/images/logos/Nike.webp assets/images/logos/nike.webp`). No
+  Windows, o Git pode não registar uma mudança que altere apenas
+  maiúsculas/minúsculas se renomeares pelo explorador de ficheiros.
+- Compara o que está no repositório com o que o código referencia:
+  `git ls-files assets/images`.
+
+Prefere imagens WebP otimizadas e confirma que tens autorização para usar as
+fotografias e os logótipos.
 
 ## Contacto via WhatsApp
 
 O número usado pelo formulário, pelos botões e pelo telefone visível na página
 é a constante `WHATSAPP`, em `assets/js/config.js`. Usa o indicativo
 do país e o número sem `+`, espaços ou pontuação, por exemplo `244900000000`.
-O número é apresentado na página e fica visível no código-fonte.
 
 O formulário abre `wa.me` com uma mensagem preenchida; não envia nem guarda
 dados num servidor.
+
+**Privacidade e spam.** O número fica visível na página e no código-fonte e
+pode ser recolhido por programas automáticos. Espera mensagens indesejadas.
+Se o número for pessoal, considera usar um número dedicado à loja (por exemplo,
+uma conta WhatsApp Business), para não expor o teu contacto pessoal.
 
 ## Publicação no GitHub Pages
 
@@ -191,25 +235,42 @@ confirmar:
   Lubango, mas a morada e o horário não estão publicados atualmente.
 - Preços, descrições, materiais, disponibilidade e demais alegações sobre cada
   produto em `data-products.js`.
-- A autorização para vender os produtos e utilizar marcas, fotografias e
-  logótipos. Os links para sites oficiais não demonstram autorização de
-  revenda.
 - As estatísticas apresentadas: a contagem de produtos é atualizada por
   `init.js`; a contagem de logótipos também é calculada a partir de `brands`;
   o número de categorias é fixo no HTML.
 
+### Marcas e fotografias de terceiros
+
+Este é o risco mais sério do projeto, mais do que qualquer questão técnica.
+Mostrar logótipos de marcas e fotografias de catálogo de terceiros sem
+autorização pode levar a pedidos de remoção, reclamações junto do GitHub
+(que pode retirar o conteúdo ou o repositório) ou a litígio com os titulares
+dos direitos. Uma loja pequena não está protegida por ser pequena. O site também
+sugere uma ligação com marcas conhecidas que pode não existir, o que agrava
+o problema.
+
+- Os links para sites oficiais não demonstram autorização de revenda.
+- Se não tens autorização, usa fotografias tiradas por ti e evita logótipos
+  de marcas, ou apresenta apenas o nome da marca em texto.
+- Não tenho a certeza de como a lei angolana se aplica a este caso concreto.
+  Se pretendes vender regularmente, consulta um advogado local.
+
 ## Antes de publicar
 
 - [ ] `index.html` e `assets/` estão na raiz publicada; as imagens necessárias
-      estão versionadas e os caminhos têm a
-      capitalização correta.
+      estão versionadas e os caminhos estão em minúsculas e coincidem com
+      `git ls-files assets/images`.
+- [ ] `node --check assets/js/data-products.js` não devolve erros e a consola
+      do browser está limpa.
 - [ ] Adiciona um favicon se quiseres que o site tenha um ícone no separador do
       browser.
+- [ ] O ano do rodapé em `index.html` (atualmente `© 2025`) está atualizado.
 - [ ] Pesquisa, filtros, idioma, tema, cartões e galerias foram testados.
 - [ ] Todos os produtos têm `sizes`, mesmo que o valor seja `[]`.
 - [ ] O número de WhatsApp e o formulário foram testados, incluindo num
-      telemóvel.
-- [ ] O responsável confirmou o conteúdo comercial e as autorizações de uso.
+      telemóvel. Decidiste se usas um número pessoal ou dedicado à loja.
+- [ ] Tens autorização para usar cada marca, logótipo e fotografia, ou
+      removeste o que não tens.
 - [ ] Preços, descrições e disponibilidade foram revistos.
 - [ ] As informações legais adequadas à atividade foram preparadas.
 
